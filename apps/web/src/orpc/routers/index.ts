@@ -64,3 +64,6 @@ export type ListMessagesOutput = Outputs['guestbook']['list']
 
 export type ListAllCommentsOutput = Outputs['admin']['listAllComments']
 export type ListAllUsersOutput = Outputs['admin']['listAllUsers']
+
+export type GetViewsOutput = Outputs['posts']['views']['get']
+export type GetLikesOutput = Outputs['posts']['likes']['get']

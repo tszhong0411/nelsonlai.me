@@ -4,6 +4,7 @@ import { eq, likesSessions, posts, sql } from '@tszhong0411/db'
 import { getIp } from '@/utils/get-ip'
 import { getSessionId } from '@/utils/get-session-id'
 
+import { cache } from '../cache'
 import { publicProcedure } from '../root'
 import { getLikeInputSchema, incrementLikeInputSchema, likeSchema } from '../schemas/likes'
 
@@ -20,25 +21,34 @@ export const getLike = publicProcedure
     const ip = getIp(context.headers)
     const sessionId = getSessionId(input.slug, ip)
 
-    const [post, user] = await Promise.all([
+    const cached = await cache.posts.likes.get(input.slug, sessionId)
+
+    if (cached) {
+      return cached
+    }
+
+    const [[post], [user]] = await Promise.all([
+      context.db.select({ likes: posts.likes }).from(posts).where(eq(posts.slug, input.slug)),
       context.db
-        .select({
-          likes: posts.likes
-        })
-        .from(posts)
-        .where(eq(posts.slug, input.slug)),
-      context.db
-        .select({
-          likes: likesSessions.likes
-        })
+        .select({ likes: likesSessions.likes })
         .from(likesSessions)
         .where(eq(likesSessions.id, sessionId))
     ])
 
-    return {
-      likes: post[0]?.likes ?? 0,
-      currentUserLikes: user[0]?.likes ?? 0
+    if (!post) {
+      throw new ORPCError('NOT_FOUND', {
+        message: 'Post not found'
+      })
     }
+
+    const likesData = {
+      likes: post.likes,
+      currentUserLikes: user?.likes ?? 0 // the case that user has not liked the post yet
+    }
+
+    await cache.posts.likes.set(likesData, input.slug, sessionId)
+
+    return likesData
   })
 
 export const incrementLike = publicProcedure
@@ -54,46 +64,34 @@ export const incrementLike = publicProcedure
     const ip = getIp(context.headers)
     const sessionId = getSessionId(input.slug, ip)
 
-    const session = await context.db
-      .select({
-        likes: likesSessions.likes
-      })
+    const [session] = await context.db
+      .select({ likes: likesSessions.likes })
       .from(likesSessions)
-      .where(eq(likesSessions.id, getSessionId(input.slug, ip)))
+      .where(eq(likesSessions.id, sessionId))
 
-    if (session[0] && session[0].likes + input.value > 3) {
+    if (session && session.likes + input.value > 3) {
       throw new ORPCError('BAD_REQUEST', {
         message: 'You can only like a post 3 times'
       })
     }
 
-    const [post] = await context.db
-      .insert(posts)
-      .values({
-        slug: input.slug,
-        likes: input.value
-      })
-      .onConflictDoUpdate({
-        target: posts.slug,
-        set: {
-          likes: sql<number>`${posts.likes} + ${input.value}`
-        }
-      })
-      .returning()
-
-    const [currentUserLikes] = await context.db
-      .insert(likesSessions)
-      .values({
-        id: sessionId,
-        likes: input.value
-      })
-      .onConflictDoUpdate({
-        target: likesSessions.id,
-        set: {
-          likes: sql<number>`${likesSessions.likes} + ${input.value}`
-        }
-      })
-      .returning()
+    const [[post], [currentUserLikes]] = await context.db.transaction(async (tx) => {
+      return Promise.all([
+        tx
+          .update(posts)
+          .set({ likes: sql`${posts.likes} + ${input.value}` })
+          .where(eq(posts.slug, input.slug))
+          .returning(),
+        tx
+          .insert(likesSessions)
+          .values({ id: sessionId, likes: input.value })
+          .onConflictDoUpdate({
+            target: likesSessions.id,
+            set: { likes: sql`${likesSessions.likes} + ${input.value}` }
+          })
+          .returning()
+      ])
+    })
 
     if (!post || !currentUserLikes) {
       throw new ORPCError('INTERNAL_SERVER_ERROR', {
@@ -101,8 +99,12 @@ export const incrementLike = publicProcedure
       })
     }
 
-    return {
+    const likesData = {
       likes: post.likes,
       currentUserLikes: currentUserLikes.likes
     }
+
+    await cache.posts.likes.set(likesData, input.slug, sessionId)
+
+    return likesData
   })

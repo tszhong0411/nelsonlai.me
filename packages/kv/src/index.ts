@@ -12,3 +12,5 @@ export const ratelimit = new Ratelimit({
   limiter: Ratelimit.slidingWindow(50, '10 s'),
   analytics: true
 })
+
+export { createCache, createKey } from './utils'
