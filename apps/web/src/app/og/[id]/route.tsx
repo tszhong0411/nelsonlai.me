@@ -43,13 +43,17 @@ export const GET = async (_: Request, props: OGRouteProps) => {
       path.join(process.cwd(), 'src/app/og/[id]/RobotoCondensed-Bold.ttf')
     )
 
-    const post = await db
+    const [post] = await db
       .select({
         views: posts.views,
         likes: posts.likes
       })
       .from(posts)
       .where(eq(posts.slug, id))
+
+    if (!post) {
+      return NextResponse.json({ error: 'Post not found' }, { status: 404 })
+    }
 
     const textColor = 'hsl(0 0% 90%)'
 
@@ -106,9 +110,9 @@ export const GET = async (_: Request, props: OGRouteProps) => {
                 color: textColor
               }}
             >
-              <span>{post[0]?.likes ?? 0} likes</span>
+              <span>{post.likes} likes</span>
               <span>·</span>
-              <span>{post[0]?.views ?? 0} views</span>
+              <span>{post.views} views</span>
             </div>
           </div>
           <div
