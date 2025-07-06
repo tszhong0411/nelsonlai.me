@@ -1,3 +1,5 @@
+import { consola } from 'consola'
+
 import { redis } from './index'
 
 type KVKey = string | string[]
@@ -22,12 +24,13 @@ export const createCache = <T, A extends string[]>(keyPrefix: KVKey) => {
   return {
     get: async (...args: A): Promise<T | null> => {
       const key = getKey(args)
-
+      consola.info('[Cache] Hit', key)
       return redis.get<T>(key)
     },
 
     set: async (value: T, ...args: A): Promise<void> => {
       const key = getKey(args)
+      consola.info('[Cache] Set', key)
       await redis.set(key, value, { ex: KV_TTL })
     }
   }

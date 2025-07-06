@@ -19,7 +19,8 @@
   },
   "dependencies": {
     "@upstash/ratelimit": "^2.0.5",
-    "@upstash/redis": "^1.35.0"
+    "@upstash/redis": "^1.35.0",
+    "consola": "^3.4.2"
   },
   "devDependencies": {
     "@tszhong0411/env": "workspace:*",
