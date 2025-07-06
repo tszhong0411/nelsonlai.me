@@ -12,13 +12,13 @@ export const viewsStats = publicProcedure
   })
   .output(viewsStatsSchema)
   .handler(async ({ context }) => {
-    const result = await context.db
+    const [result] = await context.db
       .select({
         value: sum(posts.views)
       })
       .from(posts)
 
-    const value = result[0]?.value ? Number(result[0].value) : 0
+    const value = result?.value ? Number(result.value) : 0
 
     return {
       views: value
@@ -34,13 +34,13 @@ export const likesStats = publicProcedure
   })
   .output(likesStatsSchema)
   .handler(async ({ context }) => {
-    const result = await context.db
+    const [result] = await context.db
       .select({
         value: sum(likesSessions.likes)
       })
       .from(posts)
 
-    const likes = result[0]?.value ? Number(result[0].value) : 0
+    const likes = result?.value ? Number(result.value) : 0
 
     return {
       likes
