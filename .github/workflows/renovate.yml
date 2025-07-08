@@ -10,6 +10,7 @@ on:
 
 jobs:
   generate-changeset:
+    name: Generate changeset
     runs-on: ubuntu-latest
     if: github.actor == 'renovate[bot]' && github.repository == 'tszhong0411/nelsonlai.me'
     steps:
