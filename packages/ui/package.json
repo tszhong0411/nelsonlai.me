@@ -107,7 +107,7 @@
     "tailwindcss": "^4.1.8"
   },
   "peerDependencies": {
-    "@tszhong0411/utils": ">=0",
+    "@tszhong0411/utils": ">=0.0.24",
     "next": "^15",
     "react": "^19",
     "react-dom": "^19"
