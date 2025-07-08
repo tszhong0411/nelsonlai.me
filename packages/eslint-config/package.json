@@ -2,17 +2,17 @@
   "name": "@tszhong0411/eslint-config",
   "version": "0.1.38",
   "description": "The eslint config for tszhong0411's projects",
-  "license": "MIT",
-  "author": "tszhong0411 <me@nelsonlai.me> (https://github.com/tszhong0411/)",
   "homepage": "https://github.com/tszhong0411/nelsonlai.me#readme",
+  "bugs": {
+    "url": "https://github.com/tszhong0411/nelsonlai.me/issues"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tszhong0411/nelsonlai.me.git",
     "directory": "packages/eslint-config"
   },
-  "bugs": {
-    "url": "https://github.com/tszhong0411/nelsonlai.me/issues"
-  },
+  "license": "MIT",
+  "author": "tszhong0411 <me@nelsonlai.me> (https://github.com/tszhong0411/)",
   "type": "module",
   "exports": {
     ".": {
@@ -21,6 +21,7 @@
     }
   },
   "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
@@ -32,7 +33,9 @@
     "lint:fix": "eslint --fix .",
     "type-check": "tsc --noEmit"
   },
-  "types": "./dist/index.d.ts",
+  "lint-staged": {
+    "*.{cjs,mjs,js,jsx,cts,mts,ts,tsx,json}": "eslint --fix"
+  },
   "dependencies": {
     "@eslint-react/eslint-plugin": "^1.51.0",
     "@eslint/js": "^9.28.0",
@@ -57,17 +60,14 @@
     "globals": "^16.2.0",
     "local-pkg": "^1.1.1"
   },
-  "peerDependencies": {
-    "eslint": "^9.20.0"
-  },
   "devDependencies": {
     "@tszhong0411/tsconfig": "workspace:*",
     "eslint": "^9.28.0"
   },
+  "peerDependencies": {
+    "eslint": "^9.20.0"
+  },
   "publishConfig": {
     "access": "public"
-  },
-  "lint-staged": {
-    "*.{cjs,mjs,js,jsx,cts,mts,ts,tsx,json}": "eslint --fix"
   }
 }

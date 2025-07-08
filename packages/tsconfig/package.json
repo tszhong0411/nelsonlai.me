@@ -2,34 +2,34 @@
   "name": "@tszhong0411/tsconfig",
   "version": "0.0.14",
   "description": "The typescript config for tszhong0411's projects",
-  "license": "MIT",
-  "author": "tszhong0411 <me@nelsonlai.me> (https://github.com/tszhong0411/)",
   "homepage": "https://github.com/tszhong0411/nelsonlai.me#readme",
+  "bugs": {
+    "url": "https://github.com/tszhong0411/nelsonlai.me/issues"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tszhong0411/nelsonlai.me.git",
     "directory": "packages/tsconfig"
   },
-  "bugs": {
-    "url": "https://github.com/tszhong0411/nelsonlai.me/issues"
-  },
+  "license": "MIT",
+  "author": "tszhong0411 <me@nelsonlai.me> (https://github.com/tszhong0411/)",
   "type": "module",
   "files": [
     "base.json",
     "nextjs.json",
     "react-library.json"
   ],
-  "peerDependencies": {
-    "next": "^15",
-    "typescript": "5.x"
+  "lint-staged": {
+    "*.{cjs,mjs,js,jsx,cts,mts,ts,tsx,json}": "eslint --fix"
   },
   "devDependencies": {
     "next": "^15.3.3"
   },
+  "peerDependencies": {
+    "next": "^15",
+    "typescript": "5.x"
+  },
   "publishConfig": {
     "access": "public"
-  },
-  "lint-staged": {
-    "*.{cjs,mjs,js,jsx,cts,mts,ts,tsx,json}": "eslint --fix"
   }
 }

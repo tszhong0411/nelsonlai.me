@@ -1,7 +1,7 @@
 {
-  "private": true,
   "name": "@tszhong0411/web",
   "version": "0.0.0",
+  "private": true,
   "description": "The personal portfolio of tszhong0411",
   "license": "MIT",
   "type": "module",
@@ -19,6 +19,9 @@
     "test:e2e:ui": "cross-env NODE_ENV=test pnpm with-env playwright test --ui",
     "type-check": "tsc --noEmit",
     "with-env": "dotenv -e ../../.env.local --"
+  },
+  "lint-staged": {
+    "*.{cjs,mjs,js,jsx,cts,mts,ts,tsx,json}": "eslint --fix"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
@@ -103,8 +106,5 @@
     "schema-dts": "^1.1.5",
     "sharp": "^0.34.2",
     "tailwindcss": "^4.1.8"
-  },
-  "lint-staged": {
-    "*.{cjs,mjs,js,jsx,cts,mts,ts,tsx,json}": "eslint --fix"
   }
 }
