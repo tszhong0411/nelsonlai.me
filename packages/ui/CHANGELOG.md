@@ -1,5 +1,13 @@
 # @tszhong0411/ui
 
+## 0.0.66
+
+### Patch Changes
+
+- c554388: Migrate to `prettier-plugin-packagejson`
+- Updated dependencies [c554388]
+  - @tszhong0411/utils@0.0.24
+
 ## 0.0.65
 
 ### Patch Changes
