@@ -1,5 +1,11 @@
 # @tszhong0411/eslint-config
 
+## 0.1.39
+
+### Patch Changes
+
+- c554388: Migrate to `prettier-plugin-packagejson`
+
 ## 0.1.38
 
 ### Patch Changes

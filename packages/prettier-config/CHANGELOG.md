@@ -1,5 +1,11 @@
 # @tszhong0411/prettier-config
 
+## 0.0.19
+
+### Patch Changes
+
+- c554388: Migrate to `prettier-plugin-packagejson`
+
 ## 0.0.18
 
 ### Patch Changes

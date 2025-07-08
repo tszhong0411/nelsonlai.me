@@ -1,5 +1,11 @@
 # @tszhong0411/tsconfig
 
+## 0.0.15
+
+### Patch Changes
+
+- c554388: Migrate to `prettier-plugin-packagejson`
+
 ## 0.0.14
 
 ### Patch Changes
