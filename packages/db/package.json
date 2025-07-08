@@ -38,7 +38,7 @@
     "@types/node": "^22.15.29",
     "@types/pg": "^8.15.4",
     "consola": "^3.4.2",
-    "drizzle-kit": "^0.31.1",
+    "drizzle-kit": "^0.31.4",
     "execa": "^9.6.0",
     "pg": "^8.16.0"
   },
