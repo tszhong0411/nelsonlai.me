@@ -1,7 +1,7 @@
 {
-  "private": true,
   "name": "@tszhong0411/docs",
   "version": "0.0.0",
+  "private": true,
   "description": "The documentation for tszhong0411's projects",
   "license": "MIT",
   "type": "module",
@@ -15,6 +15,9 @@
     "lint:fix": "eslint --fix .",
     "start": "next start -p 3002",
     "type-check": "tsc --noEmit"
+  },
+  "lint-staged": {
+    "*.{cjs,mjs,js,jsx,cts,mts,ts,tsx,json}": "eslint --fix"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
@@ -55,8 +58,5 @@
     "postcss": "^8.5.4",
     "postcss-load-config": "^6.0.1",
     "tailwindcss": "^4.1.8"
-  },
-  "lint-staged": {
-    "*.{cjs,mjs,js,jsx,cts,mts,ts,tsx,json}": "eslint --fix"
   }
 }

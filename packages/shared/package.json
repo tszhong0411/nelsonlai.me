@@ -1,7 +1,7 @@
 {
-  "private": true,
   "name": "@tszhong0411/shared",
   "version": "0.0.0",
+  "private": true,
   "description": "The shared stuff for tszhong0411's projects",
   "license": "MIT",
   "type": "module",
@@ -12,11 +12,11 @@
     "lint:fix": "eslint --fix .",
     "type-check": "tsc --noEmit"
   },
+  "lint-staged": {
+    "*.{cjs,mjs,js,jsx,cts,mts,ts,tsx,json}": "eslint --fix"
+  },
   "devDependencies": {
     "@tszhong0411/eslint-config": "workspace:*",
     "@tszhong0411/tsconfig": "workspace:*"
-  },
-  "lint-staged": {
-    "*.{cjs,mjs,js,jsx,cts,mts,ts,tsx,json}": "eslint --fix"
   }
 }

@@ -2,17 +2,17 @@
   "name": "@tszhong0411/utils",
   "version": "0.0.23",
   "description": "The utility functions for tszhong0411's projects",
-  "license": "MIT",
-  "author": "tszhong0411 <me@nelsonlai.me> (https://github.com/tszhong0411/)",
   "homepage": "https://github.com/tszhong0411/nelsonlai.me#readme",
+  "bugs": {
+    "url": "https://github.com/tszhong0411/nelsonlai.me/issues"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tszhong0411/nelsonlai.me.git",
     "directory": "packages/utils"
   },
-  "bugs": {
-    "url": "https://github.com/tszhong0411/nelsonlai.me/issues"
-  },
+  "license": "MIT",
+  "author": "tszhong0411 <me@nelsonlai.me> (https://github.com/tszhong0411/)",
   "type": "module",
   "exports": {
     ".": {
@@ -21,6 +21,7 @@
     }
   },
   "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
@@ -32,7 +33,9 @@
     "lint:fix": "eslint --fix .",
     "type-check": "tsc --noEmit"
   },
-  "types": "./dist/index.d.ts",
+  "lint-staged": {
+    "*.{cjs,mjs,js,jsx,cts,mts,ts,tsx,json}": "eslint --fix"
+  },
   "dependencies": {
     "clsx": "^2.1.1",
     "tailwind-merge": "^3.3.0"
@@ -44,8 +47,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "lint-staged": {
-    "*.{cjs,mjs,js,jsx,cts,mts,ts,tsx,json}": "eslint --fix"
   }
 }

@@ -1,11 +1,11 @@
 {
-  "private": true,
   "name": "nelsonlai-me",
-  "author": "tszhong0411 <me@nelsonlai.me> (https://github.com/tszhong0411/)",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tszhong0411/nelsonlai.me.git"
   },
+  "author": "tszhong0411 <me@nelsonlai.me> (https://github.com/tszhong0411/)",
   "type": "module",
   "scripts": {
     "build": "turbo build",
@@ -45,6 +45,13 @@
     "type-check": "turbo type-check",
     "version": "changeset version"
   },
+  "lint-staged": {
+    "*.{cjs,mjs,js,jsx,cts,mts,ts,tsx,json}": "eslint --fix",
+    "**/*": [
+      "prettier --write --ignore-unknown",
+      "pnpm check:spelling"
+    ]
+  },
   "devDependencies": {
     "@changesets/cli": "^2.29.4",
     "@commitlint/cli": "^19.8.1",
@@ -54,7 +61,6 @@
     "@rslib/core": "^0.9.1",
     "@tszhong0411/eslint-config": "workspace:*",
     "@tszhong0411/prettier-config": "workspace:*",
-    "@tszhong0411/prettier-plugin-package-json": "workspace:*",
     "@tszhong0411/tsconfig": "workspace:*",
     "@turbo/gen": "^2.5.4",
     "@types/node": "^22.15.29",
@@ -70,6 +76,7 @@
     "knip": "^5.60.0",
     "lint-staged": "^16.1.0",
     "prettier": "^3.5.3",
+    "prettier-plugin-packagejson": "^2.5.18",
     "prettier-plugin-tailwindcss": "^0.6.13",
     "ts-morph": "^26.0.0",
     "tsx": "^4.19.4",
@@ -77,17 +84,10 @@
     "typescript": "^5.8.3",
     "vitest": "^3.2.1"
   },
+  "packageManager": "pnpm@10.12.4",
   "engines": {
     "node": ">=22"
   },
-  "lint-staged": {
-    "*.{cjs,mjs,js,jsx,cts,mts,ts,tsx,json}": "eslint --fix",
-    "**/*": [
-      "prettier --write --ignore-unknown",
-      "pnpm check:spelling"
-    ]
-  },
-  "packageManager": "pnpm@10.12.4",
   "pnpm": {
     "onlyBuiltDependencies": [
       "@parcel/watcher",

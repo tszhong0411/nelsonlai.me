@@ -1,7 +1,7 @@
 {
-  "private": true,
   "name": "@tszhong0411/mdx-plugins",
   "version": "0.0.0",
+  "private": true,
   "description": "Useful MDX plugins",
   "license": "MIT",
   "type": "module",
@@ -12,6 +12,7 @@
     }
   },
   "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "build": "rslib build",
     "clean": "rm -rf .turbo dist",
@@ -20,7 +21,9 @@
     "lint:fix": "eslint --fix .",
     "type-check": "tsc --noEmit"
   },
-  "types": "./dist/index.d.ts",
+  "lint-staged": {
+    "*.{cjs,mjs,js,jsx,cts,mts,ts,tsx,json}": "eslint --fix"
+  },
   "dependencies": {
     "@shikijs/rehype": "^3.5.0",
     "@shikijs/transformers": "^3.5.0",
@@ -36,8 +39,5 @@
     "@tszhong0411/tsconfig": "workspace:*",
     "@types/hast": "^3.0.4",
     "@types/mdast": "^4.0.4"
-  },
-  "lint-staged": {
-    "*.{cjs,mjs,js,jsx,cts,mts,ts,tsx,json}": "eslint --fix"
   }
 }
