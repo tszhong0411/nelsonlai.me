@@ -5,6 +5,8 @@
  *
  * Modified by: tszhong0411
  */
+'use client' // TEMP: remove this once we unpublish this package
+
 import {
   type ColumnFiltersState,
   getCoreRowModel,

@@ -5,6 +5,8 @@
  *
  * Modified by: tszhong0411
  */
+'use client'
+
 import type { Option } from './index'
 import type { Column } from '@tanstack/react-table'
 
