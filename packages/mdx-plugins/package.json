@@ -14,9 +14,9 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "rslib build",
+    "build": "tsdown",
     "clean": "rm -rf .turbo dist",
-    "dev": "rslib build --watch",
+    "dev": "tsdown --watch",
     "lint": "eslint . --max-warnings 0",
     "lint:fix": "eslint --fix .",
     "type-check": "tsc --noEmit"

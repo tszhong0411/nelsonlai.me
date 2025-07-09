@@ -113,17 +113,11 @@ export const packageGenerator = (plop: PlopTypes.NodePlopAPI): void => {
 
       if (answers?.shouldCompile) {
         actions.push(
-          // Add rslib configuration
+          // Add tsdown configuration
           {
             type: 'add',
-            path: 'packages/{{ name }}/rslib.config.ts',
-            templateFile: 'templates/package/rslib.config.ts.hbs'
-          },
-          // Add tsconfig.build.json
-          {
-            type: 'add',
-            path: 'packages/{{ name }}/tsconfig.build.json',
-            templateFile: 'templates/package/tsconfig.build.json.hbs'
+            path: 'packages/{{ name }}/tsdown.config.ts',
+            templateFile: 'templates/package/tsdown.config.ts.hbs'
           }
         )
       }
