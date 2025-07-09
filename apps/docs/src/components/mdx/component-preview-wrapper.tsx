@@ -1,6 +1,7 @@
 'use client'
 
-import { Button, Tabs, TabsContent, TabsList, TabsTrigger } from '@tszhong0411/ui'
+import { Button } from '@tszhong0411/ui/components/button'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@tszhong0411/ui/components/tabs'
 import { RotateCcwIcon } from 'lucide-react'
 import { useState } from 'react'
 

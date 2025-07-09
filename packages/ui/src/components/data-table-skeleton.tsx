@@ -7,8 +7,8 @@
  */
 import { cn } from '@tszhong0411/utils'
 
-import { Skeleton } from '../skeleton'
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../table'
+import { Skeleton } from './skeleton'
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './table'
 
 type DataTableSkeletonProps = {
   columnCount: number

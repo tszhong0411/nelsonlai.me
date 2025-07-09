@@ -1,4 +1,8 @@
-import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from '@tszhong0411/ui'
+import {
+  ResizableHandle,
+  ResizablePanel,
+  ResizablePanelGroup
+} from '@tszhong0411/ui/components/resizable'
 
 const ResizableVerticalDemo = () => {
   return (

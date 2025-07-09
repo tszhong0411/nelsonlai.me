@@ -1,6 +1,6 @@
 'use client'
 
-import { Calendar } from '@tszhong0411/ui'
+import { Calendar } from '@tszhong0411/ui/components/calendar'
 import { useState } from 'react'
 
 const CalendarDemo = () => {

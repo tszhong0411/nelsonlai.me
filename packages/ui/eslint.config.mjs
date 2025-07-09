@@ -8,6 +8,6 @@ export default tszhong0411({
   turbo: true,
   tailwindcss: true,
   tailwindcssConfig: {
-    entryPoint: 'src/styles.css'
+    entryPoint: 'src/styles/main.css'
   }
 })

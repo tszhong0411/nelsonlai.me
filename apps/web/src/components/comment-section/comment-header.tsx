@@ -3,14 +3,14 @@ import type { ListCommentsInput } from '@/orpc/routers'
 import NumberFlow, { NumberFlowGroup } from '@number-flow/react'
 import { useQuery } from '@tanstack/react-query'
 import { useTranslations } from '@tszhong0411/i18n/client'
+import { Button } from '@tszhong0411/ui/components/button'
 import {
-  Button,
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
   DropdownMenuTrigger
-} from '@tszhong0411/ui'
+} from '@tszhong0411/ui/components/dropdown-menu'
 import { ListFilterIcon } from 'lucide-react'
 
 import { orpc } from '@/orpc/client'

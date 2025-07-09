@@ -1,7 +1,9 @@
 'use client'
 
 import { useTranslations } from '@tszhong0411/i18n/client'
-import { Badge, Skeleton, Tooltip, TooltipContent, TooltipTrigger } from '@tszhong0411/ui'
+import { Badge } from '@tszhong0411/ui/components/badge'
+import { Skeleton } from '@tszhong0411/ui/components/skeleton'
+import { Tooltip, TooltipContent, TooltipTrigger } from '@tszhong0411/ui/components/tooltip'
 import Image from 'next/image'
 import { useEffect, useRef } from 'react'
 

@@ -1,4 +1,4 @@
-import { AspectRatio } from '@tszhong0411/ui'
+import { AspectRatio } from '@tszhong0411/ui/components/aspect-ratio'
 import Image from 'next/image'
 
 const AspectRatioDemo = () => {

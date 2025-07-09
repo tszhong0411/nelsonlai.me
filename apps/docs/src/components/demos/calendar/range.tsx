@@ -2,7 +2,7 @@
 
 import type { DateRange } from 'react-day-picker'
 
-import { Calendar } from '@tszhong0411/ui'
+import { Calendar } from '@tszhong0411/ui/components/calendar'
 import { addDays } from 'date-fns'
 import { useState } from 'react'
 

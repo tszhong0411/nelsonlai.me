@@ -3,7 +3,7 @@ import {
   InputOTPGroup,
   InputOTPSlot,
   REGEXP_ONLY_DIGITS_AND_CHARS
-} from '@tszhong0411/ui'
+} from '@tszhong0411/ui/components/input-otp'
 
 const InputOTPPatternDemo = () => {
   return (

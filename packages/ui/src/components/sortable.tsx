@@ -1,5 +1,3 @@
-'use client'
-
 /**
  * shadcn-table (MIT License)
  * Copyright (c) Sadman Sakib
@@ -7,6 +5,8 @@
  *
  * Modified by: tszhong0411
  */
+'use client'
+
 import {
   type Announcements,
   closestCenter,
@@ -46,7 +46,7 @@ import { cn } from '@tszhong0411/utils'
 import { createContext, use, useCallback, useEffect, useId, useMemo, useState } from 'react'
 import { createPortal } from 'react-dom'
 
-import { composeEventHandlers, useComposedRefs } from './lib/composition'
+import { composeEventHandlers, useComposedRefs } from '../lib/composition'
 
 const orientationConfig = {
   vertical: {

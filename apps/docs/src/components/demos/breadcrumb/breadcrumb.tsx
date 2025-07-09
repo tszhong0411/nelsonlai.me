@@ -5,12 +5,14 @@ import {
   BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbPage,
-  BreadcrumbSeparator,
+  BreadcrumbSeparator
+} from '@tszhong0411/ui/components/breadcrumb'
+import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger
-} from '@tszhong0411/ui'
+} from '@tszhong0411/ui/components/dropdown-menu'
 
 const BreadcrumbDemo = () => {
   return (

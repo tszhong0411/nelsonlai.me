@@ -1,4 +1,4 @@
-import { Alert, AlertDescription, AlertTitle } from '@tszhong0411/ui'
+import { Alert, AlertDescription, AlertTitle } from '@tszhong0411/ui/components/alert'
 import { AlertCircleIcon } from 'lucide-react'
 
 const AlertDestructiveDemo = () => {

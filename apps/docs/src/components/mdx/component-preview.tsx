@@ -1,6 +1,6 @@
 import fs from 'node:fs/promises'
 
-import { CodeBlock } from '@tszhong0411/ui'
+import { CodeBlock } from '@tszhong0411/ui/components/code-block'
 import { toJsxRuntime } from 'hast-util-to-jsx-runtime'
 import { Fragment } from 'react'
 import { jsx, jsxs } from 'react/jsx-runtime'

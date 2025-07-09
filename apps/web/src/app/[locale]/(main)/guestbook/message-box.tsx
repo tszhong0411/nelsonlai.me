@@ -4,19 +4,17 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useMutation } from '@tanstack/react-query'
 import { useTranslations } from '@tszhong0411/i18n/client'
 import { useRouter } from '@tszhong0411/i18n/routing'
+import { Avatar, AvatarFallback, AvatarImage } from '@tszhong0411/ui/components/avatar'
+import { Button } from '@tszhong0411/ui/components/button'
 import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-  Button,
   Form,
   FormControl,
   FormField,
   FormItem,
-  FormMessage,
-  Textarea,
-  toast
-} from '@tszhong0411/ui'
+  FormMessage
+} from '@tszhong0411/ui/components/form'
+import { toast } from '@tszhong0411/ui/components/sonner'
+import { Textarea } from '@tszhong0411/ui/components/textarea'
 import { getAbbreviation } from '@tszhong0411/utils'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'

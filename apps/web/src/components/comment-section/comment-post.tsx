@@ -2,7 +2,8 @@
 
 import { useMutation } from '@tanstack/react-query'
 import { useTranslations } from '@tszhong0411/i18n/client'
-import { Button, toast } from '@tszhong0411/ui'
+import { Button } from '@tszhong0411/ui/components/button'
+import { toast } from '@tszhong0411/ui/components/sonner'
 import { SendIcon } from 'lucide-react'
 import { useEffect, useState } from 'react'
 

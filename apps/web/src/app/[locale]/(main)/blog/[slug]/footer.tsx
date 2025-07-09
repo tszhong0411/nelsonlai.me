@@ -1,7 +1,7 @@
 'use client'
 
 import { useLocale, useTranslations } from '@tszhong0411/i18n/client'
-import { linkVariants } from '@tszhong0411/ui'
+import { linkVariants } from '@tszhong0411/ui/components/link'
 
 import Link from '@/components/link'
 import { useFormattedDate } from '@/hooks/use-formatted-date'

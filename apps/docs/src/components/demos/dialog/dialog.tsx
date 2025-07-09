@@ -1,15 +1,15 @@
+import { Button } from '@tszhong0411/ui/components/button'
 import {
-  Button,
   Dialog,
   DialogContent,
   DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
-  Input,
-  Label
-} from '@tszhong0411/ui'
+  DialogTrigger
+} from '@tszhong0411/ui/components/dialog'
+import { Input } from '@tszhong0411/ui/components/input'
+import { Label } from '@tszhong0411/ui/components/label'
 
 const DialogDemo = () => {
   return (

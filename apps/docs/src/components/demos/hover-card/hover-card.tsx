@@ -1,12 +1,10 @@
+import { Avatar, AvatarFallback, AvatarImage } from '@tszhong0411/ui/components/avatar'
+import { Button } from '@tszhong0411/ui/components/button'
 import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-  Button,
   HoverCard,
   HoverCardContent,
   HoverCardTrigger
-} from '@tszhong0411/ui'
+} from '@tszhong0411/ui/components/hover-card'
 import { CalendarDaysIcon } from 'lucide-react'
 
 const HoverCardDemo = () => {

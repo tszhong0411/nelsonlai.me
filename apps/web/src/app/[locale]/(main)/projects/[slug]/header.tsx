@@ -3,7 +3,7 @@
 import type { Project } from 'content-collections'
 
 import { useTranslations } from '@tszhong0411/i18n/client'
-import { buttonVariants } from '@tszhong0411/ui'
+import { buttonVariants } from '@tszhong0411/ui/components/button'
 import { cn } from '@tszhong0411/utils'
 import { ArrowUpRightIcon } from 'lucide-react'
 import { motion } from 'motion/react'

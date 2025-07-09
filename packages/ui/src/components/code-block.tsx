@@ -5,9 +5,10 @@ import { CheckIcon, CopyIcon } from 'lucide-react'
 import mergeRefs from 'merge-refs'
 import { useEffect, useRef, useState } from 'react'
 
+import { getIconByLanguage } from '../utils/get-icon-by-language'
+
 import { Button } from './button'
 import { ScrollArea, ScrollBar } from './scroll-area'
-import { getIconByLanguage } from './utils/get-icon-by-language'
 
 type CodeBlockProps = {
   'data-lang'?: string

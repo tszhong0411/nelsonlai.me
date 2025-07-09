@@ -13,7 +13,7 @@ import { cn } from '@tszhong0411/utils'
 import { CheckIcon, ChevronsUpDownIcon, Settings2Icon } from 'lucide-react'
 import { useId, useMemo, useState } from 'react'
 
-import { Button } from '../button'
+import { Button } from './button'
 import {
   Command,
   CommandEmpty,
@@ -21,8 +21,8 @@ import {
   CommandInput,
   CommandItem,
   CommandList
-} from '../command'
-import { Popover, PopoverContent, PopoverTrigger } from '../popover'
+} from './command'
+import { Popover, PopoverContent, PopoverTrigger } from './popover'
 
 type DataTableViewOptionsProps<TData> = {
   table: Table<TData>

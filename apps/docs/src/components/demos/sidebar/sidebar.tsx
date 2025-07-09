@@ -11,7 +11,7 @@ import {
   SidebarMenuItem,
   SidebarProvider,
   SidebarTrigger
-} from '@tszhong0411/ui'
+} from '@tszhong0411/ui/components/sidebar'
 import { CalendarIcon, HomeIcon, InboxIcon, SearchIcon, SettingsIcon } from 'lucide-react'
 
 import TeamSwitcher from './components/team-switcher'

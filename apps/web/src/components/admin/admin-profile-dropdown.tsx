@@ -1,15 +1,13 @@
 import { useTranslations } from '@tszhong0411/i18n/client'
+import { Avatar, AvatarFallback, AvatarImage } from '@tszhong0411/ui/components/avatar'
+import { Button } from '@tszhong0411/ui/components/button'
 import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-  Button,
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuLabel,
-  DropdownMenuTrigger,
-  Skeleton
-} from '@tszhong0411/ui'
+  DropdownMenuTrigger
+} from '@tszhong0411/ui/components/dropdown-menu'
+import { Skeleton } from '@tszhong0411/ui/components/skeleton'
 import { getAbbreviation } from '@tszhong0411/utils'
 
 import { useSession } from '@/lib/auth-client'

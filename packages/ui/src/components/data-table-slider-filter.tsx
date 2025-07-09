@@ -11,12 +11,12 @@ import { cn } from '@tszhong0411/utils'
 import { PlusCircleIcon, XCircleIcon } from 'lucide-react'
 import { useCallback, useId, useMemo } from 'react'
 
-import { Button } from '../button'
-import { Input } from '../input'
-import { Label } from '../label'
-import { Popover, PopoverContent, PopoverTrigger } from '../popover'
-import { Separator } from '../separator'
-import { Slider } from '../slider'
+import { Button } from './button'
+import { Input } from './input'
+import { Label } from './label'
+import { Popover, PopoverContent, PopoverTrigger } from './popover'
+import { Separator } from './separator'
+import { Slider } from './slider'
 
 type Range = {
   min: number

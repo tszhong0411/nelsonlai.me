@@ -1,4 +1,5 @@
-import { Label, Switch } from '@tszhong0411/ui'
+import { Label } from '@tszhong0411/ui/components/label'
+import { Switch } from '@tszhong0411/ui/components/switch'
 
 const SwitchDemo = () => {
   return (

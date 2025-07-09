@@ -11,11 +11,12 @@ import type { DateRange } from 'react-day-picker'
 import { CalendarIcon, XCircleIcon } from 'lucide-react'
 import { useCallback, useMemo } from 'react'
 
-import { Button } from '../button'
-import { Calendar } from '../calendar'
 import { formatDate } from '../lib/data-table'
-import { Popover, PopoverContent, PopoverTrigger } from '../popover'
-import { Separator } from '../separator'
+
+import { Button } from './button'
+import { Calendar } from './calendar'
+import { Popover, PopoverContent, PopoverTrigger } from './popover'
+import { Separator } from './separator'
 
 type DateTableDateFilterProps<TData> = {
   column: Column<TData>

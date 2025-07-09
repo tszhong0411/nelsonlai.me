@@ -7,6 +7,8 @@
  */
 'use client' // TEMP: remove this once we unpublish this package
 
+import type { ExtendedColumnSort } from '../components/data-table'
+
 import {
   type ColumnFiltersState,
   getCoreRowModel,
@@ -36,7 +38,7 @@ import {
 } from 'nuqs'
 import { type TransitionStartFunction, useCallback, useMemo, useState } from 'react'
 
-import { DEFAULT_PAGE_SIZE_OPTIONS, type ExtendedColumnSort } from '../data-table'
+import { DEFAULT_PAGE_SIZE_OPTIONS } from '../components/data-table-pagination'
 import { getSortingStateParser } from '../lib/data-table'
 
 import { useDebouncedCallback } from './use-debounced-callback'

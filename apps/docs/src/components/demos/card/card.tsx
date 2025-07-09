@@ -1,19 +1,21 @@
+import { Button } from '@tszhong0411/ui/components/button'
 import {
-  Button,
   Card,
   CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
-  CardTitle,
-  Input,
-  Label,
+  CardTitle
+} from '@tszhong0411/ui/components/card'
+import { Input } from '@tszhong0411/ui/components/input'
+import { Label } from '@tszhong0411/ui/components/label'
+import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue
-} from '@tszhong0411/ui'
+} from '@tszhong0411/ui/components/select'
 
 const CardDemo = () => {
   return (

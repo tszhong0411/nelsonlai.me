@@ -1,18 +1,15 @@
+import { Button } from '@tszhong0411/ui/components/button'
 import {
-  Button,
   Card,
   CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
-  CardTitle,
-  Input,
-  Label,
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger
-} from '@tszhong0411/ui'
+  CardTitle
+} from '@tszhong0411/ui/components/card'
+import { Input } from '@tszhong0411/ui/components/input'
+import { Label } from '@tszhong0411/ui/components/label'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@tszhong0411/ui/components/tabs'
 
 const TabsDemo = () => {
   return (

@@ -1,7 +1,7 @@
 'use client'
 
+import { Button } from '@tszhong0411/ui/components/button'
 import {
-  Button,
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuLabel,
@@ -9,7 +9,7 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger
-} from '@tszhong0411/ui'
+} from '@tszhong0411/ui/components/dropdown-menu'
 import { useState } from 'react'
 
 const DropdownMenuRadioGroupDemo = () => {

@@ -1,4 +1,5 @@
-import { Label, RadioGroup, RadioGroupItem } from '@tszhong0411/ui'
+import { Label } from '@tszhong0411/ui/components/label'
+import { RadioGroup, RadioGroupItem } from '@tszhong0411/ui/components/radio-group'
 
 const RadioGroupDemo = () => {
   return (

@@ -6,8 +6,9 @@ import { cva, type VariantProps } from 'cva'
 import { PanelLeftIcon } from 'lucide-react'
 import { createContext, use, useCallback, useEffect, useMemo, useState } from 'react'
 
+import { useIsMobile } from '../hooks/use-is-mobile'
+
 import { Button } from './button'
-import { useIsMobile } from './hooks/use-is-mobile'
 import { Input } from './input'
 import { Separator } from './separator'
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from './sheet'

@@ -7,15 +7,15 @@
  */
 'use client'
 
-import type { Option } from './index'
+import type { Option } from './data-table'
 import type { Column } from '@tanstack/react-table'
 
 import { cn } from '@tszhong0411/utils'
 import { CheckIcon, PlusCircleIcon, XCircleIcon } from 'lucide-react'
 import { useCallback, useMemo, useState } from 'react'
 
-import { Badge } from '../badge'
-import { Button } from '../button'
+import { Badge } from './badge'
+import { Button } from './button'
 import {
   Command,
   CommandEmpty,
@@ -24,9 +24,9 @@ import {
   CommandItem,
   CommandList,
   CommandSeparator
-} from '../command'
-import { Popover, PopoverContent, PopoverTrigger } from '../popover'
-import { Separator } from '../separator'
+} from './command'
+import { Popover, PopoverContent, PopoverTrigger } from './popover'
+import { Separator } from './separator'
 
 type DataTableFacetedFilterProps<TData, TValue> = {
   column?: Column<TData, TValue>

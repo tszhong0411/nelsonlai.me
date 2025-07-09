@@ -2,7 +2,7 @@
 
 import { useQuery } from '@tanstack/react-query'
 import { useLocale, useTranslations } from '@tszhong0411/i18n/client'
-import { buttonVariants } from '@tszhong0411/ui'
+import { buttonVariants } from '@tszhong0411/ui/components/button'
 import { cn } from '@tszhong0411/utils'
 import { allPosts, type Post } from 'content-collections'
 import { ArrowUpRightIcon, PencilIcon } from 'lucide-react'

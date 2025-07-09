@@ -1,7 +1,7 @@
 'use client'
 
+import { Logo } from '@tszhong0411/ui/components/logo'
 import {
-  Logo,
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
@@ -9,7 +9,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerVariants
-} from '@tszhong0411/ui'
+} from '@tszhong0411/ui/components/navigation-menu'
 import { cn } from '@tszhong0411/utils'
 import Link from 'next/link'
 

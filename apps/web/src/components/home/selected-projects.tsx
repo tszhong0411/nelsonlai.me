@@ -1,7 +1,7 @@
 'use client'
 
 import { useLocale, useTranslations } from '@tszhong0411/i18n/client'
-import { buttonVariants } from '@tszhong0411/ui'
+import { buttonVariants } from '@tszhong0411/ui/components/button'
 import { cn } from '@tszhong0411/utils'
 import { allProjects, type Project } from 'content-collections'
 import { ArrowUpRightIcon, LightbulbIcon } from 'lucide-react'

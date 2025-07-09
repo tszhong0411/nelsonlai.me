@@ -1,5 +1,5 @@
+import { Button } from '@tszhong0411/ui/components/button'
 import {
-  Button,
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuGroup,
@@ -12,7 +12,7 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger
-} from '@tszhong0411/ui'
+} from '@tszhong0411/ui/components/dropdown-menu'
 import {
   CloudIcon,
   CreditCardIcon,

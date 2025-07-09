@@ -5,13 +5,46 @@
  *
  * Modified by: tszhong0411
  */
-import { flexRender, type Table as TanstackTable } from '@tanstack/react-table'
+import {
+  type ColumnSort,
+  flexRender,
+  type RowData,
+  type Table as TanstackTable
+} from '@tanstack/react-table'
 import { cn } from '@tszhong0411/utils'
 
-import { getCommonPinningStyles } from '../lib/data-table'
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../table'
+import { type DataTableConfig, getCommonPinningStyles } from '../lib/data-table'
 
 import { DataTablePagination } from './data-table-pagination'
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './table'
+
+declare module '@tanstack/react-table' {
+  // eslint-disable-next-line unused-imports/no-unused-vars, @typescript-eslint/no-unused-vars -- must have identical type parameters
+  interface ColumnMeta<TData extends RowData, TValue> {
+    label?: string
+    placeholder?: string
+    variant?: FilterVariant
+    options?: Option[]
+    range?: [number, number]
+    unit?: string
+    icon?: React.FC<React.SVGProps<SVGSVGElement>>
+  }
+}
+
+export type Option = {
+  label: string
+  value: string
+  count?: number
+  icon?: React.FC<React.SVGProps<SVGSVGElement>>
+}
+
+export type FilterOperator = DataTableConfig['operators'][number]
+export type FilterVariant = DataTableConfig['filterVariants'][number]
+export type JoinOperator = DataTableConfig['joinOperators'][number]
+
+export type ExtendedColumnSort<TData> = {
+  id: Extract<keyof TData, string>
+} & Omit<ColumnSort, 'id'>
 
 type DataTableProps<TData> = {
   table: TanstackTable<TData>
@@ -82,3 +115,12 @@ const DataTable = <TData,>(props: DataTableProps<TData>) => {
 }
 
 export { DataTable }
+export * from './data-table-column-header'
+export * from './data-table-date-filter'
+export * from './data-table-faceted-filter'
+export * from './data-table-pagination'
+export * from './data-table-skeleton'
+export * from './data-table-slider-filter'
+export * from './data-table-sort-list'
+export * from './data-table-toolbar'
+export * from './data-table-view-options'

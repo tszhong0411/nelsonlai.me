@@ -7,12 +7,14 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuShortcut,
-  DropdownMenuTrigger,
+  DropdownMenuTrigger
+} from '@tszhong0411/ui/components/dropdown-menu'
+import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
   useSidebar
-} from '@tszhong0411/ui'
+} from '@tszhong0411/ui/components/sidebar'
 import {
   AudioWaveformIcon,
   ChevronsUpDownIcon,
