@@ -44,8 +44,8 @@
     "lint:fix": "eslint --fix .",
     "type-check": "tsc --noEmit"
     {{#if shouldCompile}}
-    ,"build": "rslib build",
-    "dev": "rslib build --watch",
+    ,"build": "tsdown",
+    "dev": "tsdown --watch",
     "clean": "rm -rf .turbo dist"
     {{else}}
     ,"clean": "rm -rf .turbo"

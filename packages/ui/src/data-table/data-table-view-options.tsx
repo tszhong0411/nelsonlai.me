@@ -5,6 +5,8 @@
  *
  * Modified by: tszhong0411
  */
+'use client'
+
 import type { Table } from '@tanstack/react-table'
 
 import { cn } from '@tszhong0411/utils'

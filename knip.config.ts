@@ -4,12 +4,8 @@ const config: KnipConfig = {
   ignoreDependencies: [
     'sharp',
     // not sure why it can't detect `pnpm with-env tsx ./src/seed.ts` in packages/db/package.json
-    'tsx',
-    // @see https://github.com/webpro-nl/knip/issues/870
-    '@rsbuild/plugin-react'
+    'tsx'
   ],
-  // see above ignoreDependencies
-  ignore: ['**/rslib.config.ts'],
   workspaces: {
     '.': {
       entry: ['turbo/generators/config.ts']
