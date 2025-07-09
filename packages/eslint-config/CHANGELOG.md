@@ -1,5 +1,11 @@
 # @tszhong0411/eslint-config
 
+## 0.1.40
+
+### Patch Changes
+
+- 2ff05b3: Migrate build system from rslib to tsdown
+
 ## 0.1.39
 
 ### Patch Changes

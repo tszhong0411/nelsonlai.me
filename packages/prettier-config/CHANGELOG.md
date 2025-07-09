@@ -1,5 +1,11 @@
 # @tszhong0411/prettier-config
 
+## 0.0.20
+
+### Patch Changes
+
+- 2ff05b3: Migrate build system from rslib to tsdown
+
 ## 0.0.19
 
 ### Patch Changes
