@@ -5,6 +5,7 @@ import { Link } from '@tszhong0411/ui/components/link'
 import { cn } from '@tszhong0411/utils'
 import { InfoIcon } from 'lucide-react'
 
+import ComponentInstallation from './component-installation'
 import ComponentPreview from './component-preview'
 import EmbedComponentPreview from './embed-component-preview'
 import Heading from './heading'
@@ -47,6 +48,7 @@ const components = {
   ComponentPreview,
   EmbedComponentPreview,
   TreeView,
+  ComponentInstallation,
 
   pre: CodeBlock
 }
