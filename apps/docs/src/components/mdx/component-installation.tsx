@@ -8,14 +8,13 @@ import { jsx, jsxs } from 'react/jsx-runtime'
 import { codeToHast } from 'shiki/bundle/web'
 
 type ComponentInstallationProps = {
-  paths: string[] // Array of file paths relative to packages/ui/src
-  deps?: string[] // External dependencies
+  paths: string[]
+  deps?: string[]
 }
 
 const ComponentInstallation = async (props: ComponentInstallationProps) => {
   const { paths, deps } = props
 
-  // Process all files and create code blocks
   const fileBlocks = await Promise.all(
     paths.map(async (filePath, index) => {
       const fullPath = path.join(process.cwd(), '../../packages/ui/src', filePath)
