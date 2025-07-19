@@ -15,8 +15,8 @@ import {
   ChevronsRightIcon
 } from 'lucide-react'
 
-import { Button } from '../button'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../select'
+import { Button } from './button'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './select'
 
 type DataTablePaginationProps<TData> = {
   table: Table<TData>

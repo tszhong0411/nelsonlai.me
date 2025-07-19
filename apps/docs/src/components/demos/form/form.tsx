@@ -1,17 +1,17 @@
 'use client'
 
 import { zodResolver } from '@hookform/resolvers/zod'
+import { Button } from '@tszhong0411/ui/components/button'
 import {
-  Button,
   Form,
   FormControl,
   FormDescription,
   FormField,
   FormItem,
   FormLabel,
-  FormMessage,
-  Input
-} from '@tszhong0411/ui'
+  FormMessage
+} from '@tszhong0411/ui/components/form'
+import { Input } from '@tszhong0411/ui/components/input'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 

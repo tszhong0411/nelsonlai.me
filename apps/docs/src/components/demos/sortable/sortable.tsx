@@ -1,6 +1,11 @@
 'use client'
 
-import { Sortable, SortableContent, SortableItem, SortableOverlay } from '@tszhong0411/ui'
+import {
+  Sortable,
+  SortableContent,
+  SortableItem,
+  SortableOverlay
+} from '@tszhong0411/ui/components/sortable'
 import { useState } from 'react'
 
 const SortableDemo = () => {

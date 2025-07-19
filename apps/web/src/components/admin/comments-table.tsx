@@ -2,15 +2,15 @@
 
 import { type ColumnDef } from '@tanstack/react-table'
 import { useTranslations } from '@tszhong0411/i18n/client'
+import { Checkbox } from '@tszhong0411/ui/components/checkbox'
 import {
-  Checkbox,
   DataTable,
   DataTableColumnHeader,
   DataTableSortList,
-  DataTableToolbar,
-  formatDate,
-  useDataTable
-} from '@tszhong0411/ui'
+  DataTableToolbar
+} from '@tszhong0411/ui/components/data-table'
+import { useDataTable } from '@tszhong0411/ui/hooks/use-data-table'
+import { formatDate } from '@tszhong0411/ui/lib/data-table'
 import {
   CalendarIcon,
   CircleDashedIcon,

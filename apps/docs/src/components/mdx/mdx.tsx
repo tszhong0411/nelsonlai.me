@@ -1,8 +1,11 @@
 import { useMDXComponent } from '@content-collections/mdx/react'
-import { Alert, AlertDescription, AlertTitle, CodeBlock, Link } from '@tszhong0411/ui'
+import { Alert, AlertDescription, AlertTitle } from '@tszhong0411/ui/components/alert'
+import { CodeBlock } from '@tszhong0411/ui/components/code-block'
+import { Link } from '@tszhong0411/ui/components/link'
 import { cn } from '@tszhong0411/utils'
 import { InfoIcon } from 'lucide-react'
 
+import ComponentInstallation from './component-installation'
 import ComponentPreview from './component-preview'
 import EmbedComponentPreview from './embed-component-preview'
 import Heading from './heading'
@@ -45,6 +48,7 @@ const components = {
   ComponentPreview,
   EmbedComponentPreview,
   TreeView,
+  ComponentInstallation,
 
   pre: CodeBlock
 }

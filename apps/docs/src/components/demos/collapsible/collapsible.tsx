@@ -1,6 +1,11 @@
 'use client'
 
-import { Button, Collapsible, CollapsibleContent, CollapsibleTrigger } from '@tszhong0411/ui'
+import { Button } from '@tszhong0411/ui/components/button'
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger
+} from '@tszhong0411/ui/components/collapsible'
 import { ChevronsUpDown } from 'lucide-react'
 import { useState } from 'react'
 

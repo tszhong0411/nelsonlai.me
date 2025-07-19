@@ -1,6 +1,7 @@
 'use client'
 
-import { Label, Slider } from '@tszhong0411/ui'
+import { Label } from '@tszhong0411/ui/components/label'
+import { Slider } from '@tszhong0411/ui/components/slider'
 import { useState } from 'react'
 
 const SliderRangeDemo = () => {

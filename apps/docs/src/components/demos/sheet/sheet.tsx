@@ -1,7 +1,7 @@
+import { Button } from '@tszhong0411/ui/components/button'
+import { Input } from '@tszhong0411/ui/components/input'
+import { Label } from '@tszhong0411/ui/components/label'
 import {
-  Button,
-  Input,
-  Label,
   Sheet,
   SheetClose,
   SheetContent,
@@ -10,7 +10,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger
-} from '@tszhong0411/ui'
+} from '@tszhong0411/ui/components/sheet'
 
 const SheetDemo = () => {
   return (

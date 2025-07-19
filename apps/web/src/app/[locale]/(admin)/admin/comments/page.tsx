@@ -1,7 +1,7 @@
 'use client'
 
 import { keepPreviousData, useQuery } from '@tanstack/react-query'
-import { DataTableSkeleton } from '@tszhong0411/ui'
+import { DataTableSkeleton } from '@tszhong0411/ui/components/data-table'
 import { useTranslations } from 'next-intl'
 
 import AdminPageHeader from '@/components/admin/admin-page-header'

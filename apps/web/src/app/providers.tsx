@@ -1,6 +1,7 @@
 'use client'
 
-import { Toaster, TooltipProvider } from '@tszhong0411/ui'
+import { Toaster } from '@tszhong0411/ui/components/sonner'
+import { TooltipProvider } from '@tszhong0411/ui/components/tooltip'
 import { ThemeProvider } from 'next-themes'
 
 import { ORPCQueryProvider } from '@/orpc/tanstack-query/client'

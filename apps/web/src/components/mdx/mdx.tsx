@@ -1,5 +1,6 @@
 import { useMDXComponent } from '@content-collections/mdx/react'
-import { CodeBlock, Kbd } from '@tszhong0411/ui'
+import { CodeBlock } from '@tszhong0411/ui/components/code-block'
+import { Kbd } from '@tszhong0411/ui/components/kbd'
 
 import { BlurImage } from '@/components/ui/blur-image'
 

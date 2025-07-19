@@ -10,22 +10,23 @@ import {
   seed
 } from '@ngneat/falso'
 import { type ColumnDef } from '@tanstack/react-table'
+import { Button } from '@tszhong0411/ui/components/button'
+import { Checkbox } from '@tszhong0411/ui/components/checkbox'
 import {
-  Button,
-  Checkbox,
   DataTable,
   DataTableColumnHeader,
-  DataTableToolbar,
+  DataTableToolbar
+} from '@tszhong0411/ui/components/data-table'
+import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
-  DropdownMenuTrigger,
-  formatDate,
-  getSortingStateParser,
-  useDataTable
-} from '@tszhong0411/ui'
+  DropdownMenuTrigger
+} from '@tszhong0411/ui/components/dropdown-menu'
+import { useDataTable } from '@tszhong0411/ui/hooks/use-data-table'
+import { formatDate, getSortingStateParser } from '@tszhong0411/ui/lib/data-table'
 import {
   CalendarIcon,
   CheckIcon,

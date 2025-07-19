@@ -8,10 +8,14 @@ link:
 
 <ComponentPreview name='sonner/sonner' />
 
+## Installation
+
+<ComponentInstallation paths={['components/sonner.tsx']} deps={['sonner', 'next-themes']} />
+
 ## Usage
 
 ```tsx title='app/layout.tsx'
-import { Toaster } from '@tszhong0411/ui'
+import { Toaster } from '@/components/ui/sonner'
 
 const Layout = ({ children }) => {
   return (
@@ -28,7 +32,7 @@ export default Layout
 ```
 
 ```tsx
-import { toast } from '@tszhong0411/ui'
+import { toast } from '@/components/ui/sonner'
 ```
 
 ```tsx

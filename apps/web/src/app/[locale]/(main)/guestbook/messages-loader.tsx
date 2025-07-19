@@ -1,4 +1,4 @@
-import { Skeleton } from '@tszhong0411/ui'
+import { Skeleton } from '@tszhong0411/ui/components/skeleton'
 import { cn, range } from '@tszhong0411/utils'
 
 const Placeholder = () => (

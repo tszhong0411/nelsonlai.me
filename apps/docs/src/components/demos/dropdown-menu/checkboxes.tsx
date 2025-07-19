@@ -1,14 +1,14 @@
 'use client'
 
+import { Button } from '@tszhong0411/ui/components/button'
 import {
-  Button,
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger
-} from '@tszhong0411/ui'
+} from '@tszhong0411/ui/components/dropdown-menu'
 import { useState } from 'react'
 
 const DropdownMenuCheckboxesDemo = () => {

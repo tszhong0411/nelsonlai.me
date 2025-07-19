@@ -1,16 +1,16 @@
 'use client'
 
+import { Badge } from '@tszhong0411/ui/components/badge'
+import { Button } from '@tszhong0411/ui/components/button'
+import { ScrollArea } from '@tszhong0411/ui/components/scroll-area'
 import {
-  Badge,
-  Button,
-  ScrollArea,
   Sheet,
   SheetContent,
   SheetDescription,
   SheetHeader,
   SheetTitle,
   SheetTrigger
-} from '@tszhong0411/ui'
+} from '@tszhong0411/ui/components/sheet'
 import { MenuIcon } from 'lucide-react'
 import Link from 'next/link'
 import { useState } from 'react'

@@ -1,6 +1,6 @@
 'use client'
 
-import { Progress } from '@tszhong0411/ui'
+import { Progress } from '@tszhong0411/ui/components/progress'
 import { useEffect, useState } from 'react'
 
 const ProgressDemo = () => {

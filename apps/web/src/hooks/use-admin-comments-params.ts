@@ -1,6 +1,6 @@
 import type { comments } from '@tszhong0411/db'
 
-import { getSortingStateParser } from '@tszhong0411/ui'
+import { getSortingStateParser } from '@tszhong0411/ui/lib/data-table'
 import {
   parseAsArrayOf,
   parseAsInteger,

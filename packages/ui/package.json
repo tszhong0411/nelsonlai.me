@@ -1,39 +1,20 @@
 {
   "name": "@tszhong0411/ui",
-  "version": "0.0.66",
+  "version": "0.0.0",
+  "private": true,
   "description": "The UI components for tszhong0411's projects",
-  "homepage": "https://github.com/tszhong0411/nelsonlai.me#readme",
-  "bugs": {
-    "url": "https://github.com/tszhong0411/nelsonlai.me/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tszhong0411/nelsonlai.me.git",
-    "directory": "packages/ui"
-  },
   "license": "MIT",
-  "author": "tszhong0411 <me@nelsonlai.me> (https://github.com/tszhong0411/)",
-  "sideEffects": [
-    "./styles/*.css"
-  ],
   "type": "module",
   "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
-    },
-    "./styles/*": "./styles/*"
+    "./components/*": "./src/components/*.tsx",
+    "./hooks/*": "./src/hooks/*.ts",
+    "./lib/*": "./src/lib/*.ts",
+    "./styles/*.css": "./src/styles/*.css",
+    "./utils/*": "./src/utils/*.ts",
+    "./postcss-config": "./postcss.config.mjs"
   },
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist",
-    "styles"
-  ],
   "scripts": {
-    "build": "tsdown",
-    "clean": "rm -rf .turbo dist",
-    "dev": "tsdown --watch",
+    "clean": "rm -rf .turbo",
     "lint": "eslint . --max-warnings 0",
     "lint:fix": "eslint --fix .",
     "type-check": "tsc --noEmit"
@@ -95,12 +76,14 @@
     "zod": "^3.25.51"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.8",
     "@tszhong0411/eslint-config": "workspace:*",
     "@tszhong0411/tsconfig": "workspace:*",
     "@tszhong0411/utils": "workspace:*",
     "@types/react": "^19.1.6",
     "@types/react-dom": "^19.1.6",
     "next": "^15.3.3",
+    "postcss-load-config": "^6.0.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "tailwindcss": "^4.1.8"
@@ -110,8 +93,5 @@
     "next": "^15",
     "react": "^19",
     "react-dom": "^19"
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }

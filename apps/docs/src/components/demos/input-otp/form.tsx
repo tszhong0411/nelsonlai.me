@@ -1,20 +1,18 @@
 'use client'
 
 import { zodResolver } from '@hookform/resolvers/zod'
+import { Button } from '@tszhong0411/ui/components/button'
 import {
-  Button,
   Form,
   FormControl,
   FormDescription,
   FormField,
   FormItem,
   FormLabel,
-  FormMessage,
-  InputOTP,
-  InputOTPGroup,
-  InputOTPSlot,
-  toast
-} from '@tszhong0411/ui'
+  FormMessage
+} from '@tszhong0411/ui/components/form'
+import { InputOTP, InputOTPGroup, InputOTPSlot } from '@tszhong0411/ui/components/input-otp'
+import { toast } from '@tszhong0411/ui/components/sonner'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 

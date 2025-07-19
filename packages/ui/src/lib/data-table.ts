@@ -9,7 +9,7 @@
  *
  * Modified by: tszhong0411
  */
-import type { ExtendedColumnSort } from '../data-table'
+import type { ExtendedColumnSort } from '../components/data-table'
 import type { Column } from '@tanstack/react-table'
 
 import { createParser } from 'nuqs/server'

@@ -1,8 +1,8 @@
 'use client'
 
+import { Badge } from '@tszhong0411/ui/components/badge'
+import { Button } from '@tszhong0411/ui/components/button'
 import {
-  Badge,
-  Button,
   CommandDialog,
   CommandEmpty,
   CommandGroup,
@@ -10,7 +10,7 @@ import {
   CommandItem,
   CommandList,
   CommandSeparator
-} from '@tszhong0411/ui'
+} from '@tszhong0411/ui/components/command'
 import { cn } from '@tszhong0411/utils'
 import { ComponentIcon, MoonIcon, SearchIcon, SunIcon } from 'lucide-react'
 import { useRouter } from 'next/navigation'

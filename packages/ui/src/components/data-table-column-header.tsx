@@ -10,14 +10,14 @@ import type { Column } from '@tanstack/react-table'
 import { cn } from '@tszhong0411/utils'
 import { ChevronDownIcon, ChevronsUpDownIcon, ChevronUpIcon, EyeOffIcon, XIcon } from 'lucide-react'
 
-import { buttonVariants } from '../button'
+import { buttonVariants } from './button'
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger
-} from '../dropdown-menu'
+} from './dropdown-menu'
 
 type DataTableColumnHeaderProps<TData, TValue> = {
   column: Column<TData, TValue>

@@ -2,7 +2,8 @@
 
 import type { Doc } from 'content-collections'
 
-import { badgeVariants, Link } from '@tszhong0411/ui'
+import { badgeVariants } from '@tszhong0411/ui/components/badge'
+import { Link } from '@tszhong0411/ui/components/link'
 import { cn } from '@tszhong0411/utils'
 import { ExternalLinkIcon } from 'lucide-react'
 

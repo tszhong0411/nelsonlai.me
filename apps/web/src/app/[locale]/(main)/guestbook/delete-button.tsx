@@ -9,11 +9,10 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
-  AlertDialogTrigger,
-  Button,
-  buttonVariants,
-  toast
-} from '@tszhong0411/ui'
+  AlertDialogTrigger
+} from '@tszhong0411/ui/components/alert-dialog'
+import { Button, buttonVariants } from '@tszhong0411/ui/components/button'
+import { toast } from '@tszhong0411/ui/components/sonner'
 
 import { useORPCInvalidator } from '@/lib/orpc-invalidator'
 import { orpc } from '@/orpc/client'

@@ -1,12 +1,11 @@
+import { Card, CardContent } from '@tszhong0411/ui/components/card'
 import {
-  Card,
-  CardContent,
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious
-} from '@tszhong0411/ui'
+} from '@tszhong0411/ui/components/carousel'
 import { range } from '@tszhong0411/utils'
 
 const CarouselDemo = () => {

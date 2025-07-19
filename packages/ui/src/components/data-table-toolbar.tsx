@@ -11,13 +11,12 @@ import { cn } from '@tszhong0411/utils'
 import { XIcon } from 'lucide-react'
 import { useCallback, useMemo } from 'react'
 
-import { Button } from '../button'
-import { Input } from '../input'
-
+import { Button } from './button'
 import { DataTableDateFilter } from './data-table-date-filter'
 import { DataTableFacetedFilter } from './data-table-faceted-filter'
 import { DataTableSliderFilter } from './data-table-slider-filter'
 import { DataTableViewOptions } from './data-table-view-options'
+import { Input } from './input'
 
 type DataTableToolbarProps<TData> = {
   table: Table<TData>

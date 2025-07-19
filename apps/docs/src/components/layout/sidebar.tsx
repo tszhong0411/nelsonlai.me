@@ -1,6 +1,8 @@
 'use client'
 
-import { Badge, Link, ScrollArea } from '@tszhong0411/ui'
+import { Badge } from '@tszhong0411/ui/components/badge'
+import { Link } from '@tszhong0411/ui/components/link'
+import { ScrollArea } from '@tszhong0411/ui/components/scroll-area'
 import { cva } from 'cva'
 import { usePathname } from 'next/navigation'
 

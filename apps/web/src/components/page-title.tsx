@@ -1,6 +1,6 @@
 'use client'
 
-import { Separator } from '@tszhong0411/ui'
+import { Separator } from '@tszhong0411/ui/components/separator'
 import { motion } from 'motion/react'
 
 type PageTitleProps = {

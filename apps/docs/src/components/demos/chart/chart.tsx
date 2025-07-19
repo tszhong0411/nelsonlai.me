@@ -7,13 +7,13 @@ import {
   CardFooter,
   CardHeader,
   CardTitle
-} from '@tszhong0411/ui'
+} from '@tszhong0411/ui/components/card'
 import {
   type ChartConfig,
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent
-} from '@tszhong0411/ui'
+} from '@tszhong0411/ui/components/chart'
 import { TrendingUpIcon } from 'lucide-react'
 import { Area, AreaChart, CartesianGrid, XAxis } from 'recharts'
 

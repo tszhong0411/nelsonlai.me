@@ -1,4 +1,4 @@
-import { AspectRatio } from '@tszhong0411/ui'
+import { AspectRatio } from '@tszhong0411/ui/components/aspect-ratio'
 import { cn } from '@tszhong0411/utils'
 
 type VideoProps = {

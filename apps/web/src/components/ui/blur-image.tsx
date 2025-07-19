@@ -1,4 +1,3 @@
-'use client'
 /**
  * website
  * Copyright (c) Delba de Oliveira
@@ -6,6 +5,8 @@
  *
  * Modified by: tszhong0411
  */
+'use client'
+
 import { cn } from '@tszhong0411/utils'
 import NextImage from 'next/image'
 import { useState } from 'react'

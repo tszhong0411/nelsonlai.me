@@ -1,6 +1,6 @@
 'use client'
 
-import { createTreeCollection, type Node, TreeView } from '@tszhong0411/ui'
+import { createTreeCollection, type Node, TreeView } from '@tszhong0411/ui/components/tree-view'
 
 const collection = createTreeCollection<Node>({
   nodeToValue: (node) => node.id,

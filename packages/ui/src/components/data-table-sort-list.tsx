@@ -13,8 +13,10 @@ import { cn } from '@tszhong0411/utils'
 import { ArrowDownUp, ChevronsUpDown, GripVertical, Trash2 } from 'lucide-react'
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from 'react'
 
-import { Badge } from '../badge'
-import { Button } from '../button'
+import { dataTableConfig } from '../lib/data-table'
+
+import { Badge } from './badge'
+import { Button } from './button'
 import {
   Command,
   CommandEmpty,
@@ -22,17 +24,16 @@ import {
   CommandInput,
   CommandItem,
   CommandList
-} from '../command'
-import { dataTableConfig } from '../lib/data-table'
-import { Popover, PopoverContent, PopoverTrigger } from '../popover'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../select'
+} from './command'
+import { Popover, PopoverContent, PopoverTrigger } from './popover'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './select'
 import {
   Sortable,
   SortableContent,
   SortableItem,
   SortableItemHandle,
   SortableOverlay
-} from '../sortable'
+} from './sortable'
 
 const OPEN_MENU_SHORTCUT = 's'
 const REMOVE_SORT_SHORTCUTS = new Set(['backspace', 'delete'])

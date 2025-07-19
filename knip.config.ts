@@ -4,7 +4,9 @@ const config: KnipConfig = {
   ignoreDependencies: [
     'sharp',
     // not sure why it can't detect `pnpm with-env tsx ./src/seed.ts` in packages/db/package.json
-    'tsx'
+    'tsx',
+    // PostCSS is already installed under Next.js
+    'postcss'
   ],
   workspaces: {
     '.': {

@@ -1,6 +1,6 @@
 'use client'
 
-import { Link } from '@tszhong0411/ui'
+import { Link } from '@tszhong0411/ui/components/link'
 import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react'
 import { usePathname } from 'next/navigation'
 

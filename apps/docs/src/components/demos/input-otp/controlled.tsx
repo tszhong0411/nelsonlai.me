@@ -1,6 +1,6 @@
 'use client'
 
-import { InputOTP, InputOTPGroup, InputOTPSlot } from '@tszhong0411/ui'
+import { InputOTP, InputOTPGroup, InputOTPSlot } from '@tszhong0411/ui/components/input-otp'
 import { useState } from 'react'
 
 const InputOTPControlledDemo = () => {

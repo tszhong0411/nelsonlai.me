@@ -9,15 +9,16 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
-  AlertDialogTrigger,
-  Button,
-  buttonVariants,
+  AlertDialogTrigger
+} from '@tszhong0411/ui/components/alert-dialog'
+import { Button, buttonVariants } from '@tszhong0411/ui/components/button'
+import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuTrigger,
-  toast
-} from '@tszhong0411/ui'
+  DropdownMenuTrigger
+} from '@tszhong0411/ui/components/dropdown-menu'
+import { toast } from '@tszhong0411/ui/components/sonner'
 import { MoreVerticalIcon } from 'lucide-react'
 
 import { useCommentParams } from '@/hooks/use-comment-params'
