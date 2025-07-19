@@ -1,5 +1,11 @@
 # @tszhong0411/utils
 
+## 0.0.25
+
+### Patch Changes
+
+- 2ff05b3: Migrate build system from rslib to tsdown
+
 ## 0.0.24
 
 ### Patch Changes
