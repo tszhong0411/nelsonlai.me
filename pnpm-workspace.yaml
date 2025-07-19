@@ -1,8 +1,10 @@
 packages:
   - apps/*
   - packages/*
+
 onlyBuiltDependencies:
   - '@parcel/watcher'
+  - '@tailwindcss/oxide'
   - '@vercel/speed-insights'
   - core-js-pure
   - esbuild

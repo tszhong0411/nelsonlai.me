@@ -87,16 +87,5 @@
   "packageManager": "pnpm@10.13.1",
   "engines": {
     "node": ">=22"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@parcel/watcher",
-      "@tailwindcss/oxide",
-      "@vercel/speed-insights",
-      "core-js",
-      "core-js-pure",
-      "esbuild",
-      "sharp"
-    ]
   }
 }
