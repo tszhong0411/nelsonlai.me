@@ -5,6 +5,7 @@ import { Link } from '@tszhong0411/ui/components/link'
 import { cn } from '@tszhong0411/utils'
 import { InfoIcon } from 'lucide-react'
 
+import CodeFromFile from './code-from-file'
 import ComponentInstallation from './component-installation'
 import ComponentPreview from './component-preview'
 import EmbedComponentPreview from './embed-component-preview'
@@ -29,6 +30,7 @@ const components = {
     // eslint-disable-next-line jsx-a11y/anchor-has-content -- it's a custom component
     return <Link href={href} {...rest} />
   },
+  pre: CodeBlock,
 
   // Custom components
   Alert: (props: React.ComponentProps<typeof Alert>) => {
@@ -49,8 +51,7 @@ const components = {
   EmbedComponentPreview,
   TreeView,
   ComponentInstallation,
-
-  pre: CodeBlock
+  CodeFromFile
 }
 
 const Mdx = (props: MdxProps) => {
