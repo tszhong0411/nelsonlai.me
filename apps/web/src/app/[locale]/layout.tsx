@@ -53,6 +53,10 @@ export const generateMetadata = async (props: LayoutProps): Promise<Metadata> =>
         'max-snippet': -1
       }
     },
+    authors: {
+      name: 'Nelson Lai',
+      url: SITE_URL
+    },
     manifest: '/favicon/site.webmanifest',
     twitter: {
       card: 'summary_large_image',
@@ -72,7 +76,7 @@ export const generateMetadata = async (props: LayoutProps): Promise<Metadata> =>
       ]
     },
     keywords: SITE_KEYWORDS,
-    creator: 'tszhong0411',
+    creator: 'Nelson Lai',
     openGraph: {
       url: SITE_URL,
       type: 'website',

@@ -7,7 +7,7 @@ export const SITE_URL = isProduction ? 'https://nelsonlai.me' : 'http://localhos
 export const GITHUB_USERNAME = 'tszhong0411'
 
 export const SITE_NAME = 'Nelson Lai'
-export const SITE_KEYWORDS = ['tszhong0411', 'Next.js', 'React', 'TypeScript', 'Node.js']
+export const SITE_KEYWORDS = ['Nelson Lai', 'Next.js', 'React', 'TypeScript', 'Node.js']
 
 export const SITE_GITHUB_URL = 'https://github.com/tszhong0411'
 export const SITE_FACEBOOK_URL = 'https://www.facebook.com/tszhong0411'
