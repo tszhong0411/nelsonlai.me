@@ -71,7 +71,6 @@
     "react-textarea-autosize": "^8.5.9",
     "recharts": "^2.15.3",
     "sonner": "^2.0.5",
-    "tw-animate-css": "^1.3.4",
     "vaul": "^1.1.2",
     "zod": "^3.25.51"
   },
@@ -86,7 +85,8 @@
     "postcss-load-config": "^6.0.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "tailwindcss": "^4.1.8"
+    "tailwindcss": "^4.1.8",
+    "tw-animate-css": "^1.3.4"
   },
   "peerDependencies": {
     "@tszhong0411/utils": ">=0",
