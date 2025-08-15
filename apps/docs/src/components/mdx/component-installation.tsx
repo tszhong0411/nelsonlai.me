@@ -39,7 +39,7 @@ const ComponentInstallation = async (props: ComponentInstallationProps) => {
           defaultColor: false
         })
 
-        const displayPath = `@/${filePath}`
+        const displayPath = `@/${filePath.replace('components/', 'components/ui/')}`
 
         return {
           jsx: toJsxRuntime(out, {
