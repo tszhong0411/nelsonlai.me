@@ -1,6 +1,6 @@
 pnpm-lock.yaml
-**/migrations/**
-**/*.hbs
+packages/db/src/migrations
+turbo/generators/templates/**/*.hbs
 
 # For CI
 .pnpm-store/
