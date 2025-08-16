@@ -13,8 +13,8 @@ description: Initialize Drizzle in your app
 ## 1. Install dependencies
 
 ```bash
-pnpm add drizzle-orm pg server-only
-pnpm add -D drizzle-kit @types/pg dotenv-cli
+pnpm add drizzle-orm postgres
+pnpm add -D drizzle-kit dotenv-cli
 ```
 
 ## 2. `.env.local`
@@ -85,15 +85,13 @@ export const env = createEnv({
 />
 
 ```ts title='src/db/db.ts'
-import 'server-only'
-
-import { drizzle } from 'drizzle-orm/node-postgres'
+import { drizzle } from 'drizzle-orm/postgres-js'
 
 import { env } from '@/env'
 
 import * as schema from './schema'
 
-export const db = drizzle({ connection: env.DATABASE_URL, schema })
+export const db = drizzle(env.DATABASE_URL, { schema })
 ```
 
 ```ts title='src/db/index.ts'
@@ -101,11 +99,11 @@ export * from './db'
 ```
 
 ```ts title='drizzle.config.ts'
-import type { Config } from 'drizzle-kit'
+import { defineConfig } from 'drizzle-kit'
 
 import { env } from './src/env'
 
-export default {
+export default defineConfig({
   dialect: 'postgresql',
   schema: './src/db/schema/index.ts',
   dbCredentials: {
@@ -114,7 +112,7 @@ export default {
   out: './src/db/migrations',
   strict: true,
   verbose: true
-} satisfies Config
+})
 ```
 
 ```yml title='docker-compose.yml'
@@ -123,24 +121,18 @@ version: '3'
 services:
   db:
     image: postgres:16-alpine
-    container_name: <project-name>_postgres
+    container_name: <project-name>-postgres
     ports:
-      - 5432:5432
+      - '5432:5432'
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=<project-name>
     volumes:
       - db:/var/lib/postgresql/data
-    networks:
-      - <project-name>-network
 
 volumes:
   db:
-
-networks:
-  <project-name>-network:
-    driver: bridge
 ```
 
 <Alert>

@@ -30,19 +30,15 @@
   },
   "dependencies": {
     "@tszhong0411/env": "workspace:*",
-    "drizzle-orm": "^0.44.2"
+    "drizzle-orm": "^0.44.2",
+    "postgres": "^3.4.7"
   },
   "devDependencies": {
     "@tszhong0411/eslint-config": "workspace:*",
     "@tszhong0411/tsconfig": "workspace:*",
     "@types/node": "^22.15.29",
-    "@types/pg": "^8.15.4",
     "consola": "^3.4.2",
     "drizzle-kit": "^0.31.1",
-    "execa": "^9.6.0",
-    "pg": "^8.16.0"
-  },
-  "peerDependencies": {
-    "pg": "^8"
+    "execa": "^9.6.0"
   }
 }
