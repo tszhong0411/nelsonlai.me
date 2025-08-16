@@ -1,7 +1,7 @@
 'use client'
 
-import { CommentsProvider } from '@/stores/comments'
-import { VotesProvider } from '@/stores/votes'
+import { CommentsProvider } from '@/stores/comments.store'
+import { VotesProvider } from '@/stores/votes.store'
 
 import CommentList from './comment-list'
 import CommentPost from './comment-post'

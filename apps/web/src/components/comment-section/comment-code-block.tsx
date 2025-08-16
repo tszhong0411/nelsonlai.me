@@ -2,7 +2,7 @@ import { CodeBlock } from '@tszhong0411/ui/components/code-block'
 import { useEffect, useState } from 'react'
 import { type BundledLanguage, bundledLanguages } from 'shiki'
 
-import { useHighlighterStore } from '@/stores/highlighter'
+import { useHighlighterStore } from '@/stores/highlighter.store'
 
 type CommentCodeBlockProps = {
   children: {

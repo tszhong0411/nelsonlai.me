@@ -16,7 +16,7 @@ import { toast } from '@tszhong0411/ui/components/sonner'
 
 import { useORPCInvalidator } from '@/lib/orpc-invalidator'
 import { orpc } from '@/orpc/client'
-import { useMessageStore } from '@/stores/message'
+import { useMessageStore } from '@/stores/message.store'
 
 const DeleteButton = () => {
   const message = useMessageStore((state) => state.message)

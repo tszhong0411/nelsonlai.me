@@ -17,7 +17,7 @@ import { LoaderIcon } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
 import { signIn } from '@/lib/auth-client'
-import { useDialogsStore } from '@/stores/dialogs'
+import { useDialogsStore } from '@/stores/dialogs.store'
 
 type Provider = 'github' | 'google'
 

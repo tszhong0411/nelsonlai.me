@@ -1,7 +1,7 @@
 import { useTranslations } from '@tszhong0411/i18n/client'
 import { Button } from '@tszhong0411/ui/components/button'
 
-import { useDialogsStore } from '@/stores/dialogs'
+import { useDialogsStore } from '@/stores/dialogs.store'
 
 const UnauthorizedOverlay = () => {
   const t = useTranslations()

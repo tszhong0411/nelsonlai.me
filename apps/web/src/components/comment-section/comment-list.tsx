@@ -11,9 +11,9 @@ import githubLightDefault from 'shiki/themes/github-light-default.mjs'
 
 import { useCommentParams } from '@/hooks/use-comment-params'
 import { orpc } from '@/orpc/client'
-import { CommentProvider } from '@/stores/comment'
-import { useCommentsStore } from '@/stores/comments'
-import { useHighlighterStore } from '@/stores/highlighter'
+import { CommentProvider } from '@/stores/comment.store'
+import { useCommentsStore } from '@/stores/comments.store'
+import { useHighlighterStore } from '@/stores/highlighter.store'
 
 import Comment from './comment'
 import CommentHeader from './comment-header'

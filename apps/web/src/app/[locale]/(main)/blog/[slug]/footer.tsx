@@ -5,7 +5,7 @@ import { linkVariants } from '@tszhong0411/ui/components/link'
 
 import Link from '@/components/link'
 import { useFormattedDate } from '@/hooks/use-formatted-date'
-import { usePostStore } from '@/stores/post'
+import { usePostStore } from '@/stores/post.store'
 
 const Footer = () => {
   const { slug, modifiedTime } = usePostStore((state) => state.post)

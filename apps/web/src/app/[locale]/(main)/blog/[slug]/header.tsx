@@ -11,7 +11,7 @@ import { BlurImage } from '@/components/ui/blur-image'
 import { useFormattedDate } from '@/hooks/use-formatted-date'
 import { useORPCInvalidator } from '@/lib/orpc-invalidator'
 import { orpc } from '@/orpc/client'
-import { usePostStore } from '@/stores/post'
+import { usePostStore } from '@/stores/post.store'
 
 const Header = () => {
   const { date, title, slug } = usePostStore((state) => state.post)

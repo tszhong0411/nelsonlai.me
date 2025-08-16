@@ -12,9 +12,9 @@ import { useSession } from '@/lib/auth-client'
 import { useORPCInvalidator } from '@/lib/orpc-invalidator'
 import { oRPCQueryKeys } from '@/lib/orpc-query-keys'
 import { orpc } from '@/orpc/client'
-import { useCommentStore } from '@/stores/comment'
-import { useCommentsStore } from '@/stores/comments'
-import { useVotesStore } from '@/stores/votes'
+import { useCommentStore } from '@/stores/comment.store'
+import { useCommentsStore } from '@/stores/comments.store'
+import { useVotesStore } from '@/stores/votes.store'
 
 const voteVariants = cva({
   base: buttonVariants({

@@ -7,8 +7,8 @@ import { useInView } from 'react-intersection-observer'
 
 import { useCommentParams } from '@/hooks/use-comment-params'
 import { orpc } from '@/orpc/client'
-import { CommentProvider, useCommentStore } from '@/stores/comment'
-import { useCommentsStore } from '@/stores/comments'
+import { CommentProvider, useCommentStore } from '@/stores/comment.store'
+import { useCommentsStore } from '@/stores/comments.store'
 
 import Comment from './comment'
 import CommentLoader from './comment-loader'

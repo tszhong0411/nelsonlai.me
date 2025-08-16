@@ -2,7 +2,7 @@
 
 import type { Post } from 'content-collections'
 
-import { PostProvider } from '@/stores/post'
+import { PostProvider } from '@/stores/post.store'
 
 type ProvidersProps = {
   children: React.ReactNode

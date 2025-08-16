@@ -14,7 +14,7 @@ import {
 import { ListFilterIcon } from 'lucide-react'
 
 import { orpc } from '@/orpc/client'
-import { useCommentsStore } from '@/stores/comments'
+import { useCommentsStore } from '@/stores/comments.store'
 
 const CommentHeader = () => {
   const { slug, sort, setSort } = useCommentsStore((state) => ({

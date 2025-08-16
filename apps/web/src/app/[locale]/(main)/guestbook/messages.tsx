@@ -13,7 +13,7 @@ import { useInView } from 'react-intersection-observer'
 import { useFormattedDate } from '@/hooks/use-formatted-date'
 import { useSession } from '@/lib/auth-client'
 import { orpc } from '@/orpc/client'
-import { MessageProvider } from '@/stores/message'
+import { MessageProvider } from '@/stores/message.store'
 import { getDefaultImage } from '@/utils/get-default-image'
 
 import DeleteButton from './delete-button'

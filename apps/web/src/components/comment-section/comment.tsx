@@ -9,7 +9,7 @@ import { useEffect, useRef } from 'react'
 
 import { useCommentParams } from '@/hooks/use-comment-params'
 import { useFormattedDate } from '@/hooks/use-formatted-date'
-import { useCommentStore } from '@/stores/comment'
+import { useCommentStore } from '@/stores/comment.store'
 import { getDefaultImage } from '@/utils/get-default-image'
 
 import Markdown from '../mdx/markdown'

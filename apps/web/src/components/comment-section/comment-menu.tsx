@@ -26,8 +26,8 @@ import { useCopyToClipboard } from '@/hooks/use-copy-to-clipboard'
 import { useSession } from '@/lib/auth-client'
 import { useORPCInvalidator } from '@/lib/orpc-invalidator'
 import { orpc } from '@/orpc/client'
-import { useCommentStore } from '@/stores/comment'
-import { useCommentsStore } from '@/stores/comments'
+import { useCommentStore } from '@/stores/comment.store'
+import { useCommentsStore } from '@/stores/comments.store'
 
 const CommentMenu = () => {
   const comment = useCommentStore((state) => state.comment)
