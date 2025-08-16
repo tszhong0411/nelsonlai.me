@@ -40,5 +40,8 @@
     "consola": "^3.4.2",
     "drizzle-kit": "^0.31.1",
     "execa": "^9.6.0"
+  },
+  "peerDependencies": {
+    "postgres": "^3"
   }
 }
