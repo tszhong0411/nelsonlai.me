@@ -18,7 +18,6 @@ import Header from './header'
 import LikeButton from './like-button'
 import MobileTableOfContents from './mobile-table-of-contents'
 import ProgressBar from './progress-bar'
-import Providers from './providers'
 import TableOfContents from './table-of-contents'
 
 type PageProps = {
@@ -150,25 +149,23 @@ const Page = async (props: PageProps) => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <Providers post={post}>
-        <Header />
+      <Header post={post} />
 
-        <div className='mt-8 flex flex-col justify-between lg:flex-row'>
-          <article className='w-full lg:w-[670px]'>
-            <Mdx code={code} />
-          </article>
-          <aside className='lg:min-w-[270px] lg:max-w-[270px]'>
-            <div className='sticky top-24'>
-              {toc.length > 0 && <TableOfContents toc={toc} />}
-              {flags.likeButton && <LikeButton slug={slug} />}
-            </div>
-          </aside>
-        </div>
-        <ProgressBar />
+      <div className='mt-8 flex flex-col justify-between lg:flex-row'>
+        <article className='w-full lg:w-[670px]'>
+          <Mdx code={code} />
+        </article>
+        <aside className='lg:min-w-[270px] lg:max-w-[270px]'>
+          <div className='sticky top-24'>
+            {toc.length > 0 && <TableOfContents toc={toc} />}
+            {flags.likeButton && <LikeButton slug={slug} />}
+          </div>
+        </aside>
+      </div>
+      <ProgressBar />
 
-        {toc.length > 0 && <MobileTableOfContents toc={toc} />}
-        <Footer />
-      </Providers>
+      {toc.length > 0 && <MobileTableOfContents toc={toc} />}
+      <Footer post={post} />
 
       {flags.comment && (
         <Suspense>

@@ -1,3 +1,5 @@
+import type { ListMessagesOutput } from '@/orpc/routers'
+
 import { useMutation } from '@tanstack/react-query'
 import { useTranslations } from '@tszhong0411/i18n/client'
 import {
@@ -16,10 +18,13 @@ import { toast } from '@tszhong0411/ui/components/sonner'
 
 import { useORPCInvalidator } from '@/lib/orpc-invalidator'
 import { orpc } from '@/orpc/client'
-import { useMessageStore } from '@/stores/message.store'
 
-const DeleteButton = () => {
-  const message = useMessageStore((state) => state.message)
+type DeleteButtonProps = {
+  message: ListMessagesOutput['messages'][number]
+}
+
+const DeleteButton = (props: DeleteButtonProps) => {
+  const { message } = props
   const invalidator = useORPCInvalidator()
   const t = useTranslations()
 

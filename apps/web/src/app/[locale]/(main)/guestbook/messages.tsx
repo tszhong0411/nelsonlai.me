@@ -13,7 +13,6 @@ import { useInView } from 'react-intersection-observer'
 import { useFormattedDate } from '@/hooks/use-formatted-date'
 import { useSession } from '@/lib/auth-client'
 import { orpc } from '@/orpc/client'
-import { MessageProvider } from '@/stores/message.store'
 import { getDefaultImage } from '@/utils/get-default-image'
 
 import DeleteButton from './delete-button'
@@ -107,25 +106,23 @@ const Message = (props: MessageProps) => {
   const defaultImage = getDefaultImage(userId)
 
   return (
-    <MessageProvider message={message}>
-      <div
-        className='shadow-xs rounded-lg border p-4 dark:bg-zinc-900/30'
-        data-testid={`message-${id}`}
-      >
-        <div className='mb-3 flex gap-3'>
-          <Avatar className='size-10'>
-            <AvatarImage src={image ?? defaultImage} alt={name} />
-            <AvatarFallback>{getAbbreviation(name)}</AvatarFallback>
-          </Avatar>
-          <div className='flex flex-col justify-center gap-px text-sm'>
-            <div>{name}</div>
-            <UpdatedDate date={updatedAt} />
-          </div>
+    <div
+      className='shadow-xs rounded-lg border p-4 dark:bg-zinc-900/30'
+      data-testid={`message-${id}`}
+    >
+      <div className='mb-3 flex gap-3'>
+        <Avatar className='size-10'>
+          <AvatarImage src={image ?? defaultImage} alt={name} />
+          <AvatarFallback>{getAbbreviation(name)}</AvatarFallback>
+        </Avatar>
+        <div className='flex flex-col justify-center gap-px text-sm'>
+          <div>{name}</div>
+          <UpdatedDate date={updatedAt} />
         </div>
-        <div className='break-words pl-[52px]'>{body}</div>
-        {isAuthor && <DeleteButton />}
       </div>
-    </MessageProvider>
+      <div className='break-words pl-[52px]'>{body}</div>
+      {isAuthor && <DeleteButton message={message} />}
+    </div>
   )
 }
 
