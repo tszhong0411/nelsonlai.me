@@ -15,6 +15,7 @@ import {
 import { toast } from '@tszhong0411/ui/components/sonner'
 import { LoaderIcon } from 'lucide-react'
 import { useEffect, useState } from 'react'
+import { useShallow } from 'zustand/react/shallow'
 
 import { signIn } from '@/lib/auth-client'
 import { useDialogsStore } from '@/stores/dialogs.store'
@@ -46,10 +47,12 @@ const GoogleIcon = () => {
 }
 
 const SignInDialog = () => {
-  const { isSignInDialogOpen, setIsSignInOpen } = useDialogsStore((state) => ({
-    isSignInDialogOpen: state.isSignInDialogOpen,
-    setIsSignInOpen: state.setIsSignInOpen
-  }))
+  const { isSignInDialogOpen, setIsSignInOpen } = useDialogsStore(
+    useShallow((state) => ({
+      isSignInDialogOpen: state.isSignInDialogOpen,
+      setIsSignInOpen: state.setIsSignInOpen
+    }))
+  )
   const [isPending, setIsPending] = useState(false)
   const [lastUsedProvider, setLastUsedProvider] = useState<Provider | null>(null)
   const t = useTranslations()

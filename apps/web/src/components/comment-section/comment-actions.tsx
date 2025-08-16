@@ -7,14 +7,14 @@ import { cn } from '@tszhong0411/utils'
 import { cva } from 'cva'
 import { ChevronDownIcon, MessageSquareIcon, ThumbsDownIcon, ThumbsUpIcon } from 'lucide-react'
 
+import { useCommentContext } from '@/contexts/comment.context'
+import { useCommentsContext } from '@/contexts/comments.context'
+import { useVotesContext } from '@/contexts/votes.context'
 import { useCommentParams } from '@/hooks/use-comment-params'
 import { useSession } from '@/lib/auth-client'
 import { useORPCInvalidator } from '@/lib/orpc-invalidator'
 import { oRPCQueryKeys } from '@/lib/orpc-query-keys'
 import { orpc } from '@/orpc/client'
-import { useCommentStore } from '@/stores/comment.store'
-import { useCommentsStore } from '@/stores/comments.store'
-import { useVotesStore } from '@/stores/votes.store'
 
 const voteVariants = cva({
   base: buttonVariants({
@@ -30,18 +30,10 @@ const voteVariants = cva({
 })
 
 const CommentActions = () => {
-  const { slug, sort } = useCommentsStore((state) => ({ slug: state.slug, sort: state.sort }))
-  const { comment, setIsReplying, isOpenReplies, setIsOpenReplies } = useCommentStore((state) => ({
-    comment: state.comment,
-    setIsReplying: state.setIsReplying,
-    isOpenReplies: state.isOpenReplies,
-    setIsOpenReplies: state.setIsOpenReplies
-  }))
-  const { increment, decrement, getCount } = useVotesStore((state) => ({
-    increment: state.increment,
-    decrement: state.decrement,
-    getCount: state.getCount
-  }))
+  const { slug, sort } = useCommentsContext()
+  const { comment, setIsReplying, isOpenReplies, setIsOpenReplies } = useCommentContext()
+  const { increment, decrement, getCount } = useVotesContext()
+
   const [params] = useCommentParams()
   const { data: session } = useSession()
   const queryClient = useQueryClient()

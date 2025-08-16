@@ -8,11 +8,11 @@ import { getSingletonHighlighterCore } from 'shiki'
 import { createOnigurumaEngine } from 'shiki/engine/oniguruma'
 import githubDarkDefault from 'shiki/themes/github-dark-default.mjs'
 import githubLightDefault from 'shiki/themes/github-light-default.mjs'
+import { useShallow } from 'zustand/react/shallow'
 
+import { useCommentsContext } from '@/contexts/comments.context'
 import { useCommentParams } from '@/hooks/use-comment-params'
 import { orpc } from '@/orpc/client'
-import { CommentProvider } from '@/stores/comment.store'
-import { useCommentsStore } from '@/stores/comments.store'
 import { useHighlighterStore } from '@/stores/highlighter.store'
 
 import Comment from './comment'
@@ -20,13 +20,15 @@ import CommentHeader from './comment-header'
 import CommentLoader from './comment-loader'
 
 const CommentList = () => {
-  const { slug, sort } = useCommentsStore((state) => ({ slug: state.slug, sort: state.sort }))
+  const { slug, sort } = useCommentsContext()
   const [params] = useCommentParams()
   const t = useTranslations()
-  const { highlighter, setHighlighter } = useHighlighterStore((state) => ({
-    highlighter: state.highlighter,
-    setHighlighter: state.setHighlighter
-  }))
+  const { highlighter, setHighlighter } = useHighlighterStore(
+    useShallow((state) => ({
+      highlighter: state.highlighter,
+      setHighlighter: state.setHighlighter
+    }))
+  )
 
   const { status, data, fetchNextPage, hasNextPage, isFetchingNextPage } = useInfiniteQuery(
     orpc.posts.comments.list.infiniteOptions({
@@ -72,11 +74,7 @@ const CommentList = () => {
       <div className='space-y-8 py-2' data-testid='comments-list'>
         {isSuccess &&
           data.pages.map((page) =>
-            page.comments.map((comment) => (
-              <CommentProvider key={comment.id} comment={comment} slug={slug}>
-                <Comment />
-              </CommentProvider>
-            ))
+            page.comments.map((comment) => <Comment key={comment.id} comment={comment} />)
           )}
         {noComments && (
           <div className='flex min-h-20 items-center justify-center'>

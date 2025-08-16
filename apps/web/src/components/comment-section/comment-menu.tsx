@@ -21,17 +21,17 @@ import {
 import { toast } from '@tszhong0411/ui/components/sonner'
 import { MoreVerticalIcon } from 'lucide-react'
 
+import { useCommentContext } from '@/contexts/comment.context'
+import { useCommentsContext } from '@/contexts/comments.context'
 import { useCommentParams } from '@/hooks/use-comment-params'
 import { useCopyToClipboard } from '@/hooks/use-copy-to-clipboard'
 import { useSession } from '@/lib/auth-client'
 import { useORPCInvalidator } from '@/lib/orpc-invalidator'
 import { orpc } from '@/orpc/client'
-import { useCommentStore } from '@/stores/comment.store'
-import { useCommentsStore } from '@/stores/comments.store'
 
 const CommentMenu = () => {
-  const comment = useCommentStore((state) => state.comment)
-  const { slug, sort } = useCommentsStore((state) => ({ slug: state.slug, sort: state.sort }))
+  const { comment } = useCommentContext()
+  const { slug, sort } = useCommentsContext()
   const [params] = useCommentParams()
   const { data: session } = useSession()
   const invalidator = useORPCInvalidator()

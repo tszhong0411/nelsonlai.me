@@ -1,7 +1,11 @@
 'use client'
 
-import { CommentsProvider } from '@/stores/comments.store'
-import { VotesProvider } from '@/stores/votes.store'
+import type { ListCommentsInput } from '@/orpc/routers'
+
+import { useCallback, useRef, useState } from 'react'
+
+import { CommentsProvider } from '@/contexts/comments.context'
+import { VotesProvider } from '@/contexts/votes.context'
 
 import CommentList from './comment-list'
 import CommentPost from './comment-post'
@@ -12,10 +16,22 @@ type CommentSectionProps = {
 
 const CommentSection = (props: CommentSectionProps) => {
   const { slug } = props
+  const [sort, setSort] = useState<ListCommentsInput['sort']>('newest')
+  const mutationCount = useRef(0)
+
+  const increment = useCallback(() => {
+    mutationCount.current += 1
+  }, [])
+
+  const decrement = useCallback(() => {
+    mutationCount.current -= 1
+  }, [])
+
+  const getCount = useCallback(() => mutationCount.current, [])
 
   return (
-    <VotesProvider initialCount={0}>
-      <CommentsProvider slug={slug} sort='newest'>
+    <VotesProvider value={{ increment, decrement, getCount }}>
+      <CommentsProvider value={{ slug, sort, setSort }}>
         <div className='space-y-6'>
           <CommentPost />
           <CommentList />

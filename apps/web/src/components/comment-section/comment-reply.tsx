@@ -6,13 +6,13 @@ import { Button } from '@tszhong0411/ui/components/button'
 import { toast } from '@tszhong0411/ui/components/sonner'
 import { useState } from 'react'
 
+import { useCommentContext } from '@/contexts/comment.context'
+import { useCommentsContext } from '@/contexts/comments.context'
 import { useCommentParams } from '@/hooks/use-comment-params'
 import { useSession } from '@/lib/auth-client'
 import { useORPCInvalidator } from '@/lib/orpc-invalidator'
 import { oRPCQueryKeys } from '@/lib/orpc-query-keys'
 import { orpc } from '@/orpc/client'
-import { useCommentStore } from '@/stores/comment.store'
-import { useCommentsStore } from '@/stores/comments.store'
 
 import CommentEditor from './comment-editor'
 import UnauthorizedOverlay from './unauthorized-overlay'
@@ -20,11 +20,8 @@ import UnauthorizedOverlay from './unauthorized-overlay'
 const CommentReply = () => {
   const [content, setContent] = useState('')
   const { data: session } = useSession()
-  const { comment, setIsReplying } = useCommentStore((state) => ({
-    comment: state.comment,
-    setIsReplying: state.setIsReplying
-  }))
-  const { slug, sort } = useCommentsStore((state) => ({ slug: state.slug, sort: state.sort }))
+  const { comment, setIsReplying } = useCommentContext()
+  const { slug, sort } = useCommentsContext()
   const [params] = useCommentParams()
   const queryClient = useQueryClient()
   const invalidator = useORPCInvalidator()

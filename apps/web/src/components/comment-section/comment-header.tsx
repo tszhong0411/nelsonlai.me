@@ -13,15 +13,11 @@ import {
 } from '@tszhong0411/ui/components/dropdown-menu'
 import { ListFilterIcon } from 'lucide-react'
 
+import { useCommentsContext } from '@/contexts/comments.context'
 import { orpc } from '@/orpc/client'
-import { useCommentsStore } from '@/stores/comments.store'
 
 const CommentHeader = () => {
-  const { slug, sort, setSort } = useCommentsStore((state) => ({
-    slug: state.slug,
-    sort: state.sort,
-    setSort: state.setSort
-  }))
+  const { slug, sort, setSort } = useCommentsContext()
   const t = useTranslations()
 
   const commentCountQuery = useQuery(orpc.posts.comments.count.queryOptions({ input: { slug } }))

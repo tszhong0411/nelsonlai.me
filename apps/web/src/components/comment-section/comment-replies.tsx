@@ -5,21 +5,17 @@ import { useTranslations } from '@tszhong0411/i18n/client'
 import { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 
+import { useCommentContext } from '@/contexts/comment.context'
+import { useCommentsContext } from '@/contexts/comments.context'
 import { useCommentParams } from '@/hooks/use-comment-params'
 import { orpc } from '@/orpc/client'
-import { CommentProvider, useCommentStore } from '@/stores/comment.store'
-import { useCommentsStore } from '@/stores/comments.store'
 
 import Comment from './comment'
 import CommentLoader from './comment-loader'
 
 const CommentReplies = () => {
-  const { comment, isOpenReplies, setIsOpenReplies } = useCommentStore((state) => ({
-    comment: state.comment,
-    isOpenReplies: state.isOpenReplies,
-    setIsOpenReplies: state.setIsOpenReplies
-  }))
-  const slug = useCommentsStore((state) => state.slug)
+  const { comment, isOpenReplies, setIsOpenReplies } = useCommentContext()
+  const { slug } = useCommentsContext()
   const [params] = useCommentParams()
   const t = useTranslations()
 
@@ -59,11 +55,7 @@ const CommentReplies = () => {
         <div className='space-y-8 pl-7'>
           {isSuccess &&
             data.pages.map((page) =>
-              page.comments.map((reply) => (
-                <CommentProvider key={reply.id} comment={reply} slug={slug}>
-                  <Comment />
-                </CommentProvider>
-              ))
+              page.comments.map((reply) => <Comment key={reply.id} comment={reply} />)
             )}
           {isError && (
             <div className='flex min-h-20 items-center justify-center'>

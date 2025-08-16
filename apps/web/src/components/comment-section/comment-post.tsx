@@ -7,17 +7,17 @@ import { toast } from '@tszhong0411/ui/components/sonner'
 import { SendIcon } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
+import { useCommentsContext } from '@/contexts/comments.context'
 import { useCommentParams } from '@/hooks/use-comment-params'
 import { useSession } from '@/lib/auth-client'
 import { useORPCInvalidator } from '@/lib/orpc-invalidator'
 import { orpc } from '@/orpc/client'
-import { useCommentsStore } from '@/stores/comments.store'
 
 import CommentEditor from './comment-editor'
 import UnauthorizedOverlay from './unauthorized-overlay'
 
 const CommentPost = () => {
-  const { slug, sort } = useCommentsStore((state) => ({ slug: state.slug, sort: state.sort }))
+  const { slug, sort } = useCommentsContext()
   const [params] = useCommentParams()
   const [content, setContent] = useState('')
   const [isMounted, setIsMounted] = useState(false)
