@@ -23,7 +23,10 @@ const CommentList = () => {
   const { slug, sort } = useCommentsStore((state) => ({ slug: state.slug, sort: state.sort }))
   const [params] = useCommentParams()
   const t = useTranslations()
-  const { highlighter, setHighlighter } = useHighlighterStore()
+  const { highlighter, setHighlighter } = useHighlighterStore((state) => ({
+    highlighter: state.highlighter,
+    setHighlighter: state.setHighlighter
+  }))
 
   const { status, data, fetchNextPage, hasNextPage, isFetchingNextPage } = useInfiniteQuery(
     orpc.posts.comments.list.infiniteOptions({

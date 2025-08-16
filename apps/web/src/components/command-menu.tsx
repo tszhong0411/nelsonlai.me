@@ -41,7 +41,7 @@ const CommandMenu = () => {
   const [copy] = useCopyToClipboard()
   const { data: session } = useSession()
   const t = useTranslations()
-  const { setIsSignInOpen } = useDialogsStore()
+  const setIsSignInOpen = useDialogsStore((state) => state.setIsSignInOpen)
   const router = useRouter()
 
   useEffect(() => {

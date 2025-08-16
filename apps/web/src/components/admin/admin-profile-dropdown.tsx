@@ -17,7 +17,7 @@ import { getDefaultImage } from '@/utils/get-default-image'
 const AdminProfileDropdown = () => {
   const { data: session, isPending } = useSession()
   const t = useTranslations()
-  const { setIsSignInOpen } = useDialogsStore()
+  const setIsSignInOpen = useDialogsStore((state) => state.setIsSignInOpen)
 
   if (isPending) {
     return <Skeleton className='size-9 rounded-full' />

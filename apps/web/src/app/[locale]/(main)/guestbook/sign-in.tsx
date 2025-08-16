@@ -7,7 +7,7 @@ import { useDialogsStore } from '@/stores/dialogs.store'
 
 const SignIn = () => {
   const t = useTranslations()
-  const { setIsSignInOpen } = useDialogsStore()
+  const setIsSignInOpen = useDialogsStore((state) => state.setIsSignInOpen)
 
   return (
     <>
