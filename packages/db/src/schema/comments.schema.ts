@@ -1,8 +1,8 @@
 import { relations, sql } from 'drizzle-orm'
 import { boolean, index, integer, pgTable, primaryKey, text, timestamp } from 'drizzle-orm/pg-core'
 
-import { users } from './auth'
-import { posts } from './posts'
+import { users } from './auth.schema'
+import { posts } from './posts.schema'
 
 export const comments = pgTable(
   'comment',

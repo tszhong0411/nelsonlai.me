@@ -1,7 +1,7 @@
 import { relations, sql } from 'drizzle-orm'
 import { index, pgTable, text, timestamp } from 'drizzle-orm/pg-core'
 
-import { users } from './auth'
+import { users } from './auth.schema'
 
 export const guestbook = pgTable(
   'guestbook',
