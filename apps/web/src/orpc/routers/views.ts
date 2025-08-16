@@ -6,12 +6,6 @@ import { publicProcedure } from '../root'
 import { getViewInputSchema, incrementViewInputSchema, viewSchema } from '../schemas/views'
 
 export const getView = publicProcedure
-  .route({
-    method: 'GET',
-    path: '/posts/{slug}/views',
-    summary: 'Get view',
-    tags: ['Views']
-  })
   .input(getViewInputSchema)
   .output(viewSchema)
   .handler(async ({ input, context }) => {

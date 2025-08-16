@@ -35,12 +35,7 @@ import {
 import { emptyOutputSchema } from '../schemas/common'
 
 export const listComments = publicProcedure
-  .route({
-    method: 'GET',
-    path: '/posts/{slug}/comments',
-    summary: 'List comments',
-    tags: ['Comments']
-  })
+
   .input(listCommentsInputSchema)
   .output(commentsSchema)
   .handler(async ({ input, context }) => {
@@ -121,12 +116,7 @@ export const listComments = publicProcedure
   })
 
 export const createComment = protectedProcedure
-  .route({
-    method: 'POST',
-    path: '/posts/{slug}/comments',
-    summary: 'Create a comment',
-    tags: ['Comments']
-  })
+
   .input(createCommentInputSchema)
   .output(commentSchema)
   .handler(async ({ input, context }) => {
@@ -220,12 +210,7 @@ export const createComment = protectedProcedure
   })
 
 export const deleteComment = protectedProcedure
-  .route({
-    method: 'DELETE',
-    path: '/comments/{id}',
-    summary: 'Delete a comment',
-    tags: ['Comments']
-  })
+
   .input(deleteCommentInputSchema)
   .output(emptyOutputSchema)
   .handler(async ({ input, context }) => {
@@ -279,12 +264,7 @@ export const deleteComment = protectedProcedure
   })
 
 export const countComments = publicProcedure
-  .route({
-    method: 'GET',
-    path: '/posts/{slug}/comments/count',
-    summary: 'Count comments',
-    tags: ['Comments']
-  })
+
   .input(countCommentsInputSchema)
   .output(countCommentsSchema)
   .handler(async ({ input, context }) => {

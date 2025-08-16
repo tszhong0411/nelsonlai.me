@@ -49,12 +49,6 @@ const getUsersCreatedDateFilter = (from?: Date, to?: Date) => {
 }
 
 export const listAllComments = adminProcedure
-  .route({
-    method: 'GET',
-    path: '/admin/comments',
-    summary: 'List all comments',
-    tags: ['Admin']
-  })
   .input(listAllCommentsInputSchema)
   .output(listAllCommentsSchema)
   .handler(async ({ input, context }) => {
@@ -129,12 +123,6 @@ export const listAllComments = adminProcedure
   })
 
 export const listAllUsers = adminProcedure
-  .route({
-    method: 'GET',
-    path: '/admin/users',
-    summary: 'List all users',
-    tags: ['Admin']
-  })
   .input(listAllUsersInputSchema)
   .output(listAllUsersSchema)
   .handler(async ({ input, context }) => {

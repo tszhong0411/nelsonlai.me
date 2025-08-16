@@ -4,12 +4,6 @@ import { publicProcedure } from '../root'
 import { countRepliesInputSchema, countRepliesSchema } from '../schemas/replies'
 
 export const countReplies = publicProcedure
-  .route({
-    method: 'GET',
-    path: '/posts/{slug}/replies/count',
-    summary: 'Count replies',
-    tags: ['Replies']
-  })
   .input(countRepliesInputSchema)
   .output(countRepliesSchema)
   .handler(async ({ input, context }) => {
