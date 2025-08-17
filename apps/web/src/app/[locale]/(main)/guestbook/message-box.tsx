@@ -17,7 +17,7 @@ import { getAbbreviation } from '@tszhong0411/utils'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
-import { useCreateGuestbookMessage } from '@/hooks/queries/guestbook'
+import { useCreateGuestbookMessage } from '@/hooks/queries/guestbook.query'
 import { signOut, type User } from '@/lib/auth-client'
 import { getDefaultImage } from '@/utils/get-default-image'
 

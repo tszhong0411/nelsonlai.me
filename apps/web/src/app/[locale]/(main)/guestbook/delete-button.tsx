@@ -14,7 +14,7 @@ import {
 } from '@tszhong0411/ui/components/alert-dialog'
 import { Button, buttonVariants } from '@tszhong0411/ui/components/button'
 
-import { useDeleteGuestbookMessage } from '@/hooks/queries/guestbook'
+import { useDeleteGuestbookMessage } from '@/hooks/queries/guestbook.query'
 
 type DeleteButtonProps = {
   message: ListMessagesOutput['messages'][number]

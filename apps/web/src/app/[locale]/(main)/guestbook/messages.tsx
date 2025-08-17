@@ -9,7 +9,7 @@ import { getAbbreviation } from '@tszhong0411/utils'
 import { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 
-import { useGuestbookMessages } from '@/hooks/queries/guestbook'
+import { useGuestbookMessages } from '@/hooks/queries/guestbook.query'
 import { useFormattedDate } from '@/hooks/use-formatted-date'
 import { useSession } from '@/lib/auth-client'
 import { getDefaultImage } from '@/utils/get-default-image'
