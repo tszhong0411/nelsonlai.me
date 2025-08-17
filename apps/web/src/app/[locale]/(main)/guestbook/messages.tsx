@@ -40,7 +40,7 @@ const UpdatedDate = (props: UpdatedDateProps) => {
 }
 
 const Messages = () => {
-  const { isSuccess, isError, isLoading, data, fetchNextPage, hasNextPage, isFetchingNextPage } =
+  const { isSuccess, isLoading, isError, data, fetchNextPage, hasNextPage, isFetchingNextPage } =
     useGuestbookMessages()
   const t = useTranslations()
 
