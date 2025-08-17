@@ -29,38 +29,30 @@ const getAccessToken = async () => {
   return data.access_token as string
 }
 
-export const spotifyStats = publicProcedure
-  .route({
-    method: 'GET',
-    path: '/stats/spotify',
-    summary: 'Get Spotify stats',
-    tags: ['Spotify']
-  })
-  .output(spotifyStatsSchema)
-  .handler(async () => {
-    const accessToken = await getAccessToken()
+export const spotifyStats = publicProcedure.output(spotifyStatsSchema).handler(async () => {
+  const accessToken = await getAccessToken()
 
-    const response = await fetch(NOW_PLAYING_ENDPOINT, {
-      headers: {
-        Authorization: `Bearer ${accessToken}`
-      }
-    })
-
-    if (response.status === 204) {
-      return {
-        isPlaying: false,
-        songUrl: null,
-        name: null,
-        artist: null
-      }
+  const response = await fetch(NOW_PLAYING_ENDPOINT, {
+    headers: {
+      Authorization: `Bearer ${accessToken}`
     }
+  })
 
-    const song = await response.json()
-
+  if (response.status === 204) {
     return {
-      isPlaying: song.is_playing as boolean,
-      songUrl: song.item.external_urls.spotify as string,
-      name: song.item.name as string,
-      artist: song.item.artists.map((artist: { name: string }) => artist.name).join(', ') as string
+      isPlaying: false,
+      songUrl: null,
+      name: null,
+      artist: null
     }
-  })
+  }
+
+  const song = await response.json()
+
+  return {
+    isPlaying: song.is_playing as boolean,
+    songUrl: song.item.external_urls.spotify as string,
+    name: song.item.name as string,
+    artist: song.item.artists.map((artist: { name: string }) => artist.name).join(', ') as string
+  }
+})

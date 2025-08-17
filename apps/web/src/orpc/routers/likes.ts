@@ -9,12 +9,6 @@ import { publicProcedure } from '../root'
 import { getLikeInputSchema, incrementLikeInputSchema, likeSchema } from '../schemas/likes'
 
 export const getLike = publicProcedure
-  .route({
-    method: 'GET',
-    path: '/posts/{slug}/likes',
-    summary: 'Get like',
-    tags: ['Likes']
-  })
   .input(getLikeInputSchema)
   .output(likeSchema)
   .handler(async ({ input, context }) => {
@@ -52,12 +46,6 @@ export const getLike = publicProcedure
   })
 
 export const incrementLike = publicProcedure
-  .route({
-    method: 'POST',
-    path: '/posts/{slug}/likes',
-    summary: 'Increment like',
-    tags: ['Likes']
-  })
   .input(incrementLikeInputSchema)
   .output(likeSchema)
   .handler(async ({ input, context }) => {

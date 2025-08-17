@@ -5,12 +5,6 @@ import { protectedProcedure } from '../root'
 import { createVoteInputSchema, voteSchema } from '../schemas/votes'
 
 export const createVote = protectedProcedure
-  .route({
-    method: 'POST',
-    path: '/votes/{id}',
-    summary: 'Create vote',
-    tags: ['Votes']
-  })
   .input(createVoteInputSchema)
   .output(voteSchema)
   .handler(async ({ input, context }) => {

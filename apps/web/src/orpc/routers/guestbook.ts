@@ -17,12 +17,6 @@ import {
 } from '../schemas/guestbook'
 
 export const listMessages = publicProcedure
-  .route({
-    method: 'GET',
-    path: '/guestbook',
-    summary: 'List messages',
-    tags: ['Guestbook']
-  })
   .input(guestbookInputSchema)
   .output(guestbookSchema)
   .handler(async ({ input, context }) => {
@@ -61,12 +55,6 @@ export const listMessages = publicProcedure
   })
 
 export const createMessage = protectedProcedure
-  .route({
-    method: 'POST',
-    path: '/guestbook',
-    summary: 'Create message',
-    tags: ['Guestbook']
-  })
   .input(createMessageInputSchema)
   .output(messageSchema)
   .handler(async ({ input, context }) => {
@@ -120,12 +108,6 @@ export const createMessage = protectedProcedure
   })
 
 export const deleteMessage = protectedProcedure
-  .route({
-    method: 'DELETE',
-    path: '/guestbook/{id}',
-    summary: 'Delete message',
-    tags: ['Guestbook']
-  })
   .input(deleteMessageInputSchema)
   .output(emptyOutputSchema)
   .handler(async ({ input, context }) => {
