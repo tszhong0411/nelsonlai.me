@@ -110,6 +110,8 @@ export const useCreatePostComment = (
     orpc.posts.comments.create.mutationOptions({
       onSuccess: () => {
         queryClient.invalidateQueries({ queryKey: orpc.posts.comments.list.key({ input }) })
+        queryClient.invalidateQueries({ queryKey: orpc.posts.comments.count.key({ input }) })
+        queryClient.invalidateQueries({ queryKey: orpc.posts.replies.count.key({ input }) })
         onSuccess?.()
       }
     })
@@ -126,6 +128,8 @@ export const useDeletePostComment = (
     orpc.posts.comments.delete.mutationOptions({
       onSuccess: () => {
         queryClient.invalidateQueries({ queryKey: orpc.posts.comments.list.key({ input }) })
+        queryClient.invalidateQueries({ queryKey: orpc.posts.comments.count.key({ input }) })
+        queryClient.invalidateQueries({ queryKey: orpc.posts.replies.count.key({ input }) })
         onSuccess?.()
       }
     })
