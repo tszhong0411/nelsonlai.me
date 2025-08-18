@@ -1,6 +1,7 @@
 import { ScrollArea } from '@tszhong0411/ui/components/scroll-area'
+import { range } from '@tszhong0411/utils'
 
-const TAGS = Array.from({ length: 50 }).map((_, i, a) => `v1.2.0-beta.${a.length - i}`)
+const TAGS = range(50).map((i) => `v1.2.0-beta.${50 - i}`)
 
 const ScrollAreaDemo = () => {
   return (

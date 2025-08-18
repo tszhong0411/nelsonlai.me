@@ -27,6 +27,7 @@ import {
 } from '@tszhong0411/ui/components/dropdown-menu'
 import { useDataTable } from '@tszhong0411/ui/hooks/use-data-table'
 import { formatDate, getSortingStateParser } from '@tszhong0411/ui/lib/data-table'
+import { range } from '@tszhong0411/utils'
 import {
   CalendarIcon,
   CheckIcon,
@@ -85,7 +86,7 @@ const DataTableDemo = () => {
   const getPayments = () => {
     seed('data-table-demo')
 
-    const allPayments: Payment[] = Array.from({ length: 1000 }, () => ({
+    const allPayments: Payment[] = range(1000).map(() => ({
       id: randUuid(),
       name: randFullName(),
       email: randEmail(),

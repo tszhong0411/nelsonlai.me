@@ -1,5 +1,5 @@
 import * as SliderPrimitive from '@radix-ui/react-slider'
-import { cn } from '@tszhong0411/utils'
+import { cn, range } from '@tszhong0411/utils'
 import { useMemo } from 'react'
 
 type SliderProps = React.ComponentProps<typeof SliderPrimitive.Root>
@@ -51,10 +51,10 @@ const Slider = (props: SliderProps) => {
           )}
         />
       </SliderPrimitive.Track>
-      {Array.from({ length: _values.length }, (_, index) => (
+      {range(_values.length).map((i) => (
         <SliderPrimitive.Thumb
           data-slot='slider-thumb'
-          key={index}
+          key={i}
           className={cn(
             'border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow]',
             'hover:ring-4',

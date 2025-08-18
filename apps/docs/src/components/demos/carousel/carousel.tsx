@@ -12,12 +12,12 @@ const CarouselDemo = () => {
   return (
     <Carousel className='w-full max-w-md'>
       <CarouselContent>
-        {range(5).map((number) => (
-          <CarouselItem key={number}>
+        {range(5).map((i) => (
+          <CarouselItem key={i}>
             <div className='p-1'>
               <Card>
                 <CardContent className='flex aspect-square items-center justify-center p-6'>
-                  <span className='text-4xl font-semibold'>{number + 1}</span>
+                  <span className='text-4xl font-semibold'>{i + 1}</span>
                 </CardContent>
               </Card>
             </div>

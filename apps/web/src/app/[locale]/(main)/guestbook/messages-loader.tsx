@@ -19,8 +19,8 @@ const MessagesLoader = (props: React.ComponentProps<'div'>) => {
 
   return (
     <div className={cn('flex flex-col gap-4', className)} {...rest}>
-      {range(8).map((n) => (
-        <Placeholder key={n} />
+      {range(8).map((i) => (
+        <Placeholder key={i} />
       ))}
     </div>
   )

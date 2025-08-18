@@ -5,7 +5,7 @@
  *
  * Modified by: tszhong0411
  */
-import { cn } from '@tszhong0411/utils'
+import { cn, range } from '@tszhong0411/utils'
 
 import { Skeleton } from './skeleton'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './table'
@@ -35,17 +35,14 @@ const DataTableSkeleton = (props: DataTableSkeletonProps) => {
     ...rest
   } = props
 
-  const cozyCellWidths = Array.from(
-    { length: columnCount },
-    (_, index) => cellWidths[index % cellWidths.length] ?? 'auto'
-  )
+  const cozyCellWidths = range(columnCount).map((i) => cellWidths[i % cellWidths.length] ?? 'auto')
 
   return (
     <div className={cn('flex w-full flex-col gap-2.5 overflow-auto', className)} {...rest}>
       <div className='flex w-full items-center justify-between gap-2 overflow-auto p-1'>
         <div className='flex flex-1 items-center gap-2'>
           {filterCount > 0
-            ? Array.from({ length: filterCount }).map((_, i) => (
+            ? range(filterCount).map((i) => (
                 <Skeleton key={i} className='h-7 w-[4.5rem] border-dashed' />
               ))
             : null}
@@ -55,9 +52,9 @@ const DataTableSkeleton = (props: DataTableSkeletonProps) => {
       <div className='rounded-md border'>
         <Table>
           <TableHeader>
-            {Array.from({ length: 1 }).map((_, i) => (
+            {range(1).map((i) => (
               <TableRow key={i} className='hover:bg-transparent'>
-                {Array.from({ length: columnCount }).map((__, j) => (
+                {range(columnCount).map((j) => (
                   <TableHead
                     key={j}
                     style={{
@@ -72,9 +69,9 @@ const DataTableSkeleton = (props: DataTableSkeletonProps) => {
             ))}
           </TableHeader>
           <TableBody>
-            {Array.from({ length: rowCount }).map((_, i) => (
+            {range(rowCount).map((i) => (
               <TableRow key={i} className='hover:bg-transparent'>
-                {Array.from({ length: columnCount }).map((__, j) => (
+                {range(columnCount).map((j) => (
                   <TableCell
                     key={j}
                     style={{

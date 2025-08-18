@@ -39,9 +39,9 @@ const Marquee = (props: MarqueeProps) => {
         gap
       }}
     >
-      {range(2).map((n) => (
+      {range(2).map((i) => (
         <div
-          key={n}
+          key={i}
           style={
             {
               '--gap': gap
