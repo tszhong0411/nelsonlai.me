@@ -29,15 +29,14 @@ const CommentList = () => {
     }))
   )
 
-  const { status, data, fetchNextPage, hasNextPage, isFetchingNextPage } = usePostComments(
-    (pageParam) => ({
+  const { isSuccess, isLoading, isError, data, fetchNextPage, hasNextPage, isFetchingNextPage } =
+    usePostComments((pageParam) => ({
       slug,
       sort,
       type: 'comments',
       highlightedCommentId: params.comment ?? undefined,
       cursor: pageParam
-    })
-  )
+    }))
 
   const { ref, inView } = useInView()
 
@@ -57,10 +56,7 @@ const CommentList = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps -- only run once
   }, [])
 
-  const isSuccess = status === 'success'
-  const isError = status === 'error'
-  const isLoading = status === 'pending' || isFetchingNextPage
-  const noComments = status === 'success' && data.pages[0]?.comments.length === 0
+  const noComments = isSuccess && data.pages[0]?.comments.length === 0
 
   return (
     <>
@@ -70,7 +66,7 @@ const CommentList = () => {
           data.pages.map((page) =>
             page.comments.map((comment) => <Comment key={comment.id} comment={comment} />)
           )}
-        {isLoading && <CommentLoader />}
+        {(isLoading || isFetchingNextPage) && <CommentLoader />}
         {isError && (
           <div className='flex min-h-20 items-center justify-center'>
             <p className='text-muted-foreground text-sm'>

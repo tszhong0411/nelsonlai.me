@@ -18,17 +18,18 @@ const CommentReplies = () => {
   const [params] = useCommentParams()
   const t = useTranslations()
 
-  const { status, data, fetchNextPage, hasNextPage, isFetchingNextPage } = usePostComments(
-    (pageParam) => ({
-      slug,
-      sort: 'oldest',
-      parentId: comment.id,
-      type: 'replies',
-      highlightedCommentId: params.reply ?? undefined,
-      cursor: pageParam
-    }),
-    isOpenReplies
-  )
+  const { isSuccess, isLoading, isError, data, fetchNextPage, hasNextPage, isFetchingNextPage } =
+    usePostComments(
+      (pageParam) => ({
+        slug,
+        sort: 'oldest',
+        parentId: comment.id,
+        type: 'replies',
+        highlightedCommentId: params.reply ?? undefined,
+        cursor: pageParam
+      }),
+      isOpenReplies
+    )
 
   const { ref, inView } = useInView()
 
@@ -40,10 +41,6 @@ const CommentReplies = () => {
     if (params.comment === comment.id) setIsOpenReplies(true)
   }, [comment.id, params.comment, setIsOpenReplies])
 
-  const isSuccess = status === 'success'
-  const isError = status === 'error'
-  const isLoading = status === 'pending' || isFetchingNextPage
-
   return (
     <>
       {isOpenReplies && (
@@ -52,7 +49,7 @@ const CommentReplies = () => {
             data.pages.map((page) =>
               page.comments.map((reply) => <Comment key={reply.id} comment={reply} />)
             )}
-          {isLoading && <CommentLoader />}
+          {(isLoading || isFetchingNextPage) && <CommentLoader />}
           {isError && (
             <div className='flex min-h-20 items-center justify-center'>
               <p className='text-muted-foreground text-sm'>
