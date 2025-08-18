@@ -1,7 +1,7 @@
 import { likesSessions, posts, sum } from '@tszhong0411/db'
 
 import { publicProcedure } from '../root'
-import { likesStatsSchema, viewsStatsSchema } from '../schemas/blog'
+import { likesStatsSchema, viewsStatsSchema } from '../schemas/blog.schema'
 
 export const viewsStats = publicProcedure.output(viewsStatsSchema).handler(async ({ context }) => {
   const [result] = await context.db

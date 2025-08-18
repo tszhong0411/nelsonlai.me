@@ -6,7 +6,7 @@ import { getSessionId } from '@/utils/get-session-id'
 
 import { cache } from '../cache'
 import { publicProcedure } from '../root'
-import { getLikeInputSchema, incrementLikeInputSchema, likeSchema } from '../schemas/likes'
+import { getLikeInputSchema, incrementLikeInputSchema, likeSchema } from '../schemas/likes.schema'
 
 export const countLike = publicProcedure
   .input(getLikeInputSchema)

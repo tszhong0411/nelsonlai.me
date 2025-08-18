@@ -2,7 +2,7 @@ import { comments, users, votes } from '@tszhong0411/db'
 import { createSelectSchema } from 'drizzle-zod'
 import { z } from 'zod'
 
-import { infiniteQuerySchema } from './common'
+import { infiniteQuerySchema } from './common.schema'
 
 export const listCommentsInputSchema = infiniteQuerySchema.extend({
   slug: z.string().min(1),

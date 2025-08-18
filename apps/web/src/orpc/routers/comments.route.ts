@@ -31,8 +31,8 @@ import {
   createCommentInputSchema,
   deleteCommentInputSchema,
   listCommentsInputSchema
-} from '../schemas/comments'
-import { emptyOutputSchema } from '../schemas/common'
+} from '../schemas/comments.schema'
+import { emptyOutputSchema } from '../schemas/common.schema'
 
 export const listComments = publicProcedure
   .input(listCommentsInputSchema)

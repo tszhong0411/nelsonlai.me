@@ -25,7 +25,7 @@ import {
   listAllCommentsSchema,
   listAllUsersInputSchema,
   listAllUsersSchema
-} from '../schemas/admin'
+} from '../schemas/admin.schema'
 
 const getParentIdFilter = (parentId: Array<(typeof COMMENT_TYPES)[number]>) => {
   const conditions: SQLWrapper[] = []

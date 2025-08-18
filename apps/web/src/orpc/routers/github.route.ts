@@ -2,7 +2,7 @@ import { GITHUB_USERNAME } from '@/lib/constants'
 import { octokit } from '@/lib/octokit'
 
 import { publicProcedure } from '../root'
-import { githubStatsSchema } from '../schemas/github'
+import { githubStatsSchema } from '../schemas/github.schema'
 
 export const githubStats = publicProcedure.output(githubStatsSchema).handler(async () => {
   let stars = 0

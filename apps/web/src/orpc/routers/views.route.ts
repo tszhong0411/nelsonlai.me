@@ -3,7 +3,7 @@ import { eq, posts, sql } from '@tszhong0411/db'
 
 import { cache } from '../cache'
 import { publicProcedure } from '../root'
-import { getViewInputSchema, incrementViewInputSchema, viewSchema } from '../schemas/views'
+import { getViewInputSchema, incrementViewInputSchema, viewSchema } from '../schemas/views.schema'
 
 export const countView = publicProcedure
   .input(getViewInputSchema)

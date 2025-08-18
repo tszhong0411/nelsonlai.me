@@ -2,7 +2,7 @@ import { guestbook, users } from '@tszhong0411/db'
 import { createSelectSchema } from 'drizzle-zod'
 import { z } from 'zod'
 
-import { infiniteQuerySchema } from './common'
+import { infiniteQuerySchema } from './common.schema'
 
 export const messageSchema = createSelectSchema(guestbook).pick({
   id: true,

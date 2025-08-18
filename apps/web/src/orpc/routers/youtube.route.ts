@@ -1,7 +1,7 @@
 import { env } from '@tszhong0411/env'
 
 import { publicProcedure } from '../root'
-import { youtubeStatsSchema } from '../schemas/youtube'
+import { youtubeStatsSchema } from '../schemas/youtube.schema'
 
 export const youtubeStats = publicProcedure.output(youtubeStatsSchema).handler(async () => {
   const res = await fetch(

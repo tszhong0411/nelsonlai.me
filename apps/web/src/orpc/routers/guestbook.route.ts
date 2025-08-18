@@ -7,14 +7,14 @@ import { isProduction } from '@/lib/constants'
 import { getDefaultImage } from '@/utils/get-default-image'
 
 import { protectedProcedure, publicProcedure } from '../root'
-import { emptyOutputSchema } from '../schemas/common'
+import { emptyOutputSchema } from '../schemas/common.schema'
 import {
   createMessageInputSchema,
   deleteMessageInputSchema,
   guestbookInputSchema,
   guestbookSchema,
   messageSchema
-} from '../schemas/guestbook'
+} from '../schemas/guestbook.schema'
 
 export const listMessages = publicProcedure
   .input(guestbookInputSchema)

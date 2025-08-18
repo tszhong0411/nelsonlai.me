@@ -1,7 +1,7 @@
 import { env } from '@tszhong0411/env'
 
 import { publicProcedure } from '../root'
-import { spotifyStatsSchema } from '../schemas/spotify'
+import { spotifyStatsSchema } from '../schemas/spotify.schema'
 
 const CLIENT_ID = env.SPOTIFY_CLIENT_ID
 const CLIENT_SECRET = env.SPOTIFY_CLIENT_SECRET
