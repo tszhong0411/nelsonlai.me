@@ -64,7 +64,6 @@
     "lucide-react": "^0.513.0",
     "merge-refs": "^2.0.0",
     "next-themes": "^0.4.6",
-    "nuqs": "^2.4.3",
     "react-day-picker": "8.10.1",
     "react-hook-form": "^7.57.0",
     "react-resizable-panels": "^3.0.2",
@@ -82,6 +81,7 @@
     "@types/react": "^19.1.6",
     "@types/react-dom": "^19.1.6",
     "next": "^15.3.3",
+    "nuqs": "^2.4.3",
     "postcss-load-config": "^6.0.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
@@ -91,7 +91,13 @@
   "peerDependencies": {
     "@tszhong0411/utils": ">=0",
     "next": "^15",
+    "nuqs": "^2.4.3",
     "react": "^19",
     "react-dom": "^19"
+  },
+  "peerDependenciesMeta": {
+    "nuqs": {
+      "optional": true
+    }
   }
 }
