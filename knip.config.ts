@@ -27,7 +27,9 @@ const config: KnipConfig = {
       entry: ['src/seed.ts', 'src/reset.ts']
     },
     'packages/ui': {
-      ignore: ['src/styles.css']
+      ignore: ['src/styles.css'],
+      // optional peer dependencies
+      ignoreDependencies: ['nuqs']
     },
     'packages/emails': {
       ignoreDependencies: ['tailwindcss'], // for tailwindcss intellisense
