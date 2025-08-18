@@ -50,12 +50,11 @@ export const listMessages = publicProcedure
 
     return {
       messages: result,
-      nextCursor: result.at(-1)?.updatedAt ?? null
+      nextCursor: result.at(-1)?.updatedAt
     }
   })
 
 export const createMessage = protectedProcedure
-
   .input(createMessageInputSchema)
   .output(messageSchema)
   .handler(async ({ input, context }) => {

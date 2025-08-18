@@ -1,6 +1,5 @@
 'use client'
 
-import { useQuery } from '@tanstack/react-query'
 import { useLocale, useTranslations } from '@tszhong0411/i18n/client'
 import { buttonVariants } from '@tszhong0411/ui/components/button'
 import { cn } from '@tszhong0411/utils'
@@ -10,8 +9,8 @@ import { motion, useInView } from 'motion/react'
 import { useRef } from 'react'
 
 import { BlurImage } from '@/components/ui/blur-image'
+import { usePostLikeCount, usePostViewCount } from '@/hooks/queries/post.query'
 import { useFormattedDate } from '@/hooks/use-formatted-date'
-import { orpc } from '@/orpc/client'
 
 import Link from '../link'
 
@@ -110,8 +109,8 @@ const Card = (props: CardProps) => {
   const formattedDate = useFormattedDate(date)
   const t = useTranslations()
 
-  const viewsQuery = useQuery(orpc.posts.views.get.queryOptions({ input: { slug } }))
-  const likesQuery = useQuery(orpc.posts.likes.get.queryOptions({ input: { slug } }))
+  const viewsQuery = usePostViewCount({ slug })
+  const likesQuery = usePostLikeCount({ slug })
 
   return (
     <Link href={`/blog/${slug}`} className='shadow-feature-card group relative rounded-xl p-2'>

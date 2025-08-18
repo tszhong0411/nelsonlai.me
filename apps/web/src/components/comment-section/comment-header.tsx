@@ -1,7 +1,6 @@
 import type { ListCommentsInput } from '@/orpc/routers'
 
 import NumberFlow, { NumberFlowGroup } from '@number-flow/react'
-import { useQuery } from '@tanstack/react-query'
 import { useTranslations } from '@tszhong0411/i18n/client'
 import { Button } from '@tszhong0411/ui/components/button'
 import {
@@ -14,14 +13,14 @@ import {
 import { ListFilterIcon } from 'lucide-react'
 
 import { useCommentsContext } from '@/contexts/comments.context'
-import { orpc } from '@/orpc/client'
+import { usePostCommentCount, usePostReplyCount } from '@/hooks/queries/post.query'
 
 const CommentHeader = () => {
   const { slug, sort, setSort } = useCommentsContext()
   const t = useTranslations()
 
-  const commentCountQuery = useQuery(orpc.posts.comments.count.queryOptions({ input: { slug } }))
-  const replyCountQuery = useQuery(orpc.posts.replies.count.queryOptions({ input: { slug } }))
+  const commentCountQuery = usePostCommentCount({ slug })
+  const replyCountQuery = usePostReplyCount({ slug })
 
   return (
     <div className='flex items-center justify-between px-1'>

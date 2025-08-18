@@ -25,7 +25,7 @@ export const commentsSchema = z.object({
       votes: z.array(createSelectSchema(votes))
     })
   ),
-  nextCursor: z.date().nullable()
+  nextCursor: z.date().optional()
 })
 
 export const createCommentInputSchema = z.object({

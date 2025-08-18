@@ -96,7 +96,6 @@
     "@types/rss": "^0.0.32",
     "@types/tinycolor2": "^1.4.6",
     "@vitejs/plugin-react": "^4.5.1",
-    "consola": "^3.4.2",
     "schema-dts": "^1.1.5",
     "sharp": "^0.34.2",
     "tailwindcss": "^4.1.8"

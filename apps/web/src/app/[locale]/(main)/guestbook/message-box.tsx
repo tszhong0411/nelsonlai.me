@@ -1,7 +1,6 @@
 'use client'
 
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useMutation } from '@tanstack/react-query'
 import { useTranslations } from '@tszhong0411/i18n/client'
 import { useRouter } from '@tszhong0411/i18n/routing'
 import { Avatar, AvatarFallback, AvatarImage } from '@tszhong0411/ui/components/avatar'
@@ -19,18 +18,16 @@ import { getAbbreviation } from '@tszhong0411/utils'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
+import { useCreateGuestbookMessage } from '@/hooks/queries/guestbook.query'
 import { signOut, type User } from '@/lib/auth-client'
-import { useORPCInvalidator } from '@/lib/orpc-invalidator'
-import { orpc } from '@/orpc/client'
 import { getDefaultImage } from '@/utils/get-default-image'
 
-type FormProps = {
+type MessageBoxProps = {
   user: User
 }
 
-const MessageBox = (props: FormProps) => {
+const MessageBox = (props: MessageBoxProps) => {
   const { user } = props
-  const invalidator = useORPCInvalidator()
   const t = useTranslations()
   const router = useRouter()
 
@@ -47,25 +44,13 @@ const MessageBox = (props: FormProps) => {
     }
   })
 
-  const guestbookMutation = useMutation(
-    orpc.guestbook.create.mutationOptions({
-      onSuccess: () => {
-        form.reset()
-        toast.success(t('guestbook.create-message-successfully'))
-      },
-      onSettled: async () => {
-        await invalidator.guestbook.invalidateAll()
-      },
-      onError: (error) => {
-        toast.error(error.message)
-      }
-    })
-  )
+  const { mutate: createMessage, isPending: isCreating } = useCreateGuestbookMessage(() => {
+    form.reset()
+    toast.success(t('guestbook.create-message-successfully'))
+  })
 
   const onSubmit = (values: z.infer<typeof guestbookFormSchema>) => {
-    guestbookMutation.mutate({
-      message: values.message
-    })
+    createMessage({ message: values.message })
   }
 
   const defaultImage = getDefaultImage(user.id)
@@ -111,8 +96,8 @@ const MessageBox = (props: FormProps) => {
             </Button>
             <Button
               type='submit'
-              disabled={guestbookMutation.isPending}
-              aria-disabled={guestbookMutation.isPending}
+              disabled={isCreating}
+              aria-disabled={isCreating}
               data-testid='guestbook-submit-button'
             >
               {t('guestbook.submit')}

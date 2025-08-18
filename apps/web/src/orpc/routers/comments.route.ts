@@ -35,7 +35,6 @@ import {
 import { emptyOutputSchema } from '../schemas/common'
 
 export const listComments = publicProcedure
-
   .input(listCommentsInputSchema)
   .output(commentsSchema)
   .handler(async ({ input, context }) => {
@@ -111,12 +110,11 @@ export const listComments = publicProcedure
 
     return {
       comments: result,
-      nextCursor: result.at(-1)?.createdAt ?? null
+      nextCursor: result.at(-1)?.createdAt
     }
   })
 
 export const createComment = protectedProcedure
-
   .input(createCommentInputSchema)
   .output(commentSchema)
   .handler(async ({ input, context }) => {
@@ -210,7 +208,6 @@ export const createComment = protectedProcedure
   })
 
 export const deleteComment = protectedProcedure
-
   .input(deleteCommentInputSchema)
   .output(emptyOutputSchema)
   .handler(async ({ input, context }) => {
@@ -264,7 +261,6 @@ export const deleteComment = protectedProcedure
   })
 
 export const countComments = publicProcedure
-
   .input(countCommentsInputSchema)
   .output(countCommentsSchema)
   .handler(async ({ input, context }) => {

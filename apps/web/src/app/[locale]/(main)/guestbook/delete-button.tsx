@@ -1,6 +1,5 @@
 import type { ListMessagesOutput } from '@/orpc/routers'
 
-import { useMutation } from '@tanstack/react-query'
 import { useTranslations } from '@tszhong0411/i18n/client'
 import {
   AlertDialog,
@@ -16,8 +15,7 @@ import {
 import { Button, buttonVariants } from '@tszhong0411/ui/components/button'
 import { toast } from '@tszhong0411/ui/components/sonner'
 
-import { useORPCInvalidator } from '@/lib/orpc-invalidator'
-import { orpc } from '@/orpc/client'
+import { useDeleteGuestbookMessage } from '@/hooks/queries/guestbook.query'
 
 type DeleteButtonProps = {
   message: ListMessagesOutput['messages'][number]
@@ -25,25 +23,14 @@ type DeleteButtonProps = {
 
 const DeleteButton = (props: DeleteButtonProps) => {
   const { message } = props
-  const invalidator = useORPCInvalidator()
   const t = useTranslations()
 
-  const guestbookMutation = useMutation(
-    orpc.guestbook.delete.mutationOptions({
-      onSuccess: () => {
-        toast.success(t('guestbook.delete-message-successfully'))
-      },
-      onSettled: async () => {
-        await invalidator.guestbook.invalidateAll()
-      },
-      onError: (error) => {
-        toast.error(error.message)
-      }
-    })
-  )
+  const { mutate: deleteMessage, isPending: isDeleting } = useDeleteGuestbookMessage(() => {
+    toast.success(t('guestbook.delete-message-successfully'))
+  })
 
   const handleDeleteMessage = (id: string) => {
-    guestbookMutation.mutate({ id })
+    deleteMessage({ id })
   }
 
   return (
@@ -52,8 +39,8 @@ const DeleteButton = (props: DeleteButtonProps) => {
         <AlertDialogTrigger asChild>
           <Button
             variant='destructive'
-            disabled={guestbookMutation.isPending}
-            aria-disabled={guestbookMutation.isPending}
+            disabled={isDeleting}
+            aria-disabled={isDeleting}
             data-testid='guestbook-delete-button'
           >
             {t('common.delete')}

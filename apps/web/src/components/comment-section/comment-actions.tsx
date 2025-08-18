@@ -1,5 +1,4 @@
 import NumberFlow from '@number-flow/react'
-import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { useTranslations } from '@tszhong0411/i18n/client'
 import { Button, buttonVariants } from '@tszhong0411/ui/components/button'
 import { toast } from '@tszhong0411/ui/components/sonner'
@@ -9,12 +8,8 @@ import { ChevronDownIcon, MessageSquareIcon, ThumbsDownIcon, ThumbsUpIcon } from
 
 import { useCommentContext } from '@/contexts/comment.context'
 import { useCommentsContext } from '@/contexts/comments.context'
-import { useVotesContext } from '@/contexts/votes.context'
-import { useCommentParams } from '@/hooks/use-comment-params'
+import { useVotePostComment } from '@/hooks/queries/post.query'
 import { useSession } from '@/lib/auth-client'
-import { useORPCInvalidator } from '@/lib/orpc-invalidator'
-import { oRPCQueryKeys } from '@/lib/orpc-query-keys'
-import { orpc } from '@/orpc/client'
 
 const voteVariants = cva({
   base: buttonVariants({
@@ -30,88 +25,12 @@ const voteVariants = cva({
 })
 
 const CommentActions = () => {
-  const { slug, sort } = useCommentsContext()
+  const { slug } = useCommentsContext()
   const { comment, setIsReplying, isOpenReplies, setIsOpenReplies } = useCommentContext()
-  const { increment, decrement, getCount } = useVotesContext()
-
-  const [params] = useCommentParams()
   const { data: session } = useSession()
-  const queryClient = useQueryClient()
-  const invalidator = useORPCInvalidator()
   const t = useTranslations()
 
-  const infiniteCommentsParams = {
-    slug,
-    sort: comment.parentId ? 'oldest' : sort,
-    parentId: comment.parentId ?? undefined,
-    type: comment.parentId ? 'replies' : 'comments',
-    highlightedCommentId: comment.parentId
-      ? (params.reply ?? undefined)
-      : (params.comment ?? undefined)
-  } as const
-
-  const votesSetMutation = useMutation(
-    orpc.posts.votes.create.mutationOptions({
-      onMutate: async (newData) => {
-        increment()
-
-        const queryKey = oRPCQueryKeys.comments.list(infiniteCommentsParams)
-        await queryClient.cancelQueries({ queryKey })
-
-        const previousData = queryClient.getQueryData(queryKey)
-
-        queryClient.setQueryData(queryKey, (oldData) => {
-          if (!oldData) return { pages: [], pageParams: [] }
-
-          return {
-            ...oldData,
-            pages: oldData.pages.map((page) => ({
-              ...page,
-              comments: page.comments.map((c) => {
-                if (c.id === newData.id) {
-                  let likeCount: number = c.likeCount
-                  let dislikeCount: number = c.dislikeCount
-
-                  if (c.liked === true) likeCount--
-                  if (c.liked === false) dislikeCount--
-
-                  if (newData.like === true) likeCount++
-                  if (newData.like === false) dislikeCount++
-
-                  return {
-                    ...c,
-                    likeCount,
-                    dislikeCount,
-                    liked: newData.like
-                  }
-                }
-
-                return c
-              })
-            }))
-          }
-        })
-
-        return { previousData }
-      },
-      onError: (error, _, ctx) => {
-        if (ctx?.previousData) {
-          queryClient.setQueryData(
-            oRPCQueryKeys.comments.list(infiniteCommentsParams),
-            ctx.previousData
-          )
-        }
-        toast.error(error.message)
-      },
-      onSettled: async () => {
-        decrement()
-
-        if (getCount() === 0) {
-          await invalidator.combinations.afterVoteComment(infiniteCommentsParams)
-        }
-      }
-    })
-  )
+  const { mutate: voteComment, isPending: isVoting } = useVotePostComment({ slug })
 
   const isAuthenticated = session !== null
 
@@ -120,7 +39,7 @@ const CommentActions = () => {
       toast.error(t('blog.comments.need-logged-in-to-vote'))
       return
     }
-    votesSetMutation.mutate({ id: comment.id, like: like === comment.liked ? null : like })
+    voteComment({ id: comment.id, like: like === comment.liked ? null : like })
   }
 
   const hasReplies = !comment.parentId && comment.replyCount > 0
@@ -135,6 +54,7 @@ const CommentActions = () => {
             active: comment.liked === true
           })}
           aria-label={t('blog.comments.like')}
+          disabled={isVoting}
         >
           <ThumbsUpIcon />
           <NumberFlow value={comment.likeCount} />
@@ -146,6 +66,7 @@ const CommentActions = () => {
             active: comment.liked === false
           })}
           aria-label={t('blog.comments.dislike')}
+          disabled={isVoting}
         >
           <ThumbsDownIcon />
           <NumberFlow value={comment.dislikeCount} />

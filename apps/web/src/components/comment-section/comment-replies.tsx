@@ -1,14 +1,13 @@
 'use client'
 
-import { useInfiniteQuery } from '@tanstack/react-query'
 import { useTranslations } from '@tszhong0411/i18n/client'
 import { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 
 import { useCommentContext } from '@/contexts/comment.context'
 import { useCommentsContext } from '@/contexts/comments.context'
+import { usePostComments } from '@/hooks/queries/post.query'
 import { useCommentParams } from '@/hooks/use-comment-params'
-import { orpc } from '@/orpc/client'
 
 import Comment from './comment'
 import CommentLoader from './comment-loader'
@@ -19,9 +18,9 @@ const CommentReplies = () => {
   const [params] = useCommentParams()
   const t = useTranslations()
 
-  const { status, data, fetchNextPage, hasNextPage, isFetchingNextPage } = useInfiniteQuery(
-    orpc.posts.comments.list.infiniteOptions({
-      input: (pageParam: Date | undefined) => ({
+  const { isSuccess, isLoading, isError, data, fetchNextPage, hasNextPage, isFetchingNextPage } =
+    usePostComments(
+      (pageParam) => ({
         slug,
         sort: 'oldest',
         parentId: comment.id,
@@ -29,11 +28,8 @@ const CommentReplies = () => {
         highlightedCommentId: params.reply ?? undefined,
         cursor: pageParam
       }),
-      initialPageParam: undefined,
-      getNextPageParam: (lastPage) => lastPage.nextCursor,
-      enabled: isOpenReplies
-    })
-  )
+      isOpenReplies
+    )
 
   const { ref, inView } = useInView()
 
@@ -45,10 +41,6 @@ const CommentReplies = () => {
     if (params.comment === comment.id) setIsOpenReplies(true)
   }, [comment.id, params.comment, setIsOpenReplies])
 
-  const isSuccess = status === 'success'
-  const isError = status === 'error'
-  const isLoading = status === 'pending' || isFetchingNextPage
-
   return (
     <>
       {isOpenReplies && (
@@ -57,6 +49,7 @@ const CommentReplies = () => {
             data.pages.map((page) =>
               page.comments.map((reply) => <Comment key={reply.id} comment={reply} />)
             )}
+          {(isLoading || isFetchingNextPage) && <CommentLoader />}
           {isError && (
             <div className='flex min-h-20 items-center justify-center'>
               <p className='text-muted-foreground text-sm'>
@@ -64,7 +57,6 @@ const CommentReplies = () => {
               </p>
             </div>
           )}
-          {isLoading && <CommentLoader />}
           <span ref={ref} className='invisible' />
         </div>
       )}

@@ -1,17 +1,17 @@
 import type { Inputs, Outputs } from '../client'
 
-import { listAllComments, listAllUsers } from './admin'
-import { likesStats, viewsStats } from './blog'
-import { countComments, createComment, deleteComment, listComments } from './comments'
-import { githubStats } from './github'
-import { createMessage, deleteMessage, listMessages } from './guestbook'
-import { getLike, incrementLike } from './likes'
-import { countReplies } from './replies'
-import { spotifyStats } from './spotify'
-import { getView, incrementView } from './views'
-import { createVote } from './votes'
-import { wakatimeStats } from './wakatime'
-import { youtubeStats } from './youtube'
+import { listAllComments, listAllUsers } from './admin.route'
+import { likesStats, viewsStats } from './blog.route'
+import { countComments, createComment, deleteComment, listComments } from './comments.route'
+import { githubStats } from './github.route'
+import { createMessage, deleteMessage, listMessages } from './guestbook.route'
+import { countLike, incrementLike } from './likes.route'
+import { countReplies } from './replies.route'
+import { spotifyStats } from './spotify.route'
+import { countView, incrementView } from './views.route'
+import { createVote } from './votes.route'
+import { wakatimeStats } from './wakatime.route'
+import { youtubeStats } from './youtube.route'
 
 export const router = {
   stats: {
@@ -26,11 +26,11 @@ export const router = {
   },
   posts: {
     views: {
-      get: getView,
+      count: countView,
       increment: incrementView
     },
     likes: {
-      get: getLike,
+      count: countLike,
       increment: incrementLike
     },
     comments: {
@@ -65,5 +65,5 @@ export type ListMessagesOutput = Outputs['guestbook']['list']
 export type ListAllCommentsOutput = Outputs['admin']['listAllComments']
 export type ListAllUsersOutput = Outputs['admin']['listAllUsers']
 
-export type GetViewsOutput = Outputs['posts']['views']['get']
-export type GetLikesOutput = Outputs['posts']['likes']['get']
+export type GetViewsOutput = Outputs['posts']['views']['count']
+export type GetLikesOutput = Outputs['posts']['likes']['count']

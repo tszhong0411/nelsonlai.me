@@ -1,5 +1,11 @@
 import { StandardRPCJsonSerializer } from '@orpc/client/standard'
-import { defaultShouldDehydrateQuery, QueryClient } from '@tanstack/react-query'
+import {
+  defaultShouldDehydrateQuery,
+  MutationCache,
+  QueryCache,
+  QueryClient
+} from '@tanstack/react-query'
+import { toast } from '@tszhong0411/ui/components/sonner'
 
 const serializer = new StandardRPCJsonSerializer()
 
@@ -21,6 +27,16 @@ export const makeQueryClient = () => {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-argument -- safe
         deserializeData: (data) => serializer.deserialize(data.json, data.meta)
       }
-    }
+    },
+    queryCache: new QueryCache({
+      onError: (error) => {
+        toast.error(error.message)
+      }
+    }),
+    mutationCache: new MutationCache({
+      onError: (error) => {
+        toast.error(error.message)
+      }
+    })
   })
 }

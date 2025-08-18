@@ -2,12 +2,11 @@
 
 import type { Post } from 'content-collections'
 
-import { useQuery } from '@tanstack/react-query'
 import { useTranslations } from '@tszhong0411/i18n/client'
 
 import { BlurImage } from '@/components/ui/blur-image'
+import { usePostLikeCount, usePostViewCount } from '@/hooks/queries/post.query'
 import { useFormattedDate } from '@/hooks/use-formatted-date'
-import { orpc } from '@/orpc/client'
 
 import Link from './link'
 
@@ -34,8 +33,8 @@ const PostCard = (props: PostCardProps) => {
   const formattedDate = useFormattedDate(date)
   const t = useTranslations()
 
-  const viewsQuery = useQuery(orpc.posts.views.get.queryOptions({ input: { slug } }))
-  const likesQuery = useQuery(orpc.posts.likes.get.queryOptions({ input: { slug } }))
+  const viewsQuery = usePostViewCount({ slug })
+  const likesQuery = usePostLikeCount({ slug })
 
   return (
     <Link href={`/blog/${slug}`} className='shadow-feature-card group rounded-xl px-2 py-4'>

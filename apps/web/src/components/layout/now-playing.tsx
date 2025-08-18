@@ -1,18 +1,17 @@
 'use client'
 
-import { useQuery } from '@tanstack/react-query'
 import { useTranslations } from '@tszhong0411/i18n/client'
 
-import { orpc } from '@/orpc/client'
+import { useSpotifyStat } from '@/hooks/queries/stat.query'
 
 import Link from '../link'
 
 const NowPlaying = () => {
-  const { status, data } = useQuery(orpc.stats.spotify.queryOptions())
+  const { isSuccess, isLoading, isError, data } = useSpotifyStat()
   const t = useTranslations()
 
-  const isPlaying = status === 'success' && data.isPlaying && data.songUrl
-  const notListening = status === 'success' && (!data.isPlaying || !data.songUrl)
+  const isPlaying = isSuccess && data.isPlaying && data.songUrl
+  const notListening = isSuccess && (!data.isPlaying || !data.songUrl)
 
   return (
     <div className='flex items-center gap-4'>
@@ -31,13 +30,13 @@ const NowPlaying = () => {
 
       <div className='inline-flex w-full items-center justify-center gap-1 text-sm md:justify-start'>
         <p>
-          {status === 'pending' && t('layout.now-playing.loading')}
-          {status === 'error' && t('layout.now-playing.error')}
           {isPlaying && (
             <Link href={data.songUrl}>
               {data.name} - {data.artist}
             </Link>
           )}
+          {isLoading && t('layout.now-playing.loading')}
+          {isError && t('layout.now-playing.error')}
           {notListening && t('layout.now-playing.not-listening')}
         </p>
       </div>

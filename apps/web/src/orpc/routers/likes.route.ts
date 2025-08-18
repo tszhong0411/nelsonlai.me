@@ -8,7 +8,7 @@ import { cache } from '../cache'
 import { publicProcedure } from '../root'
 import { getLikeInputSchema, incrementLikeInputSchema, likeSchema } from '../schemas/likes'
 
-export const getLike = publicProcedure
+export const countLike = publicProcedure
   .input(getLikeInputSchema)
   .output(likeSchema)
   .handler(async ({ input, context }) => {

@@ -1,6 +1,5 @@
 'use client'
 
-import { keepPreviousData, useInfiniteQuery } from '@tanstack/react-query'
 import { useTranslations } from '@tszhong0411/i18n/client'
 import { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
@@ -11,8 +10,8 @@ import githubLightDefault from 'shiki/themes/github-light-default.mjs'
 import { useShallow } from 'zustand/react/shallow'
 
 import { useCommentsContext } from '@/contexts/comments.context'
+import { usePostComments } from '@/hooks/queries/post.query'
 import { useCommentParams } from '@/hooks/use-comment-params'
-import { orpc } from '@/orpc/client'
 import { useHighlighterStore } from '@/stores/highlighter.store'
 
 import Comment from './comment'
@@ -30,20 +29,14 @@ const CommentList = () => {
     }))
   )
 
-  const { status, data, fetchNextPage, hasNextPage, isFetchingNextPage } = useInfiniteQuery(
-    orpc.posts.comments.list.infiniteOptions({
-      input: (pageParam: Date | undefined) => ({
-        slug,
-        sort,
-        type: 'comments',
-        highlightedCommentId: params.comment ?? undefined,
-        cursor: pageParam
-      }),
-      initialPageParam: undefined,
-      getNextPageParam: (lastPage) => lastPage.nextCursor,
-      placeholderData: keepPreviousData
-    })
-  )
+  const { isSuccess, isLoading, isError, data, fetchNextPage, hasNextPage, isFetchingNextPage } =
+    usePostComments((pageParam) => ({
+      slug,
+      sort,
+      type: 'comments',
+      highlightedCommentId: params.comment ?? undefined,
+      cursor: pageParam
+    }))
 
   const { ref, inView } = useInView()
 
@@ -63,10 +56,7 @@ const CommentList = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps -- only run once
   }, [])
 
-  const isSuccess = status === 'success'
-  const isError = status === 'error'
-  const isLoading = status === 'pending' || isFetchingNextPage
-  const noComments = status === 'success' && data.pages[0]?.comments.length === 0
+  const noComments = isSuccess && data.pages[0]?.comments.length === 0
 
   return (
     <>
@@ -76,11 +66,7 @@ const CommentList = () => {
           data.pages.map((page) =>
             page.comments.map((comment) => <Comment key={comment.id} comment={comment} />)
           )}
-        {noComments && (
-          <div className='flex min-h-20 items-center justify-center'>
-            <p className='text-muted-foreground text-sm'>{t('blog.comments.no-comments')}</p>
-          </div>
-        )}
+        {(isLoading || isFetchingNextPage) && <CommentLoader />}
         {isError && (
           <div className='flex min-h-20 items-center justify-center'>
             <p className='text-muted-foreground text-sm'>
@@ -88,7 +74,11 @@ const CommentList = () => {
             </p>
           </div>
         )}
-        {isLoading && <CommentLoader />}
+        {noComments && (
+          <div className='flex min-h-20 items-center justify-center'>
+            <p className='text-muted-foreground text-sm'>{t('blog.comments.no-comments')}</p>
+          </div>
+        )}
         <span ref={ref} className='invisible' />
       </div>
     </>

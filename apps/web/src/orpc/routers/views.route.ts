@@ -5,7 +5,7 @@ import { cache } from '../cache'
 import { publicProcedure } from '../root'
 import { getViewInputSchema, incrementViewInputSchema, viewSchema } from '../schemas/views'
 
-export const getView = publicProcedure
+export const countView = publicProcedure
   .input(getViewInputSchema)
   .output(viewSchema)
   .handler(async ({ input, context }) => {
