@@ -57,7 +57,7 @@ const LikeButton = (props: LikeButtonProps) => {
   const handleLikeButtonClick = () => {
     if (isLoading || !data) return
     if (data.currentUserLikes + cacheCount >= 3) {
-      toast.error(t('blog.like-limit-reached'))
+      toast.error(t('error.like-limit-reached'))
       return
     }
 

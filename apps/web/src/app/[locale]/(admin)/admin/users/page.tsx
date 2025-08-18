@@ -23,7 +23,7 @@ const Page = () => {
         <UsersTable data={data.users} pageCount={data.pageCount} roleCounts={data.roleCounts} />
       )}
       {isLoading && <DataTableSkeleton columnCount={4} rowCount={10} filterCount={3} />}
-      {isError && <div>{t('admin.table.users.failed-to-fetch-users-data')}</div>}
+      {isError && <div>{t('error.failed-to-fetch-users-data')}</div>}
     </div>
   )
 }

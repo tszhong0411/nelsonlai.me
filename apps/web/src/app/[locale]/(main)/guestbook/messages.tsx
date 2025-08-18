@@ -62,7 +62,7 @@ const Messages = () => {
       <span ref={ref} className='invisible' />
       {isError && (
         <div className='flex min-h-24 items-center justify-center'>
-          <p className='text-muted-foreground text-sm'>{t('guestbook.failed-to-load-messages')}</p>
+          <p className='text-muted-foreground text-sm'>{t('error.failed-to-load-messages')}</p>
         </div>
       )}
       {noMessages && (

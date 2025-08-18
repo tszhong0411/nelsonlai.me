@@ -23,17 +23,12 @@
     "table": {
       "comments": {
         "body": "内容",
-        "failed-to-fetch-comments-data": "无法获取评论数据。请刷新页面。",
-        "filter-body": "过滤内容...",
-        "filter-userId": "过滤用户 ID...",
         "type": "类型",
         "userId": "用户 ID"
       },
       "createdAt": "创建时间",
       "users": {
         "email": "电子邮件",
-        "failed-to-fetch-users-data": "无法获取用户数据。请刷新页面。",
-        "filter-names": "过滤名称...",
         "name": "名称",
         "role": "角色"
       }
@@ -42,7 +37,6 @@
   "blog": {
     "comments": {
       "author": "作者",
-      "comment-cannot-be-empty": "评论不能为空",
       "comment-posted": "评论已发布",
       "comments": "评论",
       "confirm-delete-comment": "您确定要删除此评论吗？此动作无法复原。",
@@ -50,12 +44,9 @@
       "delete-a-comment": "删除评论",
       "deleted-a-comment": "已删除评论",
       "dislike": "倒赞",
-      "failed-to-load-comments": "无法载入评论。请刷新页面。",
-      "failed-to-load-replies": "无法载入回复。请刷新页面。",
       "highlighted-comment": "已标注评论",
       "like": "赞",
       "link-copied": "链接已复制到剪贴板",
-      "need-logged-in-to-vote": "您必须登入才能投票评论",
       "newest": "最新",
       "no-comments": "没有评论",
       "oldest": "最旧",
@@ -63,7 +54,6 @@
       "placeholder": "留下评论",
       "replies": "回复",
       "reply": "回复",
-      "reply-cannot-be-empty": "回复不能为空",
       "reply-posted": "回复已发布",
       "reply-to-comment": "回复评论",
       "send-comment": "送出评论",
@@ -85,7 +75,6 @@
       "written-by": "撰写者"
     },
     "like": "赞",
-    "like-limit-reached": "您只能对每篇文章点赞 3 次",
     "like-this-post": "喜欢这个文章",
     "on-this-page": "目录",
     "title": "博客"
@@ -110,7 +99,6 @@
     "error": "错误",
     "likes": "{count} 点赞",
     "sign-in": "登入",
-    "sign-in-error": "登入失败。请再试一次。",
     "sign-out": "登出",
     "views": "{count} 浏览次数"
   },
@@ -142,8 +130,22 @@
     }
   },
   "error": {
+    "failed-to-fetch-comments-data": "无法获取评论数据。请刷新页面。",
+    "failed-to-fetch-users-data": "无法获取用户数据。请刷新页面。",
+    "comment-cannot-be-empty": "评论不能为空",
+    "failed-to-load-comments": "无法载入评论。请刷新页面。",
+    "failed-to-load-replies": "无法载入回复。请刷新页面。",
+    "need-logged-in-to-vote": "您必须登入才能投票评论",
+    "reply-cannot-be-empty": "回复不能为空",
+    "like-limit-reached": "您只能对每篇文章点赞 3 次",
+    "sign-in-error": "登入失败。请再试一次。",
     "something-went-wrong": "出了一些问题！",
-    "try-again": "再试一次"
+    "try-again": "再试一次",
+    "failed-to-load-messages": "无法载入留言。请刷新页面。",
+    "message-cannot-be-empty": "留言不能为空",
+    "copy-to-clipboard-error": "无法复制到剪贴板。请再试一次！",
+    "now-playing-error": "无法获取 Spotify 资料",
+    "not-found": "找不到页面！"
   },
   "guestbook": {
     "create-message-successfully": "成功发布留言",
@@ -153,8 +155,6 @@
     },
     "delete-message-successfully": "成功删除留言",
     "description": "在我的留言板上留下您的想法。您可以在这里告诉我任何事情！",
-    "failed-to-load-messages": "无法载入留言。请刷新页面。",
-    "message-cannot-be-empty": "留言不能为空",
     "no-messages": "没有留言，快来成为第一位留言者！",
     "pinned": {
       "description": "感谢您造访我的网站。如果您有时间，我很乐意听取您对我作品的看法。请使用您的账户登入以留下评论。谢谢！",
@@ -206,8 +206,7 @@
   },
   "hook": {
     "copy-to-clipboard": {
-      "copied": "已复制到剪贴板！",
-      "error": "无法复制到剪贴板。请再试一次！"
+      "copied": "已复制到剪贴板！"
     }
   },
   "layout": {
@@ -222,7 +221,6 @@
     "instagram": "Instagram",
     "links": "链接",
     "now-playing": {
-      "error": "无法获取 Spotify 资料",
       "loading": "载入中 ...",
       "not-listening": "未在收听 - Spotify"
     },
@@ -240,7 +238,6 @@
     "site-description": "Nelson Lai 是一位居住于香港的全栈工程师。他使用 React、Node.js 和现代技术构建高效且优雅的网站。",
     "site-title": "Nelson Lai - 一名全栈工程师"
   },
-  "not-found": "找不到页面！",
   "projects": {
     "description": "我的项目清单。所有东西都是用 ❤️ 制作",
     "title": "项目",

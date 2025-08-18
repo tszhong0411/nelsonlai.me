@@ -36,7 +36,7 @@ const NowPlaying = () => {
             </Link>
           )}
           {isLoading && t('layout.now-playing.loading')}
-          {isError && t('layout.now-playing.error')}
+          {isError && t('error.now-playing-error')}
           {notListening && t('layout.now-playing.not-listening')}
         </p>
       </div>

@@ -23,17 +23,12 @@
     "table": {
       "comments": {
         "body": "內容",
-        "failed-to-fetch-comments-data": "無法獲取評論資料。請重新整理頁面。",
-        "filter-body": "篩選內容...",
-        "filter-userId": "篩選使用者 ID...",
         "type": "類型",
         "userId": "使用者 ID"
       },
       "createdAt": "建立時間",
       "users": {
         "email": "電子郵件",
-        "failed-to-fetch-users-data": "無法獲取使用者資料。請重新整理頁面。",
-        "filter-names": "篩選名稱...",
         "name": "名稱",
         "role": "角色"
       }
@@ -42,7 +37,6 @@
   "blog": {
     "comments": {
       "author": "作者",
-      "comment-cannot-be-empty": "評論不能為空",
       "comment-posted": "評論已發佈",
       "comments": "評論",
       "confirm-delete-comment": "您確定要刪除此評論嗎？此動作無法復原。",
@@ -50,12 +44,9 @@
       "delete-a-comment": "刪除評論",
       "deleted-a-comment": "已刪除評論",
       "dislike": "倒讚",
-      "failed-to-load-comments": "無法載入評論。請重新整理頁面。",
-      "failed-to-load-replies": "無法載入回覆。請重新整理頁面。",
       "highlighted-comment": "已標註評論",
       "like": "讚",
       "link-copied": "連結已複製到剪貼簿",
-      "need-logged-in-to-vote": "您必須登入才能投票評論",
       "newest": "最新",
       "no-comments": "沒有評論",
       "oldest": "最舊",
@@ -63,7 +54,6 @@
       "placeholder": "留下評論",
       "replies": "回覆",
       "reply": "回覆",
-      "reply-cannot-be-empty": "回覆不能為空",
       "reply-posted": "回覆已發佈",
       "reply-to-comment": "回覆評論",
       "send-comment": "送出評論",
@@ -85,7 +75,6 @@
       "written-by": "撰寫者"
     },
     "like": "讚",
-    "like-limit-reached": "您只能對每篇文章按讚 3 次",
     "like-this-post": "喜歡這個文章",
     "on-this-page": "目錄",
     "title": "部落格"
@@ -110,7 +99,6 @@
     "error": "錯誤",
     "likes": "{count} 按讚",
     "sign-in": "登入",
-    "sign-in-error": "登入失敗。請再試一次。",
     "sign-out": "登出",
     "views": "{count} 瀏覽次數"
   },
@@ -142,8 +130,22 @@
     }
   },
   "error": {
+    "failed-to-fetch-comments-data": "無法獲取評論資料。請重新整理頁面。",
+    "failed-to-fetch-users-data": "無法獲取使用者資料。請重新整理頁面。",
+    "comment-cannot-be-empty": "評論不能為空",
+    "failed-to-load-comments": "無法載入評論。請重新整理頁面。",
+    "failed-to-load-replies": "無法載入回覆。請重新整理頁面。",
+    "need-logged-in-to-vote": "您必須登入才能投票評論",
+    "reply-cannot-be-empty": "回覆不能為空",
+    "like-limit-reached": "您只能對每篇文章按讚 3 次",
+    "sign-in-error": "登入失敗。請再試一次。",
     "something-went-wrong": "出了一些問題！",
-    "try-again": "再試一次"
+    "try-again": "再試一次",
+    "failed-to-load-messages": "無法載入留言。請重新整理頁面。",
+    "message-cannot-be-empty": "留言不能為空",
+    "copy-to-clipboard-error": "無法複製到剪貼簿。請再試一次！",
+    "now-playing-error": "無法獲取 Spotify 資料",
+    "not-found": "找不到頁面！"
   },
   "guestbook": {
     "create-message-successfully": "成功發佈留言",
@@ -153,8 +155,6 @@
     },
     "delete-message-successfully": "成功刪除留言",
     "description": "在我的留言板上留下您的想法。您可以在這裡告訴我任何事情！",
-    "failed-to-load-messages": "無法載入留言。請重新整理頁面。",
-    "message-cannot-be-empty": "留言不能為空",
     "no-messages": "沒有留言，快來成為第一位留言者！",
     "pinned": {
       "description": "感謝您造訪我的網站。如果您有時間，我很樂意聽取您對我作品的看法。請使用您的帳戶登入以留下評論。謝謝！",
@@ -206,8 +206,7 @@
   },
   "hook": {
     "copy-to-clipboard": {
-      "copied": "已複製到剪貼簿！",
-      "error": "無法複製到剪貼簿。請再試一次！"
+      "copied": "已複製到剪貼簿！"
     }
   },
   "layout": {
@@ -222,7 +221,6 @@
     "instagram": "Instagram",
     "links": "連結",
     "now-playing": {
-      "error": "無法獲取 Spotify 資料",
       "loading": "載入中 ...",
       "not-listening": "未在收聽 - Spotify"
     },
@@ -240,7 +238,6 @@
     "site-description": "Nelson Lai 是一位居住於香港的全端工程師。他使用 React、Node.js 和現代技術構建高效且優雅的網站。",
     "site-title": "Nelson Lai - 一名全端工程師"
   },
-  "not-found": "找不到頁面！",
   "projects": {
     "description": "我的專案清單。所有東西都是用 ❤️ 製作",
     "title": "專案",

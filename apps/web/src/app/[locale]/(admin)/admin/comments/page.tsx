@@ -27,7 +27,7 @@ const Page = () => {
         />
       )}
       {isLoading && <DataTableSkeleton columnCount={4} rowCount={10} filterCount={3} />}
-      {isError && <div>{t('admin.table.comments.failed-to-fetch-comments-data')}</div>}
+      {isError && <div>{t('error.failed-to-fetch-comments-data')}</div>}
     </div>
   )
 }

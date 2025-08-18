@@ -29,7 +29,7 @@ const CommentPost = () => {
     e?.preventDefault()
 
     if (!content) {
-      toast.error(t('blog.comments.comment-cannot-be-empty'))
+      toast.error(t('error.comment-cannot-be-empty'))
       return
     }
 

@@ -36,7 +36,7 @@ const CommentActions = () => {
 
   const handleVoteComment = (like: boolean) => {
     if (!isAuthenticated) {
-      toast.error(t('blog.comments.need-logged-in-to-vote'))
+      toast.error(t('error.need-logged-in-to-vote'))
       return
     }
     voteComment({ id: comment.id, like: like === comment.liked ? null : like })

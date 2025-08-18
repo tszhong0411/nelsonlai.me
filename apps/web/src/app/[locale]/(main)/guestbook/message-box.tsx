@@ -33,7 +33,7 @@ const MessageBox = (props: MessageBoxProps) => {
 
   const guestbookFormSchema = z.object({
     message: z.string().min(1, {
-      message: t('guestbook.message-cannot-be-empty')
+      message: t('error.message-cannot-be-empty')
     })
   })
 

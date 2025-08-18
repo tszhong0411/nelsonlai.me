@@ -74,7 +74,7 @@ const SignInDialog = () => {
         },
         onError: () => {
           setIsPending(false)
-          toast.error(t('common.sign-in-error'))
+          toast.error(t('error.sign-in-error'))
         },
         onRequest: () => {
           setIsPending(true)

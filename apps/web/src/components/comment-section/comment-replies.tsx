@@ -52,9 +52,7 @@ const CommentReplies = () => {
           {(isLoading || isFetchingNextPage) && <CommentLoader />}
           {isError && (
             <div className='flex min-h-20 items-center justify-center'>
-              <p className='text-muted-foreground text-sm'>
-                {t('blog.comments.failed-to-load-replies')}
-              </p>
+              <p className='text-muted-foreground text-sm'>{t('error.failed-to-load-replies')}</p>
             </div>
           )}
           <span ref={ref} className='invisible' />
