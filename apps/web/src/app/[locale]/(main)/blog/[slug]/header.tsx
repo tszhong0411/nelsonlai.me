@@ -3,16 +3,18 @@
 import type { Post } from 'content-collections'
 
 import NumberFlow from '@number-flow/react'
-import { useMutation, useQuery } from '@tanstack/react-query'
 import { useTranslations } from '@tszhong0411/i18n/client'
 import { useEffect, useRef } from 'react'
 
 import ImageZoom from '@/components/image-zoom'
 import Link from '@/components/link'
 import { BlurImage } from '@/components/ui/blur-image'
+import {
+  useIncrementPostViewCount,
+  usePostCommentCount,
+  usePostViewCount
+} from '@/hooks/queries/post.query'
 import { useFormattedDate } from '@/hooks/use-formatted-date'
-import { useORPCInvalidator } from '@/lib/orpc-invalidator'
-import { orpc } from '@/orpc/client'
 
 type HeaderProps = {
   post: Post
@@ -21,30 +23,21 @@ type HeaderProps = {
 const Header = (props: HeaderProps) => {
   const { post } = props
   const formattedDate = useFormattedDate(post.date)
-  const invalidator = useORPCInvalidator()
   const t = useTranslations()
 
-  const incrementMutation = useMutation(
-    orpc.posts.views.increment.mutationOptions({
-      onSettled: async () => {
-        await invalidator.views.invalidateBySlug(post.slug)
-      }
-    })
-  )
+  const viewCountQuery = usePostViewCount({ slug: post.slug })
+  const commentCountQuery = usePostCommentCount({ slug: post.slug, withReplies: true })
 
-  const viewCountQuery = useQuery(orpc.posts.views.get.queryOptions({ input: { slug: post.slug } }))
-  const commentCountQuery = useQuery(
-    orpc.posts.comments.count.queryOptions({ input: { slug: post.slug, withReplies: true } })
-  )
+  const { mutate: incrementPostView } = useIncrementPostViewCount({ slug: post.slug })
 
   const incremented = useRef(false)
 
   useEffect(() => {
     if (!incremented.current) {
-      incrementMutation.mutate({ slug: post.slug })
+      incrementPostView({ slug: post.slug })
       incremented.current = true
     }
-  }, [incrementMutation, post.slug])
+  }, [incrementPostView, post.slug])
 
   return (
     <div className='space-y-16 py-16'>

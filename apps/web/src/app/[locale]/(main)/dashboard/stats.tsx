@@ -4,13 +4,18 @@
 'use client'
 
 import { SiGithub, SiWakatime, SiYoutube } from '@icons-pack/react-simple-icons'
-import { useQuery } from '@tanstack/react-query'
 import { useTranslations } from '@tszhong0411/i18n/client'
 import { ArrowRightIcon, PencilIcon, StarIcon } from 'lucide-react'
 
 import Counter from '@/components/counter'
 import Link from '@/components/link'
-import { orpc } from '@/orpc/client'
+import {
+  useBlogLikeStat,
+  useBlogViewStat,
+  useGitHubStat,
+  useWakatimeStat,
+  useYouTubeStat
+} from '@/hooks/queries/stat.query'
 
 type Card = {
   icon: React.ReactNode
@@ -25,18 +30,18 @@ type Card = {
   suffix?: string
 }
 
-const Metrics = () => {
-  const youtubeQuery = useQuery(orpc.stats.youtube.queryOptions())
-  const githubQuery = useQuery(orpc.stats.github.queryOptions())
-  const likesQuery = useQuery(orpc.stats.blog.likes.queryOptions())
-  const viewsQuery = useQuery(orpc.stats.blog.views.queryOptions())
-  const wakatimeQuery = useQuery(orpc.stats.wakatime.queryOptions())
+const Stats = () => {
+  const youtubeQuery = useYouTubeStat()
+  const githubQuery = useGitHubStat()
+  const likesQuery = useBlogLikeStat()
+  const viewsQuery = useBlogViewStat()
+  const wakatimeQuery = useWakatimeStat()
 
   const t = useTranslations()
 
   const data: Card[] = [
     {
-      title: t('dashboard.metric.coding-hours'),
+      title: t('dashboard.stat.coding-hours'),
       link: 'https://wakatime.com/@tszhong0411',
       value: wakatimeQuery.data?.seconds
         ? Math.round(wakatimeQuery.data.seconds / 60 / 60)
@@ -50,7 +55,7 @@ const Metrics = () => {
       suffix: 'hrs'
     },
     {
-      title: t('dashboard.metric.youtube-subscribers'),
+      title: t('dashboard.stat.youtube-subscribers'),
       link: 'https://www.youtube.com/@tszhong0411',
       value: youtubeQuery.data?.subscribers,
       icon: <SiYoutube className='text-[#ff0000]' />,
@@ -61,7 +66,7 @@ const Metrics = () => {
       }
     },
     {
-      title: t('dashboard.metric.youtube-views'),
+      title: t('dashboard.stat.youtube-views'),
       link: 'https://www.youtube.com/@tszhong0411',
       value: youtubeQuery.data?.views,
       icon: <SiYoutube className='text-[#ff0000]' />,
@@ -72,7 +77,7 @@ const Metrics = () => {
       }
     },
     {
-      title: t('dashboard.metric.github-followers'),
+      title: t('dashboard.stat.github-followers'),
       link: 'https://github.com/tszhong0411',
       value: githubQuery.data?.followers,
       icon: <SiGithub className='text-[#fee000]' />,
@@ -83,7 +88,7 @@ const Metrics = () => {
       }
     },
     {
-      title: t('dashboard.metric.github-stars'),
+      title: t('dashboard.stat.github-stars'),
       link: 'https://github.com/tszhong0411',
       value: githubQuery.data?.stars,
       icon: <StarIcon className='size-6 text-[#fee000]' />,
@@ -94,7 +99,7 @@ const Metrics = () => {
       }
     },
     {
-      title: t('dashboard.metric.blog-total-views'),
+      title: t('dashboard.stat.blog-total-views'),
       link: 'https://nelsonlai.me',
       value: viewsQuery.data?.views,
       icon: <PencilIcon className='size-6 text-[#ff0f7b]' />,
@@ -105,7 +110,7 @@ const Metrics = () => {
       }
     },
     {
-      title: t('dashboard.metric.blog-total-likes'),
+      title: t('dashboard.stat.blog-total-likes'),
       link: 'https://nelsonlai.me',
       value: likesQuery.data?.likes,
       icon: <PencilIcon className='size-6 text-[#ff0f7b]' />,
@@ -119,7 +124,7 @@ const Metrics = () => {
 
   return (
     <div className='mb-4 mt-16 grid gap-4 sm:grid-cols-2 md:grid-cols-3'>
-      {data.map((metric) => {
+      {data.map((stat) => {
         const {
           icon,
           link,
@@ -128,13 +133,13 @@ const Metrics = () => {
           linkText,
           gradient: { startColor, endColor },
           suffix
-        } = metric
+        } = stat
 
         const hasValue = value === 0 || value !== undefined
 
         return (
           <Link
-            key={metric.title}
+            key={stat.title}
             href={link}
             className='shadow-xs group relative overflow-hidden rounded-lg border p-4 transition-colors hover:bg-zinc-100 dark:bg-zinc-900/50 dark:hover:bg-zinc-900'
           >
@@ -171,4 +176,4 @@ const Metrics = () => {
   )
 }
 
-export default Metrics
+export default Stats

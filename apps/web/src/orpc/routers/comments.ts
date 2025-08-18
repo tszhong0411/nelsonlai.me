@@ -110,7 +110,7 @@ export const listComments = publicProcedure
 
     return {
       comments: result,
-      nextCursor: result.at(-1)?.createdAt ?? null
+      nextCursor: result.at(-1)?.createdAt
     }
   })
 

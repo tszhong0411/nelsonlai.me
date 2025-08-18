@@ -5,10 +5,10 @@ import { likesStats, viewsStats } from './blog'
 import { countComments, createComment, deleteComment, listComments } from './comments'
 import { githubStats } from './github'
 import { createMessage, deleteMessage, listMessages } from './guestbook'
-import { getLike, incrementLike } from './likes'
+import { countLike, incrementLike } from './likes'
 import { countReplies } from './replies'
 import { spotifyStats } from './spotify'
-import { getView, incrementView } from './views'
+import { countView, incrementView } from './views'
 import { createVote } from './votes'
 import { wakatimeStats } from './wakatime'
 import { youtubeStats } from './youtube'
@@ -26,11 +26,11 @@ export const router = {
   },
   posts: {
     views: {
-      get: getView,
+      count: countView,
       increment: incrementView
     },
     likes: {
-      get: getLike,
+      count: countLike,
       increment: incrementLike
     },
     comments: {
@@ -65,5 +65,5 @@ export type ListMessagesOutput = Outputs['guestbook']['list']
 export type ListAllCommentsOutput = Outputs['admin']['listAllComments']
 export type ListAllUsersOutput = Outputs['admin']['listAllUsers']
 
-export type GetViewsOutput = Outputs['posts']['views']['get']
-export type GetLikesOutput = Outputs['posts']['likes']['get']
+export type GetViewsOutput = Outputs['posts']['views']['count']
+export type GetLikesOutput = Outputs['posts']['likes']['count']

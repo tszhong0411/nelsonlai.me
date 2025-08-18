@@ -50,7 +50,7 @@ export const listMessages = publicProcedure
 
     return {
       messages: result,
-      nextCursor: result.at(-1)?.updatedAt ?? null
+      nextCursor: result.at(-1)?.updatedAt
     }
   })
 

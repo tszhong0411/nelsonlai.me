@@ -122,8 +122,8 @@
     "go-to-homepage": "回到首页"
   },
   "dashboard": {
-    "description": "这是我的个人仪表板，使用 Next.js API 路由建立，并部署为 serverless functions。我使用这个仪表板追踪 YouTube、GitHub 等平台的各种指标。",
-    "metric": {
+    "description": "这是我的个人仪表板，使用 Next.js API 路由建立，并部署为 serverless functions。我使用这个仪表板追踪 YouTube、GitHub 等平台的各种统计。",
+    "stat": {
       "blog-total-likes": "博客总点赞数",
       "blog-total-views": "博客总浏览量",
       "coding-hours": "编程时间",

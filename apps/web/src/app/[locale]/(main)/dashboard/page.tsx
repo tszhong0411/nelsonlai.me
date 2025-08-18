@@ -9,7 +9,7 @@ import PageTitle from '@/components/page-title'
 import { SITE_URL } from '@/lib/constants'
 import { getLocalizedPath } from '@/utils/get-localized-path'
 
-import Metrics from './metrics'
+import Stats from './stats'
 
 type PageProps = {
   params: Promise<{
@@ -88,7 +88,7 @@ const Page = async (props: PageProps) => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <PageTitle title={title} description={description} />
-      {flags.stats && <Metrics />}
+      {flags.stats && <Stats />}
     </>
   )
 }

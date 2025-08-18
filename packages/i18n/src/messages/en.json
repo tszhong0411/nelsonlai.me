@@ -122,8 +122,8 @@
     "go-to-homepage": "Go to homepage"
   },
   "dashboard": {
-    "description": "This is my personal dashboard, built with Next.js API routes deployed as serverless functions. I use this dashboard to track various metrics across platforms like YouTube, GitHub, and more.",
-    "metric": {
+    "description": "This is my personal dashboard, built with Next.js API routes deployed as serverless functions. I use this dashboard to track various stats across platforms like YouTube, GitHub, and more.",
+    "stat": {
       "blog-total-likes": "Blog Total Likes",
       "blog-total-views": "Blog Total Views",
       "coding-hours": "Coding Hours",

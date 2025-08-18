@@ -31,7 +31,7 @@ export const guestbookSchema = z.object({
       })
     })
   ),
-  nextCursor: z.date().nullable()
+  nextCursor: z.date().optional()
 })
 
 export const deleteMessageInputSchema = z.object({

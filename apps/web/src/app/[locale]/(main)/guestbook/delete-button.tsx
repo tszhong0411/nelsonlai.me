@@ -13,6 +13,7 @@ import {
   AlertDialogTrigger
 } from '@tszhong0411/ui/components/alert-dialog'
 import { Button, buttonVariants } from '@tszhong0411/ui/components/button'
+import { toast } from '@tszhong0411/ui/components/sonner'
 
 import { useDeleteGuestbookMessage } from '@/hooks/queries/guestbook.query'
 
@@ -24,10 +25,12 @@ const DeleteButton = (props: DeleteButtonProps) => {
   const { message } = props
   const t = useTranslations()
 
-  const guestbookMutation = useDeleteGuestbookMessage()
+  const { mutate: deleteMessage, isPending: isDeleting } = useDeleteGuestbookMessage(() => {
+    toast.success(t('guestbook.delete-message-successfully'))
+  })
 
   const handleDeleteMessage = (id: string) => {
-    guestbookMutation.mutate({ id })
+    deleteMessage({ id })
   }
 
   return (
@@ -36,8 +39,8 @@ const DeleteButton = (props: DeleteButtonProps) => {
         <AlertDialogTrigger asChild>
           <Button
             variant='destructive'
-            disabled={guestbookMutation.isPending}
-            aria-disabled={guestbookMutation.isPending}
+            disabled={isDeleting}
+            aria-disabled={isDeleting}
             data-testid='guestbook-delete-button'
           >
             {t('common.delete')}

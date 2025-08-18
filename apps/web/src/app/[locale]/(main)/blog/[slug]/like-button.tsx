@@ -4,7 +4,6 @@
  * Inspired by: https://framer.university/resources/like-button-component
  */
 import NumberFlow from '@number-flow/react'
-import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { useTranslations } from '@tszhong0411/i18n/client'
 import { Separator } from '@tszhong0411/ui/components/separator'
 import { toast } from '@tszhong0411/ui/components/sonner'
@@ -12,9 +11,7 @@ import { motion } from 'motion/react'
 import { useRef, useState } from 'react'
 import { useDebouncedCallback } from 'use-debounce'
 
-import { useORPCInvalidator } from '@/lib/orpc-invalidator'
-import { oRPCQueryKeys } from '@/lib/orpc-query-keys'
-import { orpc } from '@/orpc/client'
+import { useLikePost, usePostLikeCount } from '@/hooks/queries/post.query'
 
 type LikeButtonProps = {
   slug: string
@@ -24,41 +21,10 @@ const LikeButton = (props: LikeButtonProps) => {
   const { slug } = props
   const [cacheCount, setCacheCount] = useState(0)
   const buttonRef = useRef<HTMLButtonElement>(null)
-  const queryClient = useQueryClient()
-  const invalidator = useORPCInvalidator()
   const t = useTranslations()
 
-  const queryKey = { slug }
-
-  const { status, data } = useQuery(orpc.posts.likes.get.queryOptions({ input: queryKey }))
-  const likesMutation = useMutation(
-    orpc.posts.likes.increment.mutationOptions({
-      onMutate: async (newData) => {
-        const likesQueryKey = oRPCQueryKeys.likes.get(slug)
-        await queryClient.cancelQueries({ queryKey: likesQueryKey })
-
-        const previousData = queryClient.getQueryData(likesQueryKey)
-
-        queryClient.setQueryData(likesQueryKey, (old) => {
-          if (!old) return old
-          return {
-            ...old,
-            likes: old.likes + newData.value,
-            currentUserLikes: old.currentUserLikes + newData.value
-          }
-        })
-        return { previousData }
-      },
-      onError: (_, __, ctx) => {
-        if (ctx?.previousData) {
-          queryClient.setQueryData(oRPCQueryKeys.likes.get(slug), ctx.previousData)
-        }
-      },
-      onSettled: async () => {
-        await invalidator.likes.invalidateBySlug(slug)
-      }
-    })
-  )
+  const { isSuccess, isLoading, isError, data } = usePostLikeCount({ slug })
+  const { mutate: likePost } = useLikePost({ slug })
 
   const showConfettiAnimation = async () => {
     const { clientWidth, clientHeight } = document.documentElement
@@ -84,12 +50,12 @@ const LikeButton = (props: LikeButtonProps) => {
   }
 
   const onLikeSaving = useDebouncedCallback((value: number) => {
-    likesMutation.mutate({ slug, value })
+    likePost({ slug, value })
     setCacheCount(0)
   }, 1000)
 
   const handleLikeButtonClick = () => {
-    if (status === 'pending' || !data) return
+    if (isLoading || !data) return
     if (data.currentUserLikes + cacheCount >= 3) {
       toast.error(t('blog.like-limit-reached'))
       return
@@ -152,11 +118,9 @@ const LikeButton = (props: LikeButtonProps) => {
         </svg>
         {t('blog.like')}
         <Separator orientation='vertical' className='bg-zinc-700' />
-        {status === 'pending' && <div>--</div>}
-        {status === 'error' && <div>{t('common.error')}</div>}
-        {status === 'success' && (
-          <NumberFlow value={data.likes + cacheCount} data-testid='like-count' />
-        )}
+        {isSuccess && <NumberFlow value={data.likes + cacheCount} data-testid='like-count' />}
+        {isLoading && <div>--</div>}
+        {isError && <div>{t('common.error')}</div>}
       </motion.button>
     </div>
   )

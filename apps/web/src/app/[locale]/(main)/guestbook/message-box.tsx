@@ -12,6 +12,7 @@ import {
   FormItem,
   FormMessage
 } from '@tszhong0411/ui/components/form'
+import { toast } from '@tszhong0411/ui/components/sonner'
 import { Textarea } from '@tszhong0411/ui/components/textarea'
 import { getAbbreviation } from '@tszhong0411/utils'
 import { useForm } from 'react-hook-form'
@@ -43,14 +44,13 @@ const MessageBox = (props: MessageBoxProps) => {
     }
   })
 
-  const guestbookMutation = useCreateGuestbookMessage(() => {
+  const { mutate: createMessage, isPending: isCreating } = useCreateGuestbookMessage(() => {
     form.reset()
+    toast.success(t('guestbook.create-message-successfully'))
   })
 
   const onSubmit = (values: z.infer<typeof guestbookFormSchema>) => {
-    guestbookMutation.mutate({
-      message: values.message
-    })
+    createMessage({ message: values.message })
   }
 
   const defaultImage = getDefaultImage(user.id)
@@ -96,8 +96,8 @@ const MessageBox = (props: MessageBoxProps) => {
             </Button>
             <Button
               type='submit'
-              disabled={guestbookMutation.isPending}
-              aria-disabled={guestbookMutation.isPending}
+              disabled={isCreating}
+              aria-disabled={isCreating}
               data-testid='guestbook-submit-button'
             >
               {t('guestbook.submit')}

@@ -1,6 +1,5 @@
 'use client'
 
-import { useMutation } from '@tanstack/react-query'
 import { useTranslations } from '@tszhong0411/i18n/client'
 import { Button } from '@tszhong0411/ui/components/button'
 import { toast } from '@tszhong0411/ui/components/sonner'
@@ -8,47 +7,23 @@ import { SendIcon } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
 import { useCommentsContext } from '@/contexts/comments.context'
-import { useCommentParams } from '@/hooks/use-comment-params'
+import { useCreatePostComment } from '@/hooks/queries/post.query'
 import { useSession } from '@/lib/auth-client'
-import { useORPCInvalidator } from '@/lib/orpc-invalidator'
-import { orpc } from '@/orpc/client'
 
 import CommentEditor from './comment-editor'
 import UnauthorizedOverlay from './unauthorized-overlay'
 
 const CommentPost = () => {
-  const { slug, sort } = useCommentsContext()
-  const [params] = useCommentParams()
+  const { slug } = useCommentsContext()
   const [content, setContent] = useState('')
   const [isMounted, setIsMounted] = useState(false)
   const { data: session, isPending } = useSession()
-  const invalidator = useORPCInvalidator()
   const t = useTranslations()
 
-  const infiniteCommentsParams = {
-    slug,
-    sort,
-    type: 'comments' as const,
-    highlightedCommentId: params.comment ?? undefined
-  }
-
-  const commentsMutation = useMutation(
-    orpc.posts.comments.create.mutationOptions({
-      onSuccess: () => {
-        setContent('')
-        toast.success(t('blog.comments.comment-posted'))
-      },
-      onError: (error) => {
-        toast.error(error.message)
-      },
-      onSettled: async () => {
-        await invalidator.comments.invalidateAfterAction({
-          slug,
-          infiniteCommentsParams
-        })
-      }
-    })
-  )
+  const { mutate: createComment, isPending: isCreating } = useCreatePostComment({ slug }, () => {
+    setContent('')
+    toast.success(t('blog.comments.comment-posted'))
+  })
 
   const submitComment = (e?: React.FormEvent<HTMLFormElement>) => {
     e?.preventDefault()
@@ -58,7 +33,7 @@ const CommentPost = () => {
       return
     }
 
-    commentsMutation.mutate({
+    createComment({
       slug,
       content,
       date: new Date().toLocaleDateString('en-US', {
@@ -78,7 +53,7 @@ const CommentPost = () => {
   }
 
   const isAuthenticated = session !== null && !isPending
-  const disabled = !isAuthenticated || commentsMutation.isPending
+  const disabled = !isAuthenticated || isCreating
 
   return (
     <form onSubmit={submitComment}>

@@ -1,17 +1,13 @@
 'use client'
 
-import { useQuery } from '@tanstack/react-query'
 import { flags } from '@tszhong0411/env'
 import { useTranslations } from '@tszhong0411/i18n/client'
 import { ClockIcon } from 'lucide-react'
 
-import { orpc } from '@/orpc/client'
+import { useWakatimeStat } from '@/hooks/queries/stat.query'
 
 const CodingHours = () => {
-  const { status, data } = useQuery({
-    ...orpc.stats.wakatime.queryOptions(),
-    enabled: flags.stats
-  })
+  const { isSuccess, isLoading, isError, data } = useWakatimeStat(flags.stats)
   const t = useTranslations()
 
   return (
@@ -21,9 +17,9 @@ const CodingHours = () => {
         <h2 className='text-sm'>{t('homepage.about-me.coding-hours')}</h2>
       </div>
       <div className='flex grow items-center justify-center text-4xl font-semibold'>
-        {status === 'pending' && '--'}
-        {status === 'error' && t('common.error')}
-        {status === 'success' && Math.round(data.seconds / 60 / 60)} hrs
+        {isSuccess && Math.round(data.seconds / 60 / 60)} hrs
+        {isLoading && '--'}
+        {isError && t('common.error')}
       </div>
     </div>
   )

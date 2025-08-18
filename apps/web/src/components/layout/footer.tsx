@@ -1,20 +1,19 @@
 'use client'
 
-import { useQuery } from '@tanstack/react-query'
 import { flags } from '@tszhong0411/env'
 import { useTranslations } from '@tszhong0411/i18n/client'
 import { linkVariants } from '@tszhong0411/ui/components/link'
 import { StarIcon } from 'lucide-react'
 
 import { FOOTER_LINKS } from '@/config/links'
-import { orpc } from '@/orpc/client'
+import { useGitHubStat } from '@/hooks/queries/stat.query'
 
 import Link from '../link'
 
 import NowPlaying from './now-playing'
 
 const Footer = () => {
-  const { status, data } = useQuery(orpc.stats.github.queryOptions())
+  const { isSuccess, isLoading, isError, data } = useGitHubStat()
   const t = useTranslations()
 
   return (
@@ -46,14 +45,14 @@ const Footer = () => {
             <span className='font-medium'>Star</span>
           </div>
           <div className='bg-background flex h-8 items-center px-3'>
-            {status === 'pending' && '--'}
-            {status === 'error' && t('common.error')}
-            {status === 'success' &&
+            {isSuccess &&
               Intl.NumberFormat('en', {
                 notation: 'compact',
                 minimumFractionDigits: 0,
                 maximumFractionDigits: 1
               }).format(data.repoStars)}
+            {isLoading && '--'}
+            {isError && t('common.error')}
           </div>
         </Link>
       </div>

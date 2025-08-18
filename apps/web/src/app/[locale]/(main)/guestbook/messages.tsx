@@ -58,18 +58,18 @@ const Messages = () => {
         data.pages.map((page) =>
           page.messages.map((message) => <Message key={message.id} message={message} />)
         )}
-      {noMessages && (
-        <div className='flex min-h-24 items-center justify-center'>
-          <p className='text-muted-foreground text-sm'>{t('guestbook.no-messages')}</p>
-        </div>
-      )}
+      {(isLoading || isFetchingNextPage) && <MessagesLoader />}
+      <span ref={ref} className='invisible' />
       {isError && (
         <div className='flex min-h-24 items-center justify-center'>
           <p className='text-muted-foreground text-sm'>{t('guestbook.failed-to-load-messages')}</p>
         </div>
       )}
-      {(isLoading || isFetchingNextPage) && <MessagesLoader />}
-      <span ref={ref} className='invisible' />
+      {noMessages && (
+        <div className='flex min-h-24 items-center justify-center'>
+          <p className='text-muted-foreground text-sm'>{t('guestbook.no-messages')}</p>
+        </div>
+      )}
     </div>
   )
 }
