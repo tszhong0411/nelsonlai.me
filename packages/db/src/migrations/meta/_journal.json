@@ -43,6 +43,13 @@
       "when": 1751420464951,
       "tag": "0005_blue_cyclops",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1755513464793,
+      "tag": "0006_noisy_talos",
+      "breakpoints": true
     }
   ]
 }

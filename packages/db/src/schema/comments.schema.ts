@@ -14,10 +14,10 @@ export const comments = pgTable(
       .references(() => users.id),
     createdAt: timestamp('created_at')
       .notNull()
-      .default(sql`CURRENT_TIMESTAMP(3)`),
+      .$defaultFn(() => new Date()),
     updatedAt: timestamp('updated_at')
       .notNull()
-      .default(sql`CURRENT_TIMESTAMP(3)`),
+      .$defaultFn(() => new Date()),
     postId: text('post_id')
       .notNull()
       .references(() => posts.slug),

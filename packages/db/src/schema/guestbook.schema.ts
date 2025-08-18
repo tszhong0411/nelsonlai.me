@@ -1,4 +1,4 @@
-import { relations, sql } from 'drizzle-orm'
+import { relations } from 'drizzle-orm'
 import { index, pgTable, text, timestamp } from 'drizzle-orm/pg-core'
 
 import { users } from './auth.schema'
@@ -13,10 +13,10 @@ export const guestbook = pgTable(
       .references(() => users.id),
     createdAt: timestamp('created_at')
       .notNull()
-      .default(sql`CURRENT_TIMESTAMP(3)`),
+      .$defaultFn(() => new Date()),
     updatedAt: timestamp('updated_at')
       .notNull()
-      .default(sql`CURRENT_TIMESTAMP(3)`)
+      .$defaultFn(() => new Date())
   },
   (table) => [
     // Indexes for performance optimization
