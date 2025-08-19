@@ -50,6 +50,13 @@
       "when": 1755513464793,
       "tag": "0006_noisy_talos",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1755566666742,
+      "tag": "0007_milky_sabra",
+      "breakpoints": true
     }
   ]
 }
