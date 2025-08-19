@@ -59,12 +59,12 @@ runs:
 
         IP_ADDRESS_SALT="test_ip_address_salt"
 
-        DISCORD_WEBHOOK_URL="test_discord_webhook_url"
+        DISCORD_WEBHOOK_URL="https://test_discord_webhook.url"
 
         RESEND_API_KEY="test_resend_api_key"
 
-        AUTHOR_EMAIL="test_author_email"
-        NEXT_PUBLIC_UMAMI_URL="test_next_public_umami_url"
-        NEXT_PUBLIC_UMAMI_WEBSITE_ID="test_next_public_umami_website_id"
+        AUTHOR_EMAIL="test@author.email"
+        NEXT_PUBLIC_UMAMI_URL="https://test_next_public_umami.url"
+        NEXT_PUBLIC_UMAMI_WEBSITE_ID="00000000-0000-0000-0000-000000000000"
 
         EOF
