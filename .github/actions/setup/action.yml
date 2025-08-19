@@ -32,19 +32,3 @@ runs:
     - name: Install dependencies
       shell: bash
       run: pnpm install
-
-    - name: Create environment variables file
-      shell: bash
-      run: |
-        cat << EOF > .env.local
-        DATABASE_URL=postgres://postgres:postgres@localhost:5432/nelsonlaime
-        RESEND_API_KEY=re_fake_api_key
-        UPSTASH_REDIS_REST_URL=http://127.0.0.1:8079
-        UPSTASH_REDIS_REST_TOKEN=nelsonlaime
-        BETTER_AUTH_SECRET=1234567890
-        NEXT_PUBLIC_FLAG_COMMENT=true
-        NEXT_PUBLIC_FLAG_AUTH=true
-        NEXT_PUBLIC_FLAG_STATS=true
-        NEXT_PUBLIC_FLAG_SPOTIFY=true
-        NEXT_PUBLIC_FLAG_LIKE_BUTTON=true
-        EOF

@@ -1,7 +1,7 @@
 import { ORPCError } from '@orpc/client'
 import { createId } from '@paralleldrive/cuid2'
 import { and, desc, eq, guestbook, lt } from '@tszhong0411/db'
-import { env, flags } from '@tszhong0411/env'
+import { env } from '@tszhong0411/env'
 
 import { isProduction } from '@/lib/constants'
 import { getDefaultImage } from '@/utils/get-default-image'
@@ -75,7 +75,7 @@ export const createMessage = protectedProcedure
       })
     }
 
-    if (flags.guestbookNotification && isProduction) {
+    if (isProduction) {
       await fetch(env.DISCORD_WEBHOOK_URL, {
         method: 'POST',
         headers: {

@@ -5,6 +5,27 @@ on:
     branches:
       - main
 
+env:
+  SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+  SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
+  SPOTIFY_REFRESH_TOKEN: ${{ secrets.SPOTIFY_REFRESH_TOKEN }}
+  GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+  WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
+  BETTER_AUTH_SECRET: ${{ secrets.BETTER_AUTH_SECRET }}
+  GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+  GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+  GITHUB_CLIENT_ID: ${{ secrets.GH_CLIENT_ID }}
+  GITHUB_CLIENT_SECRET: ${{ secrets.GH_CLIENT_SECRET }}
+  DATABASE_URL: ${{ secrets.DATABASE_URL }}
+  UPSTASH_REDIS_REST_URL: ${{ secrets.UPSTASH_REDIS_REST_URL }}
+  UPSTASH_REDIS_REST_TOKEN: ${{ secrets.UPSTASH_REDIS_REST_TOKEN }}
+  IP_ADDRESS_SALT: ${{ secrets.IP_ADDRESS_SALT }}
+  DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+  RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+  AUTHOR_EMAIL: ${{ secrets.AUTHOR_EMAIL }}
+  NEXT_PUBLIC_UMAMI_URL: ${{ secrets.NEXT_PUBLIC_UMAMI_URL }}
+  NEXT_PUBLIC_UMAMI_WEBSITE_ID: ${{ secrets.NEXT_PUBLIC_UMAMI_WEBSITE_ID }}
+
 jobs:
   tests:
     name: Tests
@@ -153,8 +174,8 @@ jobs:
         run: pnpm exec playwright install --with-deps
 
       - name: Setup Playwright with cache
-        run: pnpm exec playwright install-deps
         if: steps.cache-playwright-browsers.outputs.cache-hit == 'true'
+        run: pnpm exec playwright install-deps
 
       - name: Run services
         run: docker compose up -d

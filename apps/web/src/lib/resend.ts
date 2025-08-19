@@ -1,4 +1,4 @@
-import { env, flags } from '@tszhong0411/env'
+import { env } from '@tszhong0411/env'
 import { Resend } from 'resend'
 
-export const resend = flags.comment ? new Resend(env.RESEND_API_KEY) : null
+export const resend = new Resend(env.RESEND_API_KEY)

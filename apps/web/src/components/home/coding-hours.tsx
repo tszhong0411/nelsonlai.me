@@ -1,13 +1,12 @@
 'use client'
 
-import { flags } from '@tszhong0411/env'
 import { useTranslations } from '@tszhong0411/i18n/client'
 import { ClockIcon } from 'lucide-react'
 
 import { useWakatimeStat } from '@/hooks/queries/stat.query'
 
 const CodingHours = () => {
-  const { isSuccess, isLoading, isError, data } = useWakatimeStat(flags.stats)
+  const { isSuccess, isLoading, isError, data } = useWakatimeStat()
   const t = useTranslations()
 
   return (

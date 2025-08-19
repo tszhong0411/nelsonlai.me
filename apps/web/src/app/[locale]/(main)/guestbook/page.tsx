@@ -1,7 +1,6 @@
 import type { Metadata, ResolvingMetadata } from 'next'
 import type { WebPage, WithContext } from 'schema-dts'
 
-import { flags } from '@tszhong0411/env'
 import { i18n } from '@tszhong0411/i18n/config'
 import { getTranslations, setRequestLocale } from '@tszhong0411/i18n/server'
 
@@ -65,8 +64,6 @@ export const generateMetadata = async (
 }
 
 const Page = async (props: PageProps) => {
-  if (!flags.auth) return null
-
   const { locale } = await props.params
   setRequestLocale(locale)
   const session = await getSession()
