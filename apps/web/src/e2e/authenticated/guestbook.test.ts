@@ -2,8 +2,6 @@ import { createId } from '@paralleldrive/cuid2'
 import { expect, test } from '@playwright/test'
 import { db, eq, guestbook } from '@tszhong0411/db'
 
-import { isProduction } from '@/lib/constants'
-
 import { TEST_USER } from '../constants'
 
 test.describe('guestbook page', () => {
@@ -12,8 +10,6 @@ test.describe('guestbook page', () => {
   })
 
   test('should be able to submit a message', async ({ page }) => {
-    console.log(isProduction)
-    console.log(process.env.NODE_ENV)
     const message = createId()
 
     await page.getByTestId('guestbook-textarea').fill(message)
