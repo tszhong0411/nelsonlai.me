@@ -1,7 +1,6 @@
 import type { Metadata, ResolvingMetadata } from 'next'
 import type { Article, WithContext } from 'schema-dts'
 
-import { flags } from '@tszhong0411/env'
 import { i18n } from '@tszhong0411/i18n/config'
 import { setRequestLocale } from '@tszhong0411/i18n/server'
 import { allPosts } from 'content-collections'
@@ -158,7 +157,7 @@ const Page = async (props: PageProps) => {
         <aside className='lg:min-w-[270px] lg:max-w-[270px]'>
           <div className='sticky top-24'>
             {toc.length > 0 && <TableOfContents toc={toc} />}
-            {flags.likeButton && <LikeButton slug={slug} />}
+            <LikeButton slug={slug} />
           </div>
         </aside>
       </div>
@@ -167,11 +166,9 @@ const Page = async (props: PageProps) => {
       {toc.length > 0 && <MobileTableOfContents toc={toc} />}
       <Footer post={post} />
 
-      {flags.comment && (
-        <Suspense>
-          <CommentSection slug={slug} />
-        </Suspense>
-      )}
+      <Suspense>
+        <CommentSection slug={slug} />
+      </Suspense>
     </>
   )
 }

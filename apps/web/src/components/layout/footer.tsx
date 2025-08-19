@@ -1,6 +1,5 @@
 'use client'
 
-import { flags } from '@tszhong0411/env'
 import { useTranslations } from '@tszhong0411/i18n/client'
 import { linkVariants } from '@tszhong0411/ui/components/link'
 import { StarIcon } from 'lucide-react'
@@ -18,7 +17,7 @@ const Footer = () => {
 
   return (
     <footer className='bg-background/30 shadow-xs relative mx-auto mb-6 flex w-full max-w-5xl flex-col rounded-2xl p-8 saturate-100 backdrop-blur-[10px]'>
-      {flags.spotify && <NowPlaying />}
+      <NowPlaying />
       <div className='mt-12 grid grid-cols-2 sm:grid-cols-3'>
         {FOOTER_LINKS.map((list) => (
           <div key={list.id} className='mb-10 flex flex-col items-start gap-4 pr-4'>

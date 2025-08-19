@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from 'next'
 
 import '@/styles/globals.css'
 
-import { flags } from '@tszhong0411/env'
 import { hasLocale, NextIntlClientProvider } from '@tszhong0411/i18n/client'
 import { i18n } from '@tszhong0411/i18n/config'
 import { routing } from '@tszhong0411/i18n/routing'
@@ -162,7 +161,7 @@ const Layout = async (props: LayoutProps) => {
             <NextIntlClientProvider>
               <Hello />
               {children}
-              {flags.analytics && <Analytics />}
+              <Analytics />
               <SignInDialog />
             </NextIntlClientProvider>
           </Providers>

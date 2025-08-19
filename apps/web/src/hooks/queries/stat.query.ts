@@ -18,8 +18,8 @@ export const useBlogViewStat = () => {
   return useQuery(orpc.stats.blog.views.queryOptions())
 }
 
-export const useWakatimeStat = (enabled = true) => {
-  return useQuery(orpc.stats.wakatime.queryOptions({ enabled }))
+export const useWakatimeStat = () => {
+  return useQuery(orpc.stats.wakatime.queryOptions())
 }
 
 export const useSpotifyStat = () => {
