@@ -62,7 +62,6 @@ Welcome to the monorepo of my personal blog! This repository houses the code for
 - Husky & lint-staged
 - Conventional commit lint
 - CSpell for spell checking
-- Auto refresh for MDX
 
 ### Authentication & Data
 
@@ -86,16 +85,86 @@ Welcome to the monorepo of my personal blog! This repository houses the code for
   <img alt="Reply notification template" src="assets/reply-email-notification.png">
 </div>
 
-## Requirements
+## Getting Started
+
+### Prerequisites
 
 - Node, recommended `>=22` with [corepack](https://nodejs.org/api/corepack.html) enabled
 - pnpm, recommended `>=9`
+- Docker
 - [Visual Studio Code](https://code.visualstudio.com/) with [recommended extensions](.vscode/extensions.json)
 - Optionally [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
 
-## Getting Started
+## Development
 
-Please refer to the [contributing guidelines](./CONTRIBUTING.md) for detailed information on how to start the app locally and contribute to this project.
+To run this project locally, you need to set up the development environment.
+
+### Setup
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/tszhong0411/nelsonlai.me
+```
+
+2. Navigate to the project directory:
+
+```bash
+cd nelsonlai.me
+```
+
+3. Install dependencies using pnpm:
+
+```bash
+pnpm install
+```
+
+### Environment Setup
+
+1. Copy `.env.example` to `.env.local` and update the environment variables as needed.
+
+```bash
+cp .env.example .env.local
+```
+
+2. Run required services using Docker:
+
+```bash
+docker compose up -d
+```
+
+3. Run the database migrations:
+
+```bash
+pnpm db:migrate
+```
+
+4. Seed the database:
+
+```bash
+pnpm db:seed
+```
+
+5. Run the app:
+
+```bash
+pnpm dev # Run all services
+# or
+pnpm dev:web # Run only the web app
+# or
+pnpm dev:docs # Run only the documentation app
+```
+
+The services will be available at the following URLs:
+
+| Service          | URL              |
+| ---------------- | ---------------- |
+| App              | `localhost:3000` |
+| React Email      | `localhost:3001` |
+| Docs             | `localhost:3002` |
+| Database         | `localhost:5432` |
+| Redis            | `localhost:6379` |
+| Redis serverless | `localhost:8079` |
 
 ## Credits
 
