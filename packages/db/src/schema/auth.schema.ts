@@ -14,7 +14,7 @@ export const users = pgTable('user', {
   image: text('image'),
   createdAt: timestamp('created_at').notNull(),
   updatedAt: timestamp('updated_at').notNull(),
-  // Custom
+  // Extra columns
   role: roleEnum('role').default('user').notNull()
 })
 

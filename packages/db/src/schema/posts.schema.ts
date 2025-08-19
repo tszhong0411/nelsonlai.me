@@ -13,10 +13,7 @@ export const posts = pgTable(
     likes: integer('likes').notNull().default(0),
     views: integer('views').notNull().default(0)
   },
-  (table) => [
-    // Index for performance optimization
-    index('idx_post_created').on(table.createdAt.desc())
-  ]
+  (table) => [index('idx_post_created').on(table.createdAt.desc())]
 )
 
 export const postsRelations = relations(posts, ({ many }) => ({

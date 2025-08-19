@@ -37,7 +37,7 @@ export const countLike = publicProcedure
 
     const likesData = {
       likes: post.likes,
-      currentUserLikes: user?.likes ?? 0 // the case that user has not liked the post yet
+      currentUserLikes: user?.likes ?? 0 // The case that user has not liked the post yet
     }
 
     await cache.posts.likes.set(likesData, input.slug, sessionId)

@@ -92,7 +92,7 @@ export const rehypeCode: Plugin<[RehypeShikiOptions], Root> = () => {
     await (
       await transformer
     )(tree, file, () => {
-      // do nothing
+      // Do nothing
     })
   }
 }

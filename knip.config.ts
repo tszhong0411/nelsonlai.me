@@ -3,7 +3,7 @@ import type { KnipConfig } from 'knip'
 const config: KnipConfig = {
   ignoreDependencies: [
     'sharp',
-    // not sure why it can't detect `pnpm with-env tsx ./src/seed.ts` in packages/db/package.json
+    // Not sure why it can't detect `pnpm with-env tsx ./src/seed.ts` in packages/db/package.json
     'tsx',
     // PostCSS is already installed under Next.js
     'postcss'
@@ -28,7 +28,7 @@ const config: KnipConfig = {
     },
     'packages/ui': {
       ignore: ['src/styles.css'],
-      // optional peer dependencies
+      // Optional peer dependencies
       ignoreDependencies: ['nuqs']
     },
     'packages/emails': {
@@ -36,7 +36,7 @@ const config: KnipConfig = {
       ignore: ['src/styles.css']
     }
   },
-  // credit to https://github.com/webpro-nl/knip/issues/1008#issuecomment-2756559038
+  // Credit to https://github.com/webpro-nl/knip/issues/1008#issuecomment-2756559038
   compilers: {
     css: (text: string) =>
       [...text.matchAll(/(?<=@)(import|plugin)[^;]+/g)].join('\n').replace('plugin', 'import')

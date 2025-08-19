@@ -19,7 +19,6 @@ export const guestbook = pgTable(
       .$defaultFn(() => new Date())
   },
   (table) => [
-    // Indexes for performance optimization
     index('idx_guestbook_created').on(table.createdAt.desc()),
     index('idx_guestbook_user_id').on(table.userId)
   ]
