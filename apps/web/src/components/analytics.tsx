@@ -4,7 +4,7 @@ import Script from 'next/script'
 import { IS_PRODUCTION } from '@/lib/constants'
 
 const Analytics = () => {
-  if (!IS_PRODUCTION) return null
+  if (!IS_PRODUCTION || !env.NEXT_PUBLIC_UMAMI_URL || !env.NEXT_PUBLIC_UMAMI_WEBSITE_ID) return null
 
   return (
     <Script

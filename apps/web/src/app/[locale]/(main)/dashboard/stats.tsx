@@ -43,9 +43,7 @@ const Stats = () => {
     {
       title: t('dashboard.stat.coding-hours'),
       link: 'https://wakatime.com/@tszhong0411',
-      value: wakatimeQuery.data?.seconds
-        ? Math.round(wakatimeQuery.data.seconds / 60 / 60)
-        : undefined,
+      value: wakatimeQuery.data?.hours,
       icon: <SiWakatime className='text-[#0061ff]' />,
       linkText: 'WakaTime',
       gradient: {

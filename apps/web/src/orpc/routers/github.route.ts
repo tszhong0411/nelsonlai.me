@@ -5,6 +5,14 @@ import { publicProcedure } from '../root'
 import { githubStatsSchema } from '../schemas/github.schema'
 
 export const githubStats = publicProcedure.output(githubStatsSchema).handler(async () => {
+  if (!octokit) {
+    return {
+      stars: 0,
+      followers: 0,
+      repoStars: 0
+    }
+  }
+
   let stars = 0
   let page = 1
   const per_page = 100

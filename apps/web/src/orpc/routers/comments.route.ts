@@ -157,7 +157,7 @@ export const createComment = protectedProcedure
         })
       }
 
-      if (IS_PRODUCTION) {
+      if (IS_PRODUCTION && resend && env.AUTHOR_EMAIL) {
         // Notify the author of the blog post via email
         if (!input.parentId && user.role === 'user') {
           await resend.emails.send({

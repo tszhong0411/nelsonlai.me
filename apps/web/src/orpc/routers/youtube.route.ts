@@ -4,6 +4,13 @@ import { publicProcedure } from '../root'
 import { youtubeStatsSchema } from '../schemas/youtube.schema'
 
 export const youtubeStats = publicProcedure.output(youtubeStatsSchema).handler(async () => {
+  if (!env.GOOGLE_API_KEY) {
+    return {
+      subscribers: 0,
+      views: 0
+    }
+  }
+
   const res = await fetch(
     `https://www.googleapis.com/youtube/v3/channels?id=UC2hMWOaOlk9vrkvFVaGmn0Q&part=statistics&key=${env.GOOGLE_API_KEY}`
   )

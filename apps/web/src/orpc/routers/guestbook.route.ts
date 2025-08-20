@@ -75,7 +75,7 @@ export const createMessage = protectedProcedure
       })
     }
 
-    if (IS_PRODUCTION) {
+    if (IS_PRODUCTION && env.DISCORD_WEBHOOK_URL) {
       await fetch(env.DISCORD_WEBHOOK_URL, {
         method: 'POST',
         headers: {

@@ -12,6 +12,8 @@ const NOW_PLAYING_ENDPOINT = 'https://api.spotify.com/v1/me/player/currently-pla
 const TOKEN_ENDPOINT = 'https://accounts.spotify.com/api/token'
 
 const getAccessToken = async () => {
+  if (!REFRESH_TOKEN) return null
+
   const response = await fetch(TOKEN_ENDPOINT, {
     method: 'POST',
     headers: {
@@ -30,6 +32,15 @@ const getAccessToken = async () => {
 }
 
 export const spotifyStats = publicProcedure.output(spotifyStatsSchema).handler(async () => {
+  if (!CLIENT_ID || !CLIENT_SECRET || !REFRESH_TOKEN) {
+    return {
+      isPlaying: false,
+      songUrl: null,
+      name: null,
+      artist: null
+    }
+  }
+
   const accessToken = await getAccessToken()
 
   const response = await fetch(NOW_PLAYING_ENDPOINT, {
