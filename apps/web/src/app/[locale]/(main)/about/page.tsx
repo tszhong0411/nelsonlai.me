@@ -13,10 +13,10 @@ import {
   SITE_GITHUB_URL,
   SITE_INSTAGRAM_URL,
   SITE_NAME,
-  SITE_URL,
   SITE_X_URL,
   SITE_YOUTUBE_URL
 } from '@/lib/constants'
+import { getBaseUrl } from '@/utils/get-base-url'
 import { getLocalizedPath } from '@/utils/get-localized-path'
 
 type PageProps = {
@@ -88,7 +88,7 @@ const Page = async (props: PageProps) => {
       '@type': 'Person',
       name: SITE_NAME,
       description: t('metadata.site-description'),
-      url: SITE_URL,
+      url: getBaseUrl(),
       sameAs: [SITE_FACEBOOK_URL, SITE_INSTAGRAM_URL, SITE_X_URL, SITE_GITHUB_URL, SITE_YOUTUBE_URL]
     }
   }

@@ -5,7 +5,7 @@ import { i18n } from '@tszhong0411/i18n/config'
 import { getTranslations, setRequestLocale } from '@tszhong0411/i18n/server'
 
 import PageTitle from '@/components/page-title'
-import { SITE_URL } from '@/lib/constants'
+import { getBaseUrl } from '@/utils/get-base-url'
 import { getLocalizedPath } from '@/utils/get-localized-path'
 
 import Stats from './stats'
@@ -76,7 +76,7 @@ const Page = async (props: PageProps) => {
     isPartOf: {
       '@type': 'WebSite',
       name: t('metadata.site-title'),
-      url: SITE_URL
+      url: getBaseUrl()
     }
   }
 

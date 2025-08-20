@@ -8,7 +8,8 @@ import { notFound } from 'next/navigation'
 
 import Mdx from '@/components/mdx'
 import { BlurImage } from '@/components/ui/blur-image'
-import { SITE_NAME, SITE_URL } from '@/lib/constants'
+import { SITE_NAME } from '@/lib/constants'
+import { getBaseUrl } from '@/utils/get-base-url'
 import { getLocalizedPath } from '@/utils/get-localized-path'
 
 import Header from './header'
@@ -118,10 +119,10 @@ const Page = async (props: PageProps) => {
     author: {
       '@type': 'Person',
       name: SITE_NAME,
-      url: SITE_URL
+      url: getBaseUrl()
     },
     sameAs: [github],
-    screenshot: `${SITE_URL}/images/projects/${slug}/cover.png`
+    screenshot: `${getBaseUrl()}/images/projects/${slug}/cover.png`
   }
 
   return (

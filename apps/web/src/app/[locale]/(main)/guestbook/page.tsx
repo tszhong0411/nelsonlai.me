@@ -6,7 +6,7 @@ import { getTranslations, setRequestLocale } from '@tszhong0411/i18n/server'
 
 import PageTitle from '@/components/page-title'
 import { getSession } from '@/lib/auth'
-import { SITE_URL } from '@/lib/constants'
+import { getBaseUrl } from '@/utils/get-base-url'
 import { getLocalizedPath } from '@/utils/get-localized-path'
 
 import MessageBox from './message-box'
@@ -81,7 +81,7 @@ const Page = async (props: PageProps) => {
     isPartOf: {
       '@type': 'WebSite',
       name: t('metadata.site-title'),
-      url: SITE_URL
+      url: getBaseUrl()
     }
   }
 

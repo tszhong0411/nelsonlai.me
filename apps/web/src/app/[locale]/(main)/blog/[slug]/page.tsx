@@ -9,7 +9,8 @@ import { Suspense } from 'react'
 
 import CommentSection from '@/components/comment-section'
 import Mdx from '@/components/mdx'
-import { SITE_NAME, SITE_URL } from '@/lib/constants'
+import { SITE_NAME } from '@/lib/constants'
+import { getBaseUrl } from '@/utils/get-base-url'
 import { getLocalizedPath } from '@/utils/get-localized-path'
 
 import Footer from './footer'
@@ -79,7 +80,7 @@ export const generateMetadata = async (
       description: summary,
       publishedTime: ISOPublishedTime,
       modifiedTime: ISOModifiedTime,
-      authors: SITE_URL,
+      authors: getBaseUrl(),
       images: [
         {
           url: `/og/${slug}`,
@@ -128,16 +129,16 @@ const Page = async (props: PageProps) => {
     url,
     datePublished: date,
     dateModified: modifiedTime,
-    image: `${SITE_URL}/og/${slug}`,
+    image: `${getBaseUrl()}/og/${slug}`,
     author: {
       '@type': 'Person',
       name: SITE_NAME,
-      url: SITE_URL
+      url: getBaseUrl()
     },
     publisher: {
       '@type': 'Person',
       name: SITE_NAME,
-      url: SITE_URL
+      url: getBaseUrl()
     }
   }
 

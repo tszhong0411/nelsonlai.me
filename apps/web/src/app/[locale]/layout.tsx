@@ -15,7 +15,8 @@ import { NuqsAdapter } from 'nuqs/adapters/next/app'
 import Analytics from '@/components/analytics'
 import Hello from '@/components/hello'
 import SignInDialog from '@/components/sign-in-dialog'
-import { SITE_KEYWORDS, SITE_NAME, SITE_URL } from '@/lib/constants'
+import { SITE_KEYWORDS, SITE_NAME } from '@/lib/constants'
+import { getBaseUrl } from '@/utils/get-base-url'
 
 import Providers from '../providers'
 
@@ -35,7 +36,7 @@ export const generateMetadata = async (props: LayoutProps): Promise<Metadata> =>
   const t = await getTranslations({ locale, namespace: 'metadata' })
 
   return {
-    metadataBase: new URL(SITE_URL),
+    metadataBase: new URL(getBaseUrl()),
     title: {
       default: t('site-title'),
       template: `%s | ${t('site-title')}`
@@ -54,7 +55,7 @@ export const generateMetadata = async (props: LayoutProps): Promise<Metadata> =>
     },
     authors: {
       name: 'Nelson Lai',
-      url: SITE_URL
+      url: getBaseUrl()
     },
     manifest: '/favicon/site.webmanifest',
     twitter: {
@@ -77,7 +78,7 @@ export const generateMetadata = async (props: LayoutProps): Promise<Metadata> =>
     keywords: SITE_KEYWORDS,
     creator: 'Nelson Lai',
     openGraph: {
-      url: SITE_URL,
+      url: getBaseUrl(),
       type: 'website',
       title: t('site-title'),
       siteName: t('site-title'),

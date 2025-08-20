@@ -7,7 +7,7 @@ import { allPosts } from 'content-collections'
 import { ImageResponse } from 'next/og'
 import { NextResponse } from 'next/server'
 
-import { SITE_URL } from '@/lib/constants'
+import { getBaseUrl } from '@/utils/get-base-url'
 
 type OGRouteProps = {
   params: Promise<{
@@ -61,7 +61,7 @@ export const GET = async (_: Request, props: OGRouteProps) => {
       (
         <div
           style={{
-            backgroundImage: `url(${SITE_URL}/images/og-background.png)`,
+            backgroundImage: `url(${getBaseUrl()}/images/og-background.png)`,
             width: '100%',
             height: '100%',
             display: 'flex',

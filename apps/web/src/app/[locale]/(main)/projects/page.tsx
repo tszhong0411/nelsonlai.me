@@ -7,7 +7,7 @@ import { allProjects } from 'content-collections'
 
 import PageTitle from '@/components/page-title'
 import ProjectCards from '@/components/project-cards'
-import { SITE_URL } from '@/lib/constants'
+import { getBaseUrl } from '@/utils/get-base-url'
 import { getLocalizedPath } from '@/utils/get-localized-path'
 
 type PageProps = {
@@ -79,7 +79,7 @@ const Page = async (props: PageProps) => {
     isPartOf: {
       '@type': 'WebSite',
       name: t('metadata.site-title'),
-      url: SITE_URL
+      url: getBaseUrl()
     },
     hasPart: allProjects.map((project) => ({
       '@type': 'SoftwareApplication',

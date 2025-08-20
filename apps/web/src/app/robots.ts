@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next'
 
-import { SITE_URL } from '@/lib/constants'
+import { getBaseUrl } from '@/utils/get-base-url'
 
 const robots = (): MetadataRoute.Robots => ({
   rules: [
@@ -10,7 +10,7 @@ const robots = (): MetadataRoute.Robots => ({
       disallow: ['/api/']
     }
   ],
-  sitemap: `${SITE_URL}/sitemap.xml`
+  sitemap: `${getBaseUrl()}/sitemap.xml`
 })
 
 export default robots

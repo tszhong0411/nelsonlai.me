@@ -19,7 +19,6 @@ export const env = createEnv({
     IP_ADDRESS_SALT: z.string().min(1),
 
     BETTER_AUTH_SECRET: z.string().min(1),
-    BETTER_AUTH_URL: z.string().url(),
 
     // Optional
     SPOTIFY_CLIENT_ID: z.string().min(1).optional(),

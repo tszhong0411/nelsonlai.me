@@ -15,10 +15,10 @@ import {
   SITE_INSTAGRAM_URL,
   SITE_KEYWORDS,
   SITE_NAME,
-  SITE_URL,
   SITE_X_URL,
   SITE_YOUTUBE_URL
 } from '@/lib/constants'
+import { getBaseUrl } from '@/utils/get-base-url'
 import { getLocalizedPath } from '@/utils/get-localized-path'
 
 type PageProps = {
@@ -64,12 +64,12 @@ const Page = async (props: PageProps) => {
     author: {
       '@type': 'Person',
       name: SITE_NAME,
-      url: SITE_URL,
+      url: getBaseUrl(),
       sameAs: [SITE_FACEBOOK_URL, SITE_INSTAGRAM_URL, SITE_X_URL, SITE_GITHUB_URL, SITE_YOUTUBE_URL]
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': SITE_URL
+      '@id': getBaseUrl()
     },
     inLanguage: locale,
     copyrightYear: new Date().getFullYear(),

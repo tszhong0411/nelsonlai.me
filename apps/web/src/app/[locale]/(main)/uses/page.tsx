@@ -8,7 +8,7 @@ import { notFound } from 'next/navigation'
 
 import Mdx from '@/components/mdx'
 import PageTitle from '@/components/page-title'
-import { SITE_URL } from '@/lib/constants'
+import { getBaseUrl } from '@/utils/get-base-url'
 import { getLocalizedPath } from '@/utils/get-localized-path'
 
 type PageProps = {
@@ -80,7 +80,7 @@ const Page = async (props: PageProps) => {
     isPartOf: {
       '@type': 'WebSite',
       name: t('metadata.site-title'),
-      url: SITE_URL
+      url: getBaseUrl()
     }
   }
 

@@ -7,7 +7,8 @@ import { allPosts } from 'content-collections'
 
 import FilteredPosts from '@/components/filtered-posts'
 import PageTitle from '@/components/page-title'
-import { SITE_NAME, SITE_URL } from '@/lib/constants'
+import { SITE_NAME } from '@/lib/constants'
+import { getBaseUrl } from '@/utils/get-base-url'
 import { getLocalizedPath } from '@/utils/get-localized-path'
 
 type PageProps = {
@@ -83,7 +84,7 @@ const Page = async (props: PageProps) => {
     author: {
       '@type': 'Person',
       name: SITE_NAME,
-      url: SITE_URL
+      url: getBaseUrl()
     },
     blogPost: allPosts.map((post) => ({
       '@type': 'BlogPosting',
