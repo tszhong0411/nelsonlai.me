@@ -43,7 +43,8 @@ export const env = createEnv({
     // Required
     NEXT_PUBLIC_SITE_URL: z.string().url(),
     // Optional
-    NEXT_PUBLIC_VERCEL_URL: z.string().optional(),
+    NEXT_PUBLIC_VERCEL_ENV: z.string().optional(),
+    NEXT_PUBLIC_VERCEL_BRANCH_URL: z.string().optional(),
 
     NEXT_PUBLIC_UMAMI_URL: z.string().url().optional(),
     NEXT_PUBLIC_UMAMI_WEBSITE_ID: z.string().uuid().optional()
@@ -52,7 +53,8 @@ export const env = createEnv({
     NODE_ENV: process.env.NODE_ENV,
 
     NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL,
-    NEXT_PUBLIC_VERCEL_URL: process.env.NEXT_PUBLIC_VERCEL_URL,
+    NEXT_PUBLIC_VERCEL_ENV: process.env.NEXT_PUBLIC_VERCEL_ENV,
+    NEXT_PUBLIC_VERCEL_BRANCH_URL: process.env.NEXT_PUBLIC_VERCEL_BRANCH_URL,
 
     NEXT_PUBLIC_UMAMI_URL: process.env.NEXT_PUBLIC_UMAMI_URL,
     NEXT_PUBLIC_UMAMI_WEBSITE_ID: process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID
