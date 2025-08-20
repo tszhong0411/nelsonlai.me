@@ -1,14 +1,14 @@
 import { type QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
-import { isServer } from '@/lib/constants'
+import { IS_SERVER } from '@/lib/constants'
 
 import { makeQueryClient } from './query-client'
 
 let browserQueryClient: QueryClient | undefined
 
 const getQueryClient = () => {
-  if (isServer) {
+  if (IS_SERVER) {
     // Server: always make a new query client
     return makeQueryClient()
   } else {

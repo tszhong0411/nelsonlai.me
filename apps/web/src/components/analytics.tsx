@@ -1,10 +1,10 @@
 import { env } from '@tszhong0411/env'
 import Script from 'next/script'
 
-import { isProduction } from '@/lib/constants'
+import { IS_PRODUCTION } from '@/lib/constants'
 
 const Analytics = () => {
-  if (!isProduction) return null
+  if (!IS_PRODUCTION) return null
 
   return (
     <Script

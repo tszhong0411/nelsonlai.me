@@ -18,7 +18,7 @@ import { CommentEmailTemplate, ReplyEmailTemplate } from '@tszhong0411/emails'
 import { env } from '@tszhong0411/env'
 import { allPosts } from 'content-collections'
 
-import { isProduction } from '@/lib/constants'
+import { IS_PRODUCTION } from '@/lib/constants'
 import { resend } from '@/lib/resend'
 import { getDefaultImage } from '@/utils/get-default-image'
 
@@ -157,7 +157,7 @@ export const createComment = protectedProcedure
         })
       }
 
-      if (isProduction) {
+      if (IS_PRODUCTION) {
         // Notify the author of the blog post via email
         if (!input.parentId && user.role === 'user') {
           await resend.emails.send({

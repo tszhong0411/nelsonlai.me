@@ -6,11 +6,11 @@ import { RPCLink } from '@orpc/client/fetch'
 import { BatchLinkPlugin } from '@orpc/client/plugins'
 import { createTanstackQueryUtils } from '@orpc/tanstack-query'
 
-import { isServer } from '@/lib/constants'
+import { IS_SERVER } from '@/lib/constants'
 import { getBaseUrl } from '@/utils/get-base-url'
 
 const link = new RPCLink({
-  url: `${isServer ? getBaseUrl() : globalThis.location.origin}/rpc`,
+  url: `${IS_SERVER ? getBaseUrl() : globalThis.location.origin}/rpc`,
   plugins: [
     new BatchLinkPlugin({
       groups: [{ condition: () => true, context: {} }]

@@ -3,7 +3,7 @@ import { createId } from '@paralleldrive/cuid2'
 import { and, desc, eq, guestbook, lt } from '@tszhong0411/db'
 import { env } from '@tszhong0411/env'
 
-import { isProduction } from '@/lib/constants'
+import { IS_PRODUCTION } from '@/lib/constants'
 import { getDefaultImage } from '@/utils/get-default-image'
 
 import { protectedProcedure, publicProcedure } from '../root'
@@ -75,7 +75,7 @@ export const createMessage = protectedProcedure
       })
     }
 
-    if (isProduction) {
+    if (IS_PRODUCTION) {
       await fetch(env.DISCORD_WEBHOOK_URL, {
         method: 'POST',
         headers: {

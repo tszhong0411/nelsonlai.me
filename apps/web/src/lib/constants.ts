@@ -1,6 +1,6 @@
-export const isProduction = process.env.NODE_ENV === 'production'
+export const IS_PRODUCTION = process.env.NODE_ENV === 'production'
 // eslint-disable-next-line unicorn/prefer-global-this -- using `typeof window` to safely detect non-browser environments; `globalThis` is always defined
-export const isServer = typeof window === 'undefined'
+export const IS_SERVER = typeof window === 'undefined'
 
 export const GITHUB_USERNAME = 'tszhong0411'
 
