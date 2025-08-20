@@ -16,7 +16,7 @@ const CodingHours = () => {
         <h2 className='text-sm'>{t('homepage.about-me.coding-hours')}</h2>
       </div>
       <div className='flex grow items-center justify-center text-4xl font-semibold'>
-        {isSuccess && Math.round(data.seconds / 60 / 60)} hrs
+        {isSuccess && data.hours} hrs
         {isLoading && '--'}
         {isError && t('common.error')}
       </div>
