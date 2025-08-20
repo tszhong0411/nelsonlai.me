@@ -1,9 +1,13 @@
 import { env } from '@tszhong0411/env'
 
 export const getBaseUrl = () => {
-  const base = env.NEXT_PUBLIC_SITE_URL ?? env.VERCEL_URL
-  if (base) {
-    return `https://${base}`
+  let baseURL
+
+  if (env.VERCEL_ENV === 'preview') {
+    baseURL = `https://${env.NEXT_PUBLIC_VERCEL_URL}`
   }
-  return `http://localhost:${process.env.PORT ?? 3000}`
+
+  baseURL = env.NEXT_PUBLIC_SITE_URL
+
+  return baseURL
 }
