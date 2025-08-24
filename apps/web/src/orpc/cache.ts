@@ -1,6 +1,6 @@
 import type { GetLikesOutput, GetViewsOutput } from './routers'
 
-import { createCache } from '@tszhong0411/kv'
+import { createCache } from '@repo/kv'
 
 export const cache = {
   posts: {

@@ -3,15 +3,15 @@
  * Copyright (c) Sadman Sakib
  * Source: https://github.com/sadmann7/shadcn-table/blob/67bfe74c0454c7f657aa22c3d39a4926d6ebaf37/src/components/data-table/data-table.tsx
  *
- * Modified by: tszhong0411
+ * Modified by: Nelson Lai
  */
+import { cn } from '@repo/utils'
 import {
   type ColumnSort,
   flexRender,
   type RowData,
   type Table as TanstackTable
 } from '@tanstack/react-table'
-import { cn } from '@tszhong0411/utils'
 
 import { type DataTableConfig, getCommonPinningStyles } from '../lib/data-table'
 
@@ -19,7 +19,7 @@ import { DataTablePagination } from './data-table-pagination'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './table'
 
 declare module '@tanstack/react-table' {
-  // eslint-disable-next-line unused-imports/no-unused-vars, @typescript-eslint/no-unused-vars -- must have identical type parameters
+  // eslint-disable-next-line unused-imports/no-unused-vars -- must have identical type parameters
   interface ColumnMeta<TData extends RowData, TValue> {
     label?: string
     placeholder?: string

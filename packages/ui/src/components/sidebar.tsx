@@ -1,7 +1,7 @@
 'use client'
 
 import { Slot } from '@radix-ui/react-slot'
-import { cn } from '@tszhong0411/utils'
+import { cn } from '@repo/utils'
 import { cva, type VariantProps } from 'cva'
 import { PanelLeftIcon } from 'lucide-react'
 import { createContext, use, useCallback, useEffect, useMemo, useState } from 'react'
@@ -78,7 +78,6 @@ const SidebarProvider = (props: SidebarProviderProps) => {
       }
 
       // This sets the cookie to keep the sidebar state.
-      // eslint-disable-next-line unicorn/no-document-cookie -- safe
       document.cookie = `${SIDEBAR_COOKIE_NAME}=${openState}; path=/; max-age=${SIDEBAR_COOKIE_MAX_AGE}`
     },
     [setOpenProp, open]

@@ -2,7 +2,7 @@ import type { Context } from './context'
 
 import { ORPCError } from '@orpc/client'
 import { os } from '@orpc/server'
-import { ratelimit } from '@tszhong0411/kv'
+import { ratelimit } from '@repo/kv'
 
 import { getIp } from '@/utils/get-ip'
 

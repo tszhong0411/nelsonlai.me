@@ -26,16 +26,15 @@ const flattenKeys = (obj: DeepObject, prefix = ''): string[] => {
 
 describe('i18n messages', () => {
   it('should have matching keys across all languages', async () => {
-    const defaultMessages: Messages = (await import(`../messages/${i18n.defaultLocale}.json`))
-      .default
+    const { default: defaultMessages } = await import(`../messages/${i18n.defaultLocale}.json`)
 
-    const defaultKeys = flattenKeys(defaultMessages)
+    const defaultKeys = flattenKeys(defaultMessages as Messages)
 
     for (const locale of i18n.locales) {
       if (locale === i18n.defaultLocale) continue
 
-      const messages: DeepObject = (await import(`../messages/${locale}.json`)).default
-      const messageKeys = flattenKeys(messages)
+      const { default: messages } = await import(`../messages/${locale}.json`)
+      const messageKeys = flattenKeys(messages as DeepObject)
 
       // Check if all default keys exist in current locale
       for (const key of defaultKeys) {

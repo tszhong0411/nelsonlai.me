@@ -4,7 +4,7 @@
 'use client'
 
 import { SiGithub, SiWakatime, SiYoutube } from '@icons-pack/react-simple-icons'
-import { useTranslations } from '@tszhong0411/i18n/client'
+import { useTranslations } from '@repo/i18n/client'
 import { ArrowRightIcon, PencilIcon, StarIcon } from 'lucide-react'
 
 import Counter from '@/components/counter'
@@ -153,7 +153,7 @@ const Stats = () => {
                         WebkitTextFillColor: 'transparent'
                       }}
                     >
-                      <Counter value={Number(value)} />
+                      <Counter value={value} />
                       {suffix && <span>{` ${suffix}`}</span>}
                     </div>
                   </>

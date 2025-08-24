@@ -2,10 +2,10 @@
 
 import type { ListCommentsOutput } from '@/orpc/routers'
 
-import { useTranslations } from '@tszhong0411/i18n/client'
-import { Badge } from '@tszhong0411/ui/components/badge'
-import { Skeleton } from '@tszhong0411/ui/components/skeleton'
-import { Tooltip, TooltipContent, TooltipTrigger } from '@tszhong0411/ui/components/tooltip'
+import { useTranslations } from '@repo/i18n/client'
+import { Badge } from '@repo/ui/components/badge'
+import { Skeleton } from '@repo/ui/components/skeleton'
+import { Tooltip, TooltipContent, TooltipTrigger } from '@repo/ui/components/tooltip'
 import Image from 'next/image'
 import { useEffect, useMemo, useRef, useState } from 'react'
 

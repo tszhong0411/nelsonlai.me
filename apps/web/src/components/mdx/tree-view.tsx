@@ -4,7 +4,7 @@ import {
   createTreeCollection,
   type Node,
   TreeView as UITreeView
-} from '@tszhong0411/ui/components/tree-view'
+} from '@repo/ui/components/tree-view'
 
 type TreeViewProps = { collection: Node } & Omit<
   React.ComponentProps<typeof UITreeView>,

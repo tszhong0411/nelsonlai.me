@@ -1,10 +1,10 @@
 'use client'
 
-import { useTranslations } from '@tszhong0411/i18n/client'
+import { useTranslations } from '@repo/i18n/client'
 import { motion, useAnimate, useInView } from 'motion/react'
 import { useEffect, useRef } from 'react'
 
-import { BlurImage } from '@/components/ui/blur-image'
+import BlurImage from '@/components/blur-image'
 import me from '~/images/me.png'
 
 const variants = {
@@ -123,7 +123,6 @@ const GetInTouch = () => {
               {t('homepage.get-in-touch.description')}
             </p>
             <div className='my-8'>
-              {/* eslint-disable-next-line no-restricted-syntax -- it's mailto link */}
               <a
                 href='mailto:me@nelsonlai.me'
                 className='bg-email-button rounded-full px-4 py-2 text-sm text-white'

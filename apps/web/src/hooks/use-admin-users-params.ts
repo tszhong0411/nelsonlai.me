@@ -1,6 +1,6 @@
 import type { ListAllUsersOutput } from '@/orpc/routers'
 
-import { getSortingStateParser } from '@tszhong0411/ui/lib/data-table'
+import { getSortingStateParser } from '@repo/ui/lib/data-table'
 import {
   parseAsArrayOf,
   parseAsInteger,

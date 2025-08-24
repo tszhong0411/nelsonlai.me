@@ -1,4 +1,4 @@
-import { cn } from '@tszhong0411/utils'
+import { cn } from '@repo/utils'
 import { LoaderIcon } from 'lucide-react'
 
 const CommentLoader = (props: React.ComponentProps<'div'>) => {

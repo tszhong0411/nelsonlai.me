@@ -1,6 +1,6 @@
 'use client'
 
-import { cn } from '@tszhong0411/utils'
+import { cn } from '@repo/utils'
 import { CheckIcon, CopyIcon } from 'lucide-react'
 import mergeRefs from 'merge-refs'
 import { useEffect, useRef, useState } from 'react'

@@ -1,4 +1,4 @@
-import { useTranslations } from '@tszhong0411/i18n/client'
+import { useTranslations } from '@repo/i18n/client'
 import {
   AlertDialog,
   AlertDialogAction,
@@ -9,15 +9,15 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger
-} from '@tszhong0411/ui/components/alert-dialog'
-import { Button, buttonVariants } from '@tszhong0411/ui/components/button'
+} from '@repo/ui/components/alert-dialog'
+import { Button, buttonVariants } from '@repo/ui/components/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger
-} from '@tszhong0411/ui/components/dropdown-menu'
-import { toast } from '@tszhong0411/ui/components/sonner'
+} from '@repo/ui/components/dropdown-menu'
+import { toast } from '@repo/ui/components/sonner'
 import { MoreVerticalIcon } from 'lucide-react'
 
 import { useCommentContext } from '@/contexts/comment.context'

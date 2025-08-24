@@ -1,13 +1,13 @@
 import type { Metadata, ResolvingMetadata } from 'next'
 import type { SoftwareApplication, WithContext } from 'schema-dts'
 
-import { i18n } from '@tszhong0411/i18n/config'
-import { setRequestLocale } from '@tszhong0411/i18n/server'
+import { i18n } from '@repo/i18n/config'
+import { setRequestLocale } from '@repo/i18n/server'
 import { allProjects } from 'content-collections'
 import { notFound } from 'next/navigation'
 
+import BlurImage from '@/components/blur-image'
 import Mdx from '@/components/mdx'
-import { BlurImage } from '@/components/ui/blur-image'
 import { SITE_NAME } from '@/lib/constants'
 import { getBaseUrl } from '@/utils/get-base-url'
 import { getLocalizedPath } from '@/utils/get-localized-path'

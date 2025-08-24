@@ -1,4 +1,4 @@
-import { type DateTimeFormatOptions, useFormatter } from '@tszhong0411/i18n/client'
+import { type DateTimeFormatOptions, useFormatter } from '@repo/i18n/client'
 import dayjs from 'dayjs'
 
 type Options = {

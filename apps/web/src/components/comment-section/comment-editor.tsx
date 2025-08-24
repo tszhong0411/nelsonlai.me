@@ -1,7 +1,7 @@
-import { useTranslations } from '@tszhong0411/i18n/client'
-import { Button } from '@tszhong0411/ui/components/button'
-import { Textarea } from '@tszhong0411/ui/components/textarea'
-import { cn } from '@tszhong0411/utils'
+import { useTranslations } from '@repo/i18n/client'
+import { Button } from '@repo/ui/components/button'
+import { Textarea } from '@repo/ui/components/textarea'
+import { cn } from '@repo/utils'
 import { BoldIcon, ItalicIcon, StrikethroughIcon } from 'lucide-react'
 import { useRef } from 'react'
 

@@ -1,6 +1,6 @@
 'use client'
 
-import { Sidebar, SidebarContent } from '@tszhong0411/ui/components/sidebar'
+import { Sidebar, SidebarContent } from '@repo/ui/components/sidebar'
 
 import { ADMIN_SIDEBAR_LINKS } from '@/config/admin-sidebar-links'
 

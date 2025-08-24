@@ -2,7 +2,7 @@
 
 import type { Project } from 'content-collections'
 
-import { BlurImage } from '@/components/ui/blur-image'
+import BlurImage from '@/components/blur-image'
 
 import Link from './link'
 

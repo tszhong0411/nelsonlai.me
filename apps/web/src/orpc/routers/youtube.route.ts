@@ -1,4 +1,4 @@
-import { env } from '@tszhong0411/env'
+import { env } from '@repo/env'
 
 import { publicProcedure } from '../root'
 import { youtubeStatsSchema } from '../schemas/youtube.schema'

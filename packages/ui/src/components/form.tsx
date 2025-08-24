@@ -3,7 +3,7 @@
 import type * as LabelPrimitive from '@radix-ui/react-label'
 
 import { Slot } from '@radix-ui/react-slot'
-import { cn } from '@tszhong0411/utils'
+import { cn } from '@repo/utils'
 import { createContext, use, useId, useMemo } from 'react'
 import {
   Controller,
@@ -144,7 +144,7 @@ type FormMessageProps = React.ComponentProps<'p'>
 const FormMessage = (props: FormMessageProps) => {
   const { className, children, ...rest } = props
   const { error, formMessageId } = useFormField()
-  const body = error ? String(error.message ?? '') : children
+  const body = error ? (error.message ?? '') : children
 
   if (!body) {
     return null

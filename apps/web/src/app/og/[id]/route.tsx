@@ -1,8 +1,8 @@
 import fs from 'node:fs'
 import path from 'node:path'
 
-import { db, eq, posts } from '@tszhong0411/db'
-import { getErrorMessage } from '@tszhong0411/utils'
+import { db, eq, posts } from '@repo/db'
+import { getErrorMessage } from '@repo/utils'
 import { allPosts } from 'content-collections'
 import { ImageResponse } from 'next/og'
 import { NextResponse } from 'next/server'

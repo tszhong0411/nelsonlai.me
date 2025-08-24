@@ -1,8 +1,8 @@
 import type { Metadata, ResolvingMetadata } from 'next'
 import type { WebPage, WithContext } from 'schema-dts'
 
-import { i18n } from '@tszhong0411/i18n/config'
-import { getTranslations, setRequestLocale } from '@tszhong0411/i18n/server'
+import { i18n } from '@repo/i18n/config'
+import { getTranslations, setRequestLocale } from '@repo/i18n/server'
 
 import PageTitle from '@/components/page-title'
 import { getSession } from '@/lib/auth'

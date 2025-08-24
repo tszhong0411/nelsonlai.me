@@ -2,7 +2,7 @@
 
 import type { Metadata } from 'next'
 
-import { useTranslations } from '@tszhong0411/i18n/client'
+import { useTranslations } from '@repo/i18n/client'
 
 import GoToHomepage from '@/components/go-to-homepage'
 import MainLayout from '@/components/main-layout'

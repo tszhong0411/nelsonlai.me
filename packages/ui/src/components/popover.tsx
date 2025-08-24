@@ -1,5 +1,5 @@
 import * as PopoverPrimitive from '@radix-ui/react-popover'
-import { cn } from '@tszhong0411/utils'
+import { cn } from '@repo/utils'
 
 type PopoverProps = React.ComponentProps<typeof PopoverPrimitive.Root>
 

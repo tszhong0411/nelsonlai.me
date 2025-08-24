@@ -1,4 +1,4 @@
-import { env } from '@tszhong0411/env'
+import { env } from '@repo/env'
 
 export const getBaseUrl = () => {
   if (env.NEXT_PUBLIC_VERCEL_ENV === 'preview')

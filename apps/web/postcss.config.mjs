@@ -1,1 +1,1 @@
-export { default } from '@tszhong0411/ui/postcss-config'
+export { default } from '@repo/ui/postcss-config'

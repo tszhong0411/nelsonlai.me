@@ -1,8 +1,8 @@
 'use client'
 
-import { useTranslations } from '@tszhong0411/i18n/client'
-import { usePathname } from '@tszhong0411/i18n/routing'
-import { cn } from '@tszhong0411/utils'
+import { useTranslations } from '@repo/i18n/client'
+import { usePathname } from '@repo/i18n/routing'
+import { cn } from '@repo/utils'
 
 import { HEADER_LINKS } from '@/config/links'
 

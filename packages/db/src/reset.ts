@@ -1,4 +1,4 @@
-import { env } from '@tszhong0411/env'
+import { env } from '@repo/env'
 import { consola } from 'consola'
 import { sql } from 'drizzle-orm'
 import { execa } from 'execa'

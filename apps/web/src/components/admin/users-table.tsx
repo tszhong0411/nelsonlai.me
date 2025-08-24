@@ -2,17 +2,17 @@
 
 import type { ListAllUsersOutput } from '@/orpc/routers'
 
-import { type ColumnDef } from '@tanstack/react-table'
-import { useTranslations } from '@tszhong0411/i18n/client'
-import { Checkbox } from '@tszhong0411/ui/components/checkbox'
+import { useTranslations } from '@repo/i18n/client'
+import { Checkbox } from '@repo/ui/components/checkbox'
 import {
   DataTable,
   DataTableColumnHeader,
   DataTableSortList,
   DataTableToolbar
-} from '@tszhong0411/ui/components/data-table'
-import { useDataTable } from '@tszhong0411/ui/hooks/use-data-table'
-import { formatDate } from '@tszhong0411/ui/lib/data-table'
+} from '@repo/ui/components/data-table'
+import { useDataTable } from '@repo/ui/hooks/use-data-table'
+import { formatDate } from '@repo/ui/lib/data-table'
+import { type ColumnDef } from '@tanstack/react-table'
 import { CalendarIcon, CircleDashedIcon, UserIcon, UserLockIcon } from 'lucide-react'
 
 import { USER_ROLES } from '@/lib/constants'

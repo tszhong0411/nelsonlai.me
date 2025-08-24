@@ -1,4 +1,4 @@
-import { i18n } from '@tszhong0411/i18n/config'
+import { i18n } from '@repo/i18n/config'
 
 import { getBaseUrl } from './get-base-url'
 

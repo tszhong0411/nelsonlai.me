@@ -1,8 +1,8 @@
 'use client'
 
-import { useTranslations } from '@tszhong0411/i18n/client'
-import { Button } from '@tszhong0411/ui/components/button'
-import { toast } from '@tszhong0411/ui/components/sonner'
+import { useTranslations } from '@repo/i18n/client'
+import { Button } from '@repo/ui/components/button'
+import { toast } from '@repo/ui/components/sonner'
 import { useState } from 'react'
 
 import { useCommentContext } from '@/contexts/comment.context'
@@ -57,7 +57,7 @@ const CommentReply = () => {
           onEscape={() => setIsReplying(false)}
           placeholder={t('blog.comments.reply-to-comment')}
           disabled={disabled}
-          // eslint-disable-next-line jsx-a11y/no-autofocus -- Autofocus is necessary because user is replying to a comment
+          // eslint-disable-next-line jsx-a11y/no-autofocus -- autofocus is necessary because user is replying to a comment
           autoFocus
           data-testid='comment-textarea-reply'
         />
