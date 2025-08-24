@@ -39,4 +39,4 @@ const BlurImage = (props: ImageProps) => {
   )
 }
 
-export { BlurImage }
+export default BlurImage

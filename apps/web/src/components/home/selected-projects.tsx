@@ -8,7 +8,7 @@ import { ArrowUpRightIcon, LightbulbIcon } from 'lucide-react'
 import { motion, useInView } from 'motion/react'
 import { useRef } from 'react'
 
-import { BlurImage } from '@/components/ui/blur-image'
+import BlurImage from '@/components/blur-image'
 
 import Link from '../link'
 

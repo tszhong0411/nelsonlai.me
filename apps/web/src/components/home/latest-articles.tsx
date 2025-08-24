@@ -8,7 +8,7 @@ import { ArrowUpRightIcon, PencilIcon } from 'lucide-react'
 import { motion, useInView } from 'motion/react'
 import { useRef } from 'react'
 
-import { BlurImage } from '@/components/ui/blur-image'
+import BlurImage from '@/components/blur-image'
 import { usePostLikeCount, usePostViewCount } from '@/hooks/queries/post.query'
 import { useFormattedDate } from '@/hooks/use-formatted-date'
 

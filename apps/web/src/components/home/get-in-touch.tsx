@@ -4,7 +4,7 @@ import { useTranslations } from '@repo/i18n/client'
 import { motion, useAnimate, useInView } from 'motion/react'
 import { useEffect, useRef } from 'react'
 
-import { BlurImage } from '@/components/ui/blur-image'
+import BlurImage from '@/components/blur-image'
 import me from '~/images/me.png'
 
 const variants = {

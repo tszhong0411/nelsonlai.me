@@ -6,9 +6,9 @@ import NumberFlow from '@number-flow/react'
 import { useTranslations } from '@repo/i18n/client'
 import { useEffect, useRef } from 'react'
 
+import BlurImage from '@/components/blur-image'
 import ImageZoom from '@/components/image-zoom'
 import Link from '@/components/link'
-import { BlurImage } from '@/components/ui/blur-image'
 import {
   useIncrementPostViewCount,
   usePostCommentCount,
