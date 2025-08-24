@@ -145,9 +145,6 @@ jobs:
           frontmatter "Test View Post" > apps/web/src/content/blog/en/test-view.mdx
           frontmatter "Test Like Post" > apps/web/src/content/blog/en/test-like.mdx
 
-      - name: Build apps
-        run: pnpm build:apps
-
       - name: Setup Playwright
         run: pnpm playwright install --with-deps
 
