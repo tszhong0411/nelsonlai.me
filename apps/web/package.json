@@ -17,7 +17,6 @@
     "test:e2e:inspector": "cross-env NODE_ENV=test pnpm with-env playwright test $1 --debug",
     "test:e2e:ui": "cross-env NODE_ENV=test pnpm with-env playwright test --ui",
     "type-check": "tsc --noEmit",
-    "typegen": "pnpm with-env next typegen",
     "with-env": "dotenv -e ../../.env.local --"
   },
   "lint-staged": {

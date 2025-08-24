@@ -55,8 +55,8 @@ jobs:
       - name: Setup
         uses: ./.github/actions/setup
 
-      - name: Generate Next.js route types
-        run: pnpm --filter web typegen
+      - name: Build MDX
+        run: pnpm build:mdx
 
       - name: Run type check
         run: pnpm type-check
