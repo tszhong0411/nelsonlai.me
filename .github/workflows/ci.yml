@@ -6,6 +6,8 @@ on:
       - main
 
 env:
+  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+  TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
   NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
   DATABASE_URL: ${{ secrets.DATABASE_URL }}
   UPSTASH_REDIS_REST_URL: ${{ secrets.UPSTASH_REDIS_REST_URL }}
@@ -15,7 +17,7 @@ env:
 
 jobs:
   tests:
-    name: Tests
+    name: Unit Tests
     runs-on: ubuntu-latest
     steps:
       - name: Checkout branch
@@ -53,8 +55,11 @@ jobs:
       - name: Setup
         uses: ./.github/actions/setup
 
-      - name: Build apps
-        run: pnpm build:apps
+      - name: Generate Next.js route types
+        run: pnpm --filter web typegen
+
+      - name: Build MDX
+        run: pnpm build:mdx
 
       - name: Run type check
         run: pnpm type-check
@@ -69,7 +74,7 @@ jobs:
       - name: Setup
         uses: ./.github/actions/setup
 
-      - name: Run Prettier
+      - name: Run Prettier format check
         run: pnpm format:check
 
   spelling:
@@ -102,7 +107,7 @@ jobs:
         run: pnpm check:knip
 
   e2e:
-    name: End to end tests
+    name: End-to-end tests
     runs-on: ubuntu-latest
     timeout-minutes: 30
     needs: [tests, eslint, types]
@@ -143,26 +148,8 @@ jobs:
       - name: Build apps
         run: pnpm build:apps
 
-      - name: Store Playwright's Version
-        run: |
-          PLAYWRIGHT_VERSION=$(pnpm ls @playwright/test | grep @playwright | sed 's/.*@//')
-          echo "Playwright's Version: $PLAYWRIGHT_VERSION"
-          echo "PLAYWRIGHT_VERSION=$PLAYWRIGHT_VERSION" >> $GITHUB_ENV
-
-      - name: Cache Playwright browsers for Playwright's Version
-        id: cache-playwright-browsers
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/ms-playwright
-          key: playwright-browsers-${{ env.PLAYWRIGHT_VERSION }}
-
       - name: Setup Playwright
-        if: steps.cache-playwright-browsers.outputs.cache-hit != 'true'
-        run: pnpm exec playwright install --with-deps
-
-      - name: Setup Playwright with cache
-        if: steps.cache-playwright-browsers.outputs.cache-hit == 'true'
-        run: pnpm exec playwright install-deps
+        run: pnpm playwright install --with-deps
 
       - name: Run services
         run: docker compose up -d
