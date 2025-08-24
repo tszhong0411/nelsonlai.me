@@ -13,7 +13,7 @@
     "type-check": "tsc --noEmit"
   },
   "lint-staged": {
-    "*.{ts}": "eslint --fix"
+    "*.ts": "eslint --fix"
   },
   "dependencies": {
     "clsx": "^2.1.1",

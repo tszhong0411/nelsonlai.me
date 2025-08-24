@@ -13,7 +13,7 @@
     "type-check": "tsc --noEmit"
   },
   "lint-staged": {
-    "*.{ts}": "eslint --fix"
+    "*.ts": "eslint --fix"
   },
   "dependencies": {
     "@t3-oss/env-nextjs": "^0.13.6",

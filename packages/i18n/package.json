@@ -20,7 +20,7 @@
     "type-check": "tsc --noEmit"
   },
   "lint-staged": {
-    "*.{ts}": "eslint --fix"
+    "*.ts": "eslint --fix"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",

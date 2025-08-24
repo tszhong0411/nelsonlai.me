@@ -21,7 +21,7 @@
     "with-env": "dotenv -e ../../.env.local --"
   },
   "lint-staged": {
-    "*.{ts}": "eslint --fix"
+    "*.ts": "eslint --fix"
   },
   "dependencies": {
     "@repo/env": "workspace:*",
