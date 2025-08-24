@@ -313,7 +313,7 @@ export const defineConfig = async (options: Options) => {
     })
   }
 
-  // must be last
+  // Must be last
   config.push(prettierPlugin)
 
   return config

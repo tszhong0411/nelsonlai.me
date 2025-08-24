@@ -120,7 +120,7 @@ export const useDataTable = <TData>(props: UseDataTableProps<TData>) => {
 
   const pagination: PaginationState = useMemo(() => {
     return {
-      pageIndex: page - 1, // zero-based index -> one-based index
+      pageIndex: page - 1, // Zero-based index -> one-based index
       pageSize: perPage
     }
   }, [page, perPage])

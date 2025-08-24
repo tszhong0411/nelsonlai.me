@@ -9,7 +9,7 @@ export default {
   endOfLine: 'lf',
   plugins: [
     'prettier-plugin-packagejson',
-    'prettier-plugin-tailwindcss' // must be loaded last
+    'prettier-plugin-tailwindcss' // Must be loaded last
   ],
   printWidth: 100,
 
