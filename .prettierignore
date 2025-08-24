@@ -1,5 +1,2 @@
 pnpm-lock.yaml
 packages/db/src/migrations
-
-# For CI
-.pnpm-store/
