@@ -11,6 +11,6 @@
     "plugins": [{ "name": "next" }]
   },
   "exclude": ["node_modules"],
-  "extends": "@tszhong0411/typescript-config/base.json",
+  "extends": "@repo/typescript-config/base.json",
   "include": ["**/*.ts", "**/*.tsx", "next-env.d.ts", ".next/types/**/*.ts", "postcss.config.mjs"]
 }

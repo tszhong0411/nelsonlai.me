@@ -3,7 +3,7 @@
  * Copyright (c) fuma-nama
  * Source: https://github.com/fuma-nama/fumadocs/blob/7b18075cc97ca876ab14b22f05349a09dc0e4025/packages/core/src/mdx-plugins/rehype-code.ts
  *
- * Modified by: tszhong0411
+ * Modified by: Nelson Lai
  */
 import type { Root } from 'hast'
 import type { Plugin } from 'unified'

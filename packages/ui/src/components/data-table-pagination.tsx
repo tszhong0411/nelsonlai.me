@@ -3,11 +3,11 @@
  * Copyright (c) Sadman Sakib
  * Source: https://github.com/sadmann7/shadcn-table/blob/67bfe74c0454c7f657aa22c3d39a4926d6ebaf37/src/components/data-table/data-table-pagination.tsx
  *
- * Modified by: tszhong0411
+ * Modified by: Nelson Lai
  */
 import type { Table } from '@tanstack/react-table'
 
-import { cn } from '@tszhong0411/utils'
+import { cn } from '@repo/utils'
 import {
   ChevronLeftIcon,
   ChevronRightIcon,

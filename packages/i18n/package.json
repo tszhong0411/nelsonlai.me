@@ -1,5 +1,5 @@
 {
-  "name": "@tszhong0411/i18n",
+  "name": "@repo/i18n",
   "version": "0.0.0",
   "license": "MIT",
   "author": "Nelson Lai <me@nelsonlai.me> (https://github.com/tszhong0411/)",
@@ -23,8 +23,8 @@
     "*.{ts}": "eslint --fix"
   },
   "devDependencies": {
-    "@tszhong0411/eslint-config": "workspace:*",
-    "@tszhong0411/typescript-config": "workspace:*",
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
     "@types/react": "^19.1.6",
     "next": "^15.3.3",
     "next-intl": "^4.1.0"

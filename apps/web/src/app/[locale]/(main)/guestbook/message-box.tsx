@@ -1,20 +1,14 @@
 'use client'
 
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useTranslations } from '@tszhong0411/i18n/client'
-import { useRouter } from '@tszhong0411/i18n/routing'
-import { Avatar, AvatarFallback, AvatarImage } from '@tszhong0411/ui/components/avatar'
-import { Button } from '@tszhong0411/ui/components/button'
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormMessage
-} from '@tszhong0411/ui/components/form'
-import { toast } from '@tszhong0411/ui/components/sonner'
-import { Textarea } from '@tszhong0411/ui/components/textarea'
-import { getAbbreviation } from '@tszhong0411/utils'
+import { useTranslations } from '@repo/i18n/client'
+import { useRouter } from '@repo/i18n/routing'
+import { Avatar, AvatarFallback, AvatarImage } from '@repo/ui/components/avatar'
+import { Button } from '@repo/ui/components/button'
+import { Form, FormControl, FormField, FormItem, FormMessage } from '@repo/ui/components/form'
+import { toast } from '@repo/ui/components/sonner'
+import { Textarea } from '@repo/ui/components/textarea'
+import { getAbbreviation } from '@repo/utils'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 

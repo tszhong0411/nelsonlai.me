@@ -1,8 +1,8 @@
 'use client'
 
-import { useLocale, useTranslations } from '@tszhong0411/i18n/client'
-import { buttonVariants } from '@tszhong0411/ui/components/button'
-import { cn } from '@tszhong0411/utils'
+import { useLocale, useTranslations } from '@repo/i18n/client'
+import { buttonVariants } from '@repo/ui/components/button'
+import { cn } from '@repo/utils'
 import { allPosts, type Post } from 'content-collections'
 import { ArrowUpRightIcon, PencilIcon } from 'lucide-react'
 import { motion, useInView } from 'motion/react'

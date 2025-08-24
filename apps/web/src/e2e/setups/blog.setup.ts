@@ -2,7 +2,7 @@ import fs from 'node:fs/promises'
 import path from 'node:path'
 
 import { test as setup } from '@playwright/test'
-import { db, posts } from '@tszhong0411/db'
+import { db, posts } from '@repo/db'
 
 import { TEST_POSTS } from '../constants'
 

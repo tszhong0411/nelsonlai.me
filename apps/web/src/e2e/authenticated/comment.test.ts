@@ -1,6 +1,6 @@
 import { createId } from '@paralleldrive/cuid2'
 import { expect, test } from '@playwright/test'
-import { comments, db } from '@tszhong0411/db'
+import { comments, db } from '@repo/db'
 
 import { TEST_USER } from '../constants'
 import { getNumberFlow } from '../utils/number-flow'

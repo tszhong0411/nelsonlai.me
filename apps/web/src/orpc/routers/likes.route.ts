@@ -1,5 +1,5 @@
 import { ORPCError } from '@orpc/client'
-import { eq, likesSessions, posts, sql } from '@tszhong0411/db'
+import { eq, likesSessions, posts, sql } from '@repo/db'
 
 import { getIp } from '@/utils/get-ip'
 import { getSessionId } from '@/utils/get-session-id'

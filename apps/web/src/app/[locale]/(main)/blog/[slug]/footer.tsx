@@ -2,8 +2,8 @@
 
 import type { Post } from 'content-collections'
 
-import { useLocale, useTranslations } from '@tszhong0411/i18n/client'
-import { linkVariants } from '@tszhong0411/ui/components/link'
+import { useLocale, useTranslations } from '@repo/i18n/client'
+import { linkVariants } from '@repo/ui/components/link'
 
 import Link from '@/components/link'
 import { useFormattedDate } from '@/hooks/use-formatted-date'

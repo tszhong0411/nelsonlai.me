@@ -1,11 +1,11 @@
-import { useTranslations } from '@tszhong0411/i18n/client'
-import { Button } from '@tszhong0411/ui/components/button'
+import { useTranslations } from '@repo/i18n/client'
+import { Button } from '@repo/ui/components/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger
-} from '@tszhong0411/ui/components/dropdown-menu'
+} from '@repo/ui/components/dropdown-menu'
 import { MonitorIcon, MoonIcon, SunIcon } from 'lucide-react'
 import { useTheme } from 'next-themes'
 

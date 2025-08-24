@@ -7,7 +7,7 @@
  *  - https://github.com/sadmann7/shadcn-table/blob/67bfe74c0454c7f657aa22c3d39a4926d6ebaf37/src/config/data-table.ts
  *  - https://github.com/sadmann7/shadcn-table/blob/67bfe74c0454c7f657aa22c3d39a4926d6ebaf37/src/lib/parsers.ts
  *
- * Modified by: tszhong0411
+ * Modified by: Nelson Lai
  */
 import type { ExtendedColumnSort } from '../components/data-table'
 import type { Column } from '@tanstack/react-table'

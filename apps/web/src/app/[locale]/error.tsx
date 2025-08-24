@@ -1,7 +1,7 @@
 'use client'
 
-import { useTranslations } from '@tszhong0411/i18n/client'
-import { Button } from '@tszhong0411/ui/components/button'
+import { useTranslations } from '@repo/i18n/client'
+import { Button } from '@repo/ui/components/button'
 
 import MainLayout from '@/components/main-layout'
 

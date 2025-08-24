@@ -1,6 +1,6 @@
 import type { NextRequest } from 'next/server'
 
-import { i18nMiddleware } from '@tszhong0411/i18n/middleware'
+import { i18nMiddleware } from '@repo/i18n/middleware'
 
 const middleware = (request: NextRequest) => {
   const csp = `

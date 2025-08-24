@@ -5,7 +5,7 @@ import {
   TableHead,
   TableHeader,
   TableRow
-} from '@tszhong0411/ui/components/table'
+} from '@repo/ui/components/table'
 
 type TableProps = {
   headers: string[]

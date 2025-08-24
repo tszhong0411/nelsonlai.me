@@ -1,5 +1,5 @@
 import { SiNextdotjs } from '@icons-pack/react-simple-icons'
-import { useTranslations } from '@tszhong0411/i18n/client'
+import { useTranslations } from '@repo/i18n/client'
 import { HeartIcon } from 'lucide-react'
 
 const FavoriteFramework = () => {

@@ -1,5 +1,5 @@
-import { Table } from '@tszhong0411/ui/components/table'
-import { cn } from '@tszhong0411/utils'
+import { Table } from '@repo/ui/components/table'
+import { cn } from '@repo/utils'
 
 type CommentTableProps = React.ComponentProps<'table'>
 

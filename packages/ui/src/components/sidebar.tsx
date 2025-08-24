@@ -1,7 +1,7 @@
 'use client'
 
 import { Slot } from '@radix-ui/react-slot'
-import { cn } from '@tszhong0411/utils'
+import { cn } from '@repo/utils'
 import { cva, type VariantProps } from 'cva'
 import { PanelLeftIcon } from 'lucide-react'
 import { createContext, use, useCallback, useEffect, useMemo, useState } from 'react'

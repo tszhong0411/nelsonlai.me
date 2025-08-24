@@ -1,6 +1,6 @@
 'use client'
 
-import { useTranslations } from '@tszhong0411/i18n/client'
+import { useTranslations } from '@repo/i18n/client'
 import { ClockIcon } from 'lucide-react'
 
 import { useWakatimeStat } from '@/hooks/queries/stat.query'

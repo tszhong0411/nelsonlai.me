@@ -1,5 +1,5 @@
 {
-  "name": "@tszhong0411/utils",
+  "name": "@repo/utils",
   "version": "0.0.0",
   "license": "MIT",
   "author": "Nelson Lai <me@nelsonlai.me> (https://github.com/tszhong0411/)",
@@ -20,8 +20,8 @@
     "tailwind-merge": "^3.3.0"
   },
   "devDependencies": {
-    "@tszhong0411/eslint-config": "workspace:*",
-    "@tszhong0411/typescript-config": "workspace:*",
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
     "@types/node": "^22.15.29"
   }
 }

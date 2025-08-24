@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import type { WebSite, WithContext } from 'schema-dts'
 
-import { i18n } from '@tszhong0411/i18n/config'
-import { getTranslations, setRequestLocale } from '@tszhong0411/i18n/server'
+import { i18n } from '@repo/i18n/config'
+import { getTranslations, setRequestLocale } from '@repo/i18n/server'
 
 import AboutMe from '@/components/home/about-me'
 import GetInTouch from '@/components/home/get-in-touch'

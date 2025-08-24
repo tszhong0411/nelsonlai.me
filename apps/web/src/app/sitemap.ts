@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next'
 
-import { supportedLanguages } from '@tszhong0411/i18n/config'
+import { supportedLanguages } from '@repo/i18n/config'
 import { allPages, allPosts, allProjects } from 'content-collections'
 
 import { getLocalizedPath } from '@/utils/get-localized-path'

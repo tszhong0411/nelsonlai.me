@@ -3,7 +3,7 @@
  * Copyright (c) Sadman Sakib
  * Source: https://github.com/sadmann7/shadcn-table/blob/67bfe74c0454c7f657aa22c3d39a4926d6ebaf37/src/components/ui/sortable.tsx
  *
- * Modified by: tszhong0411
+ * Modified by: Nelson Lai
  */
 'use client'
 
@@ -42,7 +42,7 @@ import {
 } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
 import { Slot } from '@radix-ui/react-slot'
-import { cn } from '@tszhong0411/utils'
+import { cn } from '@repo/utils'
 import { createContext, use, useCallback, useEffect, useId, useMemo, useState } from 'react'
 import { createPortal } from 'react-dom'
 

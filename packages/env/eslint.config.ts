@@ -1,4 +1,4 @@
-import { defineConfig } from '@tszhong0411/eslint-config'
+import { defineConfig } from '@repo/eslint-config'
 
 export default defineConfig({
   tsconfigRootDir: import.meta.dirname

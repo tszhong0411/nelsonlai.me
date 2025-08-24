@@ -1,7 +1,7 @@
 import { ORPCError } from '@orpc/client'
 import { createId } from '@paralleldrive/cuid2'
-import { and, desc, eq, guestbook, lt } from '@tszhong0411/db'
-import { env } from '@tszhong0411/env'
+import { and, desc, eq, guestbook, lt } from '@repo/db'
+import { env } from '@repo/env'
 
 import { IS_PRODUCTION } from '@/lib/constants'
 import { getDefaultImage } from '@/utils/get-default-image'

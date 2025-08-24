@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "exclude": ["node_modules"],
-  "extends": "@tszhong0411/typescript-config/react-library.json",
+  "extends": "@repo/typescript-config/react-library.json",
   "include": ["**/*.ts", "**/*.tsx", "postcss.config.mjs"]
 }

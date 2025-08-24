@@ -16,7 +16,7 @@ import {
   or,
   type SQLWrapper,
   users
-} from '@tszhong0411/db'
+} from '@repo/db'
 
 import { adminProcedure } from '@/orpc/root'
 

@@ -1,10 +1,10 @@
 import type { NextConfig } from 'next'
 
-import '@tszhong0411/env'
+import '@repo/env'
 
 import { withContentCollections } from '@content-collections/next'
 import bundleAnalyzer from '@next/bundle-analyzer'
-import { NextConfigHeaders } from '@tszhong0411/shared'
+import { NextConfigHeaders } from '@repo/shared'
 import createNextIntlPlugin from 'next-intl/plugin'
 
 const withNextIntl = createNextIntlPlugin()

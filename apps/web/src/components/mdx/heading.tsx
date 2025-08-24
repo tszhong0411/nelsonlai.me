@@ -3,10 +3,10 @@
  * Copyright (c) fuma-nama
  * Source: https://github.com/fuma-nama/fumadocs/blob/82c273917280f63da95687852135f89a08593e71/packages/ui/src/components/heading.tsx
  *
- * Modified by: tszhong0411
+ * Modified by: Nelson Lai
  */
-import { useTranslations } from '@tszhong0411/i18n/client'
-import { cn } from '@tszhong0411/utils'
+import { useTranslations } from '@repo/i18n/client'
+import { cn } from '@repo/utils'
 import { LinkIcon } from 'lucide-react'
 
 import Link from '../link'

@@ -1,8 +1,8 @@
 import path from 'node:path'
 
 import { test as setup } from '@playwright/test'
-import { accounts, db, sessions, users } from '@tszhong0411/db'
-import { env } from '@tszhong0411/env'
+import { accounts, db, sessions, users } from '@repo/db'
+import { env } from '@repo/env'
 import { generateId } from 'better-auth'
 import { serializeSignedCookie } from 'better-call'
 import dayjs from 'dayjs'

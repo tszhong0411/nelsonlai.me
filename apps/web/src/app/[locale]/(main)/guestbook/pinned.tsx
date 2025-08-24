@@ -1,4 +1,4 @@
-import { useTranslations } from '@tszhong0411/i18n/client'
+import { useTranslations } from '@repo/i18n/client'
 import { MessageCircleIcon, PinIcon } from 'lucide-react'
 
 const Pinned = () => {

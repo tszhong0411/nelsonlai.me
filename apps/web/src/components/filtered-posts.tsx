@@ -2,9 +2,9 @@
 
 import type { Post } from 'content-collections'
 
-import { useTranslations } from '@tszhong0411/i18n/client'
-import { Input } from '@tszhong0411/ui/components/input'
-import { Label } from '@tszhong0411/ui/components/label'
+import { useTranslations } from '@repo/i18n/client'
+import { Input } from '@repo/ui/components/input'
+import { Label } from '@repo/ui/components/label'
 import { SearchIcon } from 'lucide-react'
 import { useState } from 'react'
 

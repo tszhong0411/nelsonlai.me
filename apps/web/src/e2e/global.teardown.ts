@@ -2,8 +2,8 @@ import fs from 'node:fs/promises'
 import path from 'node:path'
 
 import { test as teardown } from '@playwright/test'
-import { comments, db, eq, guestbook, like, likesSessions, posts, users } from '@tszhong0411/db'
-import { redis } from '@tszhong0411/kv'
+import { comments, db, eq, guestbook, like, likesSessions, posts, users } from '@repo/db'
+import { redis } from '@repo/kv'
 
 import { TEST_POSTS, TEST_USER } from './constants'
 

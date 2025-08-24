@@ -1,4 +1,4 @@
-import { likesSessions, posts, sum } from '@tszhong0411/db'
+import { likesSessions, posts, sum } from '@repo/db'
 
 import { publicProcedure } from '../root'
 import { likesStatsSchema, viewsStatsSchema } from '../schemas/blog.schema'

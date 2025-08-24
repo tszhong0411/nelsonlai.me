@@ -1,5 +1,5 @@
 import * as ScrollAreaPrimitive from '@radix-ui/react-scroll-area'
-import { cn } from '@tszhong0411/utils'
+import { cn } from '@repo/utils'
 
 type ScrollAreaProps = React.ComponentProps<typeof ScrollAreaPrimitive.Root>
 

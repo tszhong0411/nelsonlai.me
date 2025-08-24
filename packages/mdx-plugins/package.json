@@ -1,5 +1,5 @@
 {
-  "name": "@tszhong0411/mdx-plugins",
+  "name": "@repo/mdx-plugins",
   "version": "0.0.0",
   "license": "MIT",
   "author": "Nelson Lai <me@nelsonlai.me> (https://github.com/tszhong0411/)",
@@ -26,8 +26,8 @@
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
-    "@tszhong0411/eslint-config": "workspace:*",
-    "@tszhong0411/typescript-config": "workspace:*",
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
     "@types/hast": "^3.0.4",
     "@types/mdast": "^4.0.4"
   }

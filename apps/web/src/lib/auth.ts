@@ -1,7 +1,7 @@
 import type { NextRequest } from 'next/server'
 
-import { db } from '@tszhong0411/db'
-import { env } from '@tszhong0411/env'
+import { db } from '@repo/db'
+import { env } from '@repo/env'
 import { betterAuth } from 'better-auth'
 import { drizzleAdapter } from 'better-auth/adapters/drizzle'
 import { headers } from 'next/headers'

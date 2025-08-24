@@ -1,5 +1,5 @@
 {
-  "name": "@tszhong0411/db",
+  "name": "@repo/db",
   "version": "0.0.0",
   "license": "MIT",
   "author": "Nelson Lai <me@nelsonlai.me> (https://github.com/tszhong0411/)",
@@ -24,13 +24,13 @@
     "*.{ts}": "eslint --fix"
   },
   "dependencies": {
-    "@tszhong0411/env": "workspace:*",
+    "@repo/env": "workspace:*",
     "drizzle-orm": "^0.44.2",
     "postgres": "^3.4.7"
   },
   "devDependencies": {
-    "@tszhong0411/eslint-config": "workspace:*",
-    "@tszhong0411/typescript-config": "workspace:*",
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
     "@types/node": "^22.15.29",
     "consola": "^3.4.2",
     "drizzle-kit": "^0.31.1",

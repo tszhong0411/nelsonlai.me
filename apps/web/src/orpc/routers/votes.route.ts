@@ -1,5 +1,5 @@
 import { ORPCError } from '@orpc/client'
-import { and, eq, votes } from '@tszhong0411/db'
+import { and, eq, votes } from '@repo/db'
 
 import { protectedProcedure } from '../root'
 import { createVoteInputSchema, voteSchema } from '../schemas/votes.schema'

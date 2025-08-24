@@ -1,5 +1,5 @@
 {
-  "name": "@tszhong0411/env",
+  "name": "@repo/env",
   "version": "0.0.0",
   "license": "MIT",
   "author": "Nelson Lai <me@nelsonlai.me> (https://github.com/tszhong0411/)",
@@ -20,7 +20,7 @@
     "zod": "^3.25.51"
   },
   "devDependencies": {
-    "@tszhong0411/eslint-config": "workspace:*",
-    "@tszhong0411/typescript-config": "workspace:*"
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*"
   }
 }

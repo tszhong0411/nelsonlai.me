@@ -3,7 +3,7 @@
  * Copyright (c) Vitaly Rtishchev
  * Source: https://github.com/mantinedev/mantine/blob/ae20e40adfa26936d73e81b3ab30136f7997a19b/packages/%40mantine/hooks/src/use-debounced-callback/use-debounced-callback.ts
  *
- * Modified by: tszhong0411
+ * Modified by: Nelson Lai
  */
 import { useCallback, useEffect, useRef } from 'react'
 

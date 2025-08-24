@@ -1,5 +1,5 @@
 import { Slot } from '@radix-ui/react-slot'
-import { cn } from '@tszhong0411/utils'
+import { cn } from '@repo/utils'
 import { cva, type VariantProps } from 'cva'
 
 const badgeVariants = cva({

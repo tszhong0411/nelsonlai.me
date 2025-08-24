@@ -3,7 +3,7 @@
 import type { Post } from 'content-collections'
 
 import NumberFlow from '@number-flow/react'
-import { useTranslations } from '@tszhong0411/i18n/client'
+import { useTranslations } from '@repo/i18n/client'
 import { useEffect, useRef } from 'react'
 
 import ImageZoom from '@/components/image-zoom'

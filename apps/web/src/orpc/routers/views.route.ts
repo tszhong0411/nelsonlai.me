@@ -1,5 +1,5 @@
 import { ORPCError } from '@orpc/client'
-import { eq, posts, sql } from '@tszhong0411/db'
+import { eq, posts, sql } from '@repo/db'
 
 import { cache } from '../cache'
 import { publicProcedure } from '../root'

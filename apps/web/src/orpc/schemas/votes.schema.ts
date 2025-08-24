@@ -1,4 +1,4 @@
-import { votes } from '@tszhong0411/db'
+import { votes } from '@repo/db'
 import { createSelectSchema } from 'drizzle-zod'
 import { z } from 'zod'
 

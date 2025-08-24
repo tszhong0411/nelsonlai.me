@@ -1,4 +1,4 @@
-import { Link as LocalizedLink } from '@tszhong0411/i18n/routing'
+import { Link as LocalizedLink } from '@repo/i18n/routing'
 
 type LinkProps = React.ComponentProps<'a'>
 

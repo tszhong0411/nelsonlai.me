@@ -5,7 +5,7 @@
  *  - https://github.com/radix-ui/primitives/blob/79304015e13a31bc465545fa1d20e743a0bce3c5/packages/core/primitive/src/primitive.tsx
  *  - https://github.com/radix-ui/primitives/blob/79304015e13a31bc465545fa1d20e743a0bce3c5/packages/react/compose-refs/src/compose-refs.tsx
  *
- * Modified by: tszhong0411
+ * Modified by: Nelson Lai
  */
 import { useCallback } from 'react'
 

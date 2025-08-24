@@ -1,4 +1,4 @@
-import { cn } from '@tszhong0411/utils'
+import { cn } from '@repo/utils'
 import { cva, type VariantProps } from 'cva'
 import NextLink from 'next/link'
 

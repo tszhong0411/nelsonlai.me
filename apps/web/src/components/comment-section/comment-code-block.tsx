@@ -1,4 +1,4 @@
-import { CodeBlock } from '@tszhong0411/ui/components/code-block'
+import { CodeBlock } from '@repo/ui/components/code-block'
 import { useEffect, useState } from 'react'
 import { type BundledLanguage, bundledLanguages } from 'shiki'
 

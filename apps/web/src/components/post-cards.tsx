@@ -2,7 +2,7 @@
 
 import type { Post } from 'content-collections'
 
-import { useTranslations } from '@tszhong0411/i18n/client'
+import { useTranslations } from '@repo/i18n/client'
 
 import { BlurImage } from '@/components/ui/blur-image'
 import { usePostLikeCount, usePostViewCount } from '@/hooks/queries/post.query'

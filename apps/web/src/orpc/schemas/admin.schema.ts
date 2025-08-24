@@ -1,4 +1,4 @@
-import { comments, users } from '@tszhong0411/db'
+import { comments, users } from '@repo/db'
 import { createSelectSchema } from 'drizzle-zod'
 import { z } from 'zod'
 

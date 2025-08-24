@@ -1,6 +1,6 @@
 import type { ListMessagesOutput } from '@/orpc/routers'
 
-import { useTranslations } from '@tszhong0411/i18n/client'
+import { useTranslations } from '@repo/i18n/client'
 import {
   AlertDialog,
   AlertDialogAction,
@@ -11,9 +11,9 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger
-} from '@tszhong0411/ui/components/alert-dialog'
-import { Button, buttonVariants } from '@tszhong0411/ui/components/button'
-import { toast } from '@tszhong0411/ui/components/sonner'
+} from '@repo/ui/components/alert-dialog'
+import { Button, buttonVariants } from '@repo/ui/components/button'
+import { toast } from '@repo/ui/components/sonner'
 
 import { useDeleteGuestbookMessage } from '@/hooks/queries/guestbook.query'
 

@@ -3,11 +3,11 @@
  * Copyright (c) Delba de Oliveira
  * Source: https://github.com/delbaoliveira/website/blob/59e6f181ad75751342ceaa8931db4cbcef86b018/ui/BlurImage.tsx
  *
- * Modified by: tszhong0411
+ * Modified by: Nelson Lai
  */
 'use client'
 
-import { cn } from '@tszhong0411/utils'
+import { cn } from '@repo/utils'
 import NextImage from 'next/image'
 import { useState } from 'react'
 

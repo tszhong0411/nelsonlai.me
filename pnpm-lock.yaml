@@ -20,10 +20,10 @@ importers:
       '@playwright/test':
         specifier: ^1.52.0
         version: 1.55.0
-      '@tszhong0411/eslint-config':
+      '@repo/eslint-config':
         specifier: workspace:*
         version: link:packages/eslint-config
-      '@tszhong0411/typescript-config':
+      '@repo/typescript-config':
         specifier: workspace:*
         version: link:packages/typescript-config
       '@types/node':
@@ -113,6 +113,24 @@ importers:
       '@paralleldrive/cuid2':
         specifier: ^2.2.2
         version: 2.2.2
+      '@repo/db':
+        specifier: workspace:*
+        version: link:../../packages/db
+      '@repo/emails':
+        specifier: workspace:*
+        version: link:../../packages/emails
+      '@repo/env':
+        specifier: workspace:*
+        version: link:../../packages/env
+      '@repo/i18n':
+        specifier: workspace:*
+        version: link:../../packages/i18n
+      '@repo/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
+      '@repo/utils':
+        specifier: workspace:*
+        version: link:../../packages/utils
       '@tanstack/react-query':
         specifier: ^5.80.3
         version: 5.85.5(react@19.1.1)
@@ -122,24 +140,6 @@ importers:
       '@tanstack/react-table':
         specifier: ^8.21.3
         version: 8.21.3(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
-      '@tszhong0411/db':
-        specifier: workspace:*
-        version: link:../../packages/db
-      '@tszhong0411/emails':
-        specifier: workspace:*
-        version: link:../../packages/emails
-      '@tszhong0411/env':
-        specifier: workspace:*
-        version: link:../../packages/env
-      '@tszhong0411/i18n':
-        specifier: workspace:*
-        version: link:../../packages/i18n
-      '@tszhong0411/ui':
-        specifier: workspace:*
-        version: link:../../packages/ui
-      '@tszhong0411/utils':
-        specifier: workspace:*
-        version: link:../../packages/utils
       '@vercel/speed-insights':
         specifier: ^1.2.0
         version: 1.2.0(next@15.5.0(@babel/core@7.28.3)(@playwright/test@1.55.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)
@@ -255,6 +255,21 @@ importers:
       '@next/bundle-analyzer':
         specifier: ^15.3.3
         version: 15.5.0
+      '@repo/eslint-config':
+        specifier: workspace:*
+        version: link:../../packages/eslint-config
+      '@repo/kv':
+        specifier: workspace:*
+        version: link:../../packages/kv
+      '@repo/mdx-plugins':
+        specifier: workspace:*
+        version: link:../../packages/mdx-plugins
+      '@repo/shared':
+        specifier: workspace:*
+        version: link:../../packages/shared
+      '@repo/typescript-config':
+        specifier: workspace:*
+        version: link:../../packages/typescript-config
       '@tailwindcss/postcss':
         specifier: ^4.1.8
         version: 4.1.12
@@ -264,21 +279,6 @@ importers:
       '@testing-library/react':
         specifier: ^16.3.0
         version: 16.3.0(@testing-library/dom@10.4.1)(@types/react-dom@19.1.7(@types/react@19.1.11))(@types/react@19.1.11)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
-      '@tszhong0411/eslint-config':
-        specifier: workspace:*
-        version: link:../../packages/eslint-config
-      '@tszhong0411/kv':
-        specifier: workspace:*
-        version: link:../../packages/kv
-      '@tszhong0411/mdx-plugins':
-        specifier: workspace:*
-        version: link:../../packages/mdx-plugins
-      '@tszhong0411/shared':
-        specifier: workspace:*
-        version: link:../../packages/shared
-      '@tszhong0411/typescript-config':
-        specifier: workspace:*
-        version: link:../../packages/typescript-config
       '@types/canvas-confetti':
         specifier: ^1.9.0
         version: 1.9.0
@@ -303,16 +303,13 @@ importers:
       schema-dts:
         specifier: ^1.1.5
         version: 1.1.5
-      sharp:
-        specifier: ^0.34.2
-        version: 0.34.3
       tailwindcss:
         specifier: ^4.1.8
         version: 4.1.12
 
   packages/db:
     dependencies:
-      '@tszhong0411/env':
+      '@repo/env':
         specifier: workspace:*
         version: link:../env
       drizzle-orm:
@@ -322,10 +319,10 @@ importers:
         specifier: ^3.4.7
         version: 3.4.7
     devDependencies:
-      '@tszhong0411/eslint-config':
+      '@repo/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
-      '@tszhong0411/typescript-config':
+      '@repo/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
       '@types/node':
@@ -353,10 +350,10 @@ importers:
         specifier: ^4.0.16
         version: 4.2.8
     devDependencies:
-      '@tszhong0411/eslint-config':
+      '@repo/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
-      '@tszhong0411/typescript-config':
+      '@repo/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
       '@types/node':
@@ -378,10 +375,10 @@ importers:
         specifier: ^3.25.51
         version: 3.25.76
     devDependencies:
-      '@tszhong0411/eslint-config':
+      '@repo/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
-      '@tszhong0411/typescript-config':
+      '@repo/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
 
@@ -459,10 +456,10 @@ importers:
 
   packages/i18n:
     devDependencies:
-      '@tszhong0411/eslint-config':
+      '@repo/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
-      '@tszhong0411/typescript-config':
+      '@repo/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
       '@types/react':
@@ -487,13 +484,13 @@ importers:
         specifier: ^3.4.2
         version: 3.4.2
     devDependencies:
-      '@tszhong0411/env':
+      '@repo/env':
         specifier: workspace:*
         version: link:../env
-      '@tszhong0411/eslint-config':
+      '@repo/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
-      '@tszhong0411/typescript-config':
+      '@repo/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
 
@@ -524,10 +521,10 @@ importers:
         specifier: ^5.0.0
         version: 5.0.0
     devDependencies:
-      '@tszhong0411/eslint-config':
+      '@repo/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
-      '@tszhong0411/typescript-config':
+      '@repo/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
       '@types/hast':
@@ -539,10 +536,10 @@ importers:
 
   packages/shared:
     devDependencies:
-      '@tszhong0411/eslint-config':
+      '@repo/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
-      '@tszhong0411/typescript-config':
+      '@repo/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
 
@@ -647,18 +644,18 @@ importers:
         specifier: ^3.25.51
         version: 3.25.76
     devDependencies:
+      '@repo/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint-config
+      '@repo/typescript-config':
+        specifier: workspace:*
+        version: link:../typescript-config
+      '@repo/utils':
+        specifier: workspace:*
+        version: link:../utils
       '@tailwindcss/postcss':
         specifier: ^4.1.8
         version: 4.1.12
-      '@tszhong0411/eslint-config':
-        specifier: workspace:*
-        version: link:../eslint-config
-      '@tszhong0411/typescript-config':
-        specifier: workspace:*
-        version: link:../typescript-config
-      '@tszhong0411/utils':
-        specifier: workspace:*
-        version: link:../utils
       '@types/react':
         specifier: ^19.1.6
         version: 19.1.11
@@ -696,10 +693,10 @@ importers:
         specifier: ^3.3.0
         version: 3.3.1
     devDependencies:
-      '@tszhong0411/eslint-config':
+      '@repo/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
-      '@tszhong0411/typescript-config':
+      '@repo/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
       '@types/node':
@@ -13499,11 +13496,13 @@ snapshots:
     dependencies:
       color-name: 1.1.4
       simple-swizzle: 0.2.2
+    optional: true
 
   color@4.2.3:
     dependencies:
       color-convert: 2.0.1
       color-string: 1.9.1
+    optional: true
 
   colorette@2.0.20: {}
 
@@ -15056,7 +15055,8 @@ snapshots:
 
   is-arrayish@0.2.1: {}
 
-  is-arrayish@0.3.2: {}
+  is-arrayish@0.3.2:
+    optional: true
 
   is-async-function@2.1.1:
     dependencies:
@@ -17468,6 +17468,7 @@ snapshots:
       '@img/sharp-win32-arm64': 0.34.3
       '@img/sharp-win32-ia32': 0.34.3
       '@img/sharp-win32-x64': 0.34.3
+    optional: true
 
   shebang-command@2.0.0:
     dependencies:
@@ -17525,6 +17526,7 @@ snapshots:
   simple-swizzle@0.2.2:
     dependencies:
       is-arrayish: 0.3.2
+    optional: true
 
   sirv@2.0.4:
     dependencies:

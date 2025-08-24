@@ -1,6 +1,6 @@
 import type { NextRequest } from 'next/server'
 
-import { db } from '@tszhong0411/db'
+import { db } from '@repo/db'
 import { headers } from 'next/headers'
 
 import { getSession } from '@/lib/auth'

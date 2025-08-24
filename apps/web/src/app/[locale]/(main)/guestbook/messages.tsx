@@ -2,10 +2,10 @@
 
 import type { ListMessagesOutput } from '@/orpc/routers'
 
-import { useTranslations } from '@tszhong0411/i18n/client'
-import { Avatar, AvatarFallback, AvatarImage } from '@tszhong0411/ui/components/avatar'
-import { Skeleton } from '@tszhong0411/ui/components/skeleton'
-import { getAbbreviation } from '@tszhong0411/utils'
+import { useTranslations } from '@repo/i18n/client'
+import { Avatar, AvatarFallback, AvatarImage } from '@repo/ui/components/avatar'
+import { Skeleton } from '@repo/ui/components/skeleton'
+import { getAbbreviation } from '@repo/utils'
 import { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 

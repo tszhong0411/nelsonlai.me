@@ -1,11 +1,11 @@
 import { StandardRPCJsonSerializer } from '@orpc/client/standard'
+import { toast } from '@repo/ui/components/sonner'
 import {
   defaultShouldDehydrateQuery,
   MutationCache,
   QueryCache,
   QueryClient
 } from '@tanstack/react-query'
-import { toast } from '@tszhong0411/ui/components/sonner'
 
 const serializer = new StandardRPCJsonSerializer()
 

@@ -1,4 +1,4 @@
-import { and, comments, count, eq, isNotNull } from '@tszhong0411/db'
+import { and, comments, count, eq, isNotNull } from '@repo/db'
 
 import { publicProcedure } from '../root'
 import { countRepliesInputSchema, countRepliesSchema } from '../schemas/replies.schema'
