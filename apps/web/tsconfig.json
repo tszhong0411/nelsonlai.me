@@ -4,21 +4,13 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "content-collections": ["./.content-collections/generated"],
-      "~/*": ["./public/*"]
+      "~/*": ["./public/*"],
+      "content-collections": ["./.content-collections/generated"]
     },
+    "jsx": "preserve",
     "plugins": [{ "name": "next" }]
   },
   "exclude": ["node_modules"],
-  "extends": "@tszhong0411/tsconfig/nextjs.json",
-  "include": [
-    "**/*.js",
-    "**/*.jsx",
-    "**/*.mjs",
-    "**/*.ts",
-    "**/*.tsx",
-    "**/*.mts",
-    "next-env.d.ts",
-    ".next/types/**/*.ts"
-  ]
+  "extends": "@tszhong0411/typescript-config/base.json",
+  "include": ["**/*.ts", "**/*.tsx", "next-env.d.ts", ".next/types/**/*.ts", "postcss.config.mjs"]
 }

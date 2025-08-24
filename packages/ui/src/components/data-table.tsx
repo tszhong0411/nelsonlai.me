@@ -19,7 +19,7 @@ import { DataTablePagination } from './data-table-pagination'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './table'
 
 declare module '@tanstack/react-table' {
-  // eslint-disable-next-line unused-imports/no-unused-vars, @typescript-eslint/no-unused-vars -- must have identical type parameters
+  // eslint-disable-next-line unused-imports/no-unused-vars -- must have identical type parameters
   interface ColumnMeta<TData extends RowData, TValue> {
     label?: string
     placeholder?: string

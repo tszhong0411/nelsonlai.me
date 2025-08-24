@@ -144,7 +144,7 @@ type FormMessageProps = React.ComponentProps<'p'>
 const FormMessage = (props: FormMessageProps) => {
   const { className, children, ...rest } = props
   const { error, formMessageId } = useFormField()
-  const body = error ? String(error.message ?? '') : children
+  const body = error ? (error.message ?? '') : children
 
   if (!body) {
     return null

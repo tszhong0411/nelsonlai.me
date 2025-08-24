@@ -32,7 +32,7 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**", "dist/**", ".content-collections/**"]
+      "outputs": [".next/**", "!.next/cache/**", ".content-collections/**"]
     },
     "build:apps": {
       "dependsOn": ["^build:apps"],
@@ -40,10 +40,6 @@
     },
     "build:mdx": {
       "outputs": [".content-collections/**"]
-    },
-    "build:packages": {
-      "dependsOn": ["^build:packages"],
-      "outputs": ["dist/**"]
     },
     "clean": {
       "cache": false

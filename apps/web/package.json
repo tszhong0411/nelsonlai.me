@@ -1,9 +1,8 @@
 {
   "name": "@tszhong0411/web",
   "version": "0.0.0",
-  "private": true,
-  "description": "The personal portfolio of tszhong0411",
   "license": "MIT",
+  "author": "Nelson Lai <me@nelsonlai.me> (https://github.com/tszhong0411/)",
   "type": "module",
   "scripts": {
     "build": "pnpm with-env next build",
@@ -21,7 +20,7 @@
     "with-env": "dotenv -e ../../.env.local --"
   },
   "lint-staged": {
-    "*.{cjs,mjs,js,jsx,cts,mts,ts,tsx,json}": "eslint --fix"
+    "*.{mjs,ts,tsx}": "eslint --fix"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
@@ -88,7 +87,7 @@
     "@tszhong0411/kv": "workspace:*",
     "@tszhong0411/mdx-plugins": "workspace:*",
     "@tszhong0411/shared": "workspace:*",
-    "@tszhong0411/tsconfig": "workspace:*",
+    "@tszhong0411/typescript-config": "workspace:*",
     "@types/canvas-confetti": "^1.9.0",
     "@types/node": "^22.15.29",
     "@types/react": "^19.1.6",
@@ -97,7 +96,6 @@
     "@types/tinycolor2": "^1.4.6",
     "@vitejs/plugin-react": "^4.5.1",
     "schema-dts": "^1.1.5",
-    "sharp": "^0.34.2",
     "tailwindcss": "^4.1.8"
   }
 }

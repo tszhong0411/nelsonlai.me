@@ -153,7 +153,7 @@ const Stats = () => {
                         WebkitTextFillColor: 'transparent'
                       }}
                     >
-                      <Counter value={Number(value)} />
+                      <Counter value={value} />
                       {suffix && <span>{` ${suffix}`}</span>}
                     </div>
                   </>

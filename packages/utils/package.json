@@ -1,40 +1,19 @@
 {
   "name": "@tszhong0411/utils",
-  "version": "0.0.25",
-  "description": "The utility functions for tszhong0411's projects",
-  "homepage": "https://github.com/tszhong0411/nelsonlai.me#readme",
-  "bugs": {
-    "url": "https://github.com/tszhong0411/nelsonlai.me/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tszhong0411/nelsonlai.me.git",
-    "directory": "packages/utils"
-  },
+  "version": "0.0.0",
   "license": "MIT",
-  "author": "tszhong0411 <me@nelsonlai.me> (https://github.com/tszhong0411/)",
+  "author": "Nelson Lai <me@nelsonlai.me> (https://github.com/tszhong0411/)",
   "type": "module",
-  "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
-    }
-  },
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
   "scripts": {
-    "build": "tsdown",
-    "clean": "rm -rf .turbo dist",
-    "dev": "tsdown --watch",
+    "clean": "rm -rf .turbo",
     "lint": "eslint . --max-warnings 0",
     "lint:fix": "eslint --fix .",
     "type-check": "tsc --noEmit"
   },
   "lint-staged": {
-    "*.{cjs,mjs,js,jsx,cts,mts,ts,tsx,json}": "eslint --fix"
+    "*.{ts}": "eslint --fix"
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -42,10 +21,7 @@
   },
   "devDependencies": {
     "@tszhong0411/eslint-config": "workspace:*",
-    "@tszhong0411/tsconfig": "workspace:*",
+    "@tszhong0411/typescript-config": "workspace:*",
     "@types/node": "^22.15.29"
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }
