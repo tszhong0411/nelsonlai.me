@@ -1,6 +1,6 @@
 'use client'
 
-import type { TOC } from '@repo/mdx-plugins'
+import type { TOC } from '@/mdx-plugins'
 
 import { useTranslations } from '@repo/i18n/client'
 import { useRouter } from '@repo/i18n/routing'
